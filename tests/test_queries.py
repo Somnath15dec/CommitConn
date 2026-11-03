@@ -156,3 +156,23 @@ def test_eval_b_counts_and_fields(eval_b):
         assert p["context_word"] not in synonyms
         assert p["playlist_words"] == CONTEXT_TO_PLAYLIST_WORDS[p["context_word"]]
         assert p["surface"] in [p["context_word"], *CONTEXT_SYNONYMS.get(p["context_word"], [])]
+
+
+
+def test_incremental_train_keeps_previous_pairs(cat):
+    sub = cat.head(30).reset_index(drop=True)
+    fresh, _ = gq.generate_train(sub)
+    prev = [p for p in fresh if p["track_id"] != sub.track_id[0]]      # pretend track 0 is new
+    again, n_new = gq.generate_train(sub, prev)
+    assert n_new == 1
+    assert [p for p in again if p["track_id"] != sub.track_id[0]] == prev
+    assert any(p["track_id"] == sub.track_id[0] for p in again)
+    assert gq.generate_train(sub, prev) == (again, 1)                      # deterministic
+
+
+def test_retained_tracks_have_valid_pairs(cat, train):
+    by_track = {}
+    for p in train:
+        by_track.setdefault(p["track_id"], []).append(p)
+    assert set(by_track) == set(cat.track_id)
+    assert all(gq.train_pairs_valid(cat.loc[t], ps) for t, ps in by_track.items())

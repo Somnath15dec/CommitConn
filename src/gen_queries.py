@@ -7,6 +7,8 @@ the canonical word.
 """
 import json
 import re
+import sys
+import zlib
 from collections import Counter
 
 import numpy as np
@@ -207,11 +209,38 @@ def eval_query_for(row, rng, train_keys: set) -> dict | None:
     return None
 
 
-def generate(cat: pd.DataFrame):
-    rng = np.random.default_rng(TRAIN_RANDOM_STATE)
+def train_pairs_valid(row, pairs: list[dict]) -> bool:
+    own = set(row.tags) | set(row.context) | set(row.genres) | set(row.category)
+    return bool(pairs) and all(set(p["wanted_tags"]) <= own for p in pairs)
+
+
+def generate_train(cat: pd.DataFrame, previous: list[dict] | None = None) -> tuple[list[dict], int]:
+    """Templated train pairs; returns (pairs, n_tracks_newly_generated). Query-string balancing happens at
+    training time (per-epoch sampling, docs/PHASE1.md Step 15); no pairs are dropped here.
+
+    fresh (previous=None): one rng (TRAIN_RANDOM_STATE) over the catalog in order.
+    incremental: tracks whose previous pairs are still valid keep them unchanged; other tracks get pairs from
+    a per-track rng seeded by (TRAIN_RANDOM_STATE, crc32(track_id)), so catalog changes don't reshuffle the rest."""
     rows = list(cat.itertuples(index=False))
     ctx_freq = Counter(c for row in rows for c in dict.fromkeys(o[1] for o in slot_options(row, "train")["context"]))
-    train = [p for row in rows for p in train_queries_for(row, rng, ctx_freq)]
+    if previous is None:
+        rng = np.random.default_rng(TRAIN_RANDOM_STATE)
+        return [p for row in rows for p in train_queries_for(row, rng, ctx_freq)], len(rows)
+    prev: dict[str, list[dict]] = {}
+    for p in previous:
+        prev.setdefault(p["track_id"], []).append(p)
+    out, n_new = [], 0
+    for row in rows:
+        if train_pairs_valid(row, prev.get(row.track_id, [])):
+            out += prev[row.track_id]
+        else:
+            rng = np.random.default_rng([TRAIN_RANDOM_STATE, zlib.crc32(row.track_id.encode())])
+            out += train_queries_for(row, rng, ctx_freq)
+            n_new += 1
+    return out, n_new
+
+
+def generate_eval_a(cat: pd.DataFrame, train: list[dict]) -> tuple[list[dict], int]:
     train_keys = {(p["query"], p["track_id"]) for p in train}
 
     erng = np.random.default_rng(EVAL_RANDOM_STATE)
@@ -225,7 +254,25 @@ def generate(cat: pd.DataFrame):
         rec = eval_query_for(eligible[i], erng, train_keys)
         if rec:
             evals.append(rec)
-    return train, evals, len(eligible)
+    return evals, len(eligible)
+
+
+def eval_a_still_valid(cat: pd.DataFrame, evals: list[dict], train: list[dict]) -> str | None:
+    """None if an existing Eval A can be kept as is; otherwise the reason it can't."""
+    rows = cat.set_index("track_id", drop=False)
+    missing = [p["track_id"] for p in evals if p["track_id"] not in rows.index]
+    if missing:
+        return f"{len(missing)} Eval A tracks no longer in the catalog"
+    train_keys = {(p["query"], p["track_id"]) for p in train}
+    for p in evals:
+        row = rows.loc[p["track_id"]]
+        own = set(row.tags) | set(row.context) | set(row.genres)
+        if not set(p["wanted_tags"]) <= own:
+            return f"track {p['track_id']} no longer carries {set(p['wanted_tags']) - own}"
+        if (p["query"], p["track_id"]) in train_keys or any(contains_word(p["query"], b)
+                                                             for b in eval_banned_words(row)):
+            return f"pair {p['query']!r} / {p['track_id']} now leaks"
+    return None
 
 
 def eval_b_words() -> list[str]:
@@ -260,6 +307,11 @@ def generate_eval_b(train_queries: set[str], per_word: int = EVAL_B_PER_WORD) ->
     return out
 
 
+def read_jsonl(path) -> list[dict]:
+    with path.open(encoding="utf-8") as f:
+        return [json.loads(line) for line in f]
+
+
 def write_jsonl(path, rows):
     with path.open("w", encoding="utf-8") as f:
         for r in rows:
@@ -273,15 +325,28 @@ def context_vocab(cat: pd.DataFrame) -> list[str]:
 
 def main():
     cat = pd.read_parquet(CATALOG)
-    train, evals, n_eligible = generate(cat)
+    fresh = "--fresh" in sys.argv or not TRAIN_PAIRS.exists()
+    train, n_new = generate_train(cat, None if fresh else read_jsonl(TRAIN_PAIRS))
+    print(f"train pairs: {'fresh' if fresh else 'incremental'} generation, {n_new} tracks newly generated")
     write_jsonl(TRAIN_PAIRS, train)
-    write_jsonl(EVAL_PAIRS, evals)
+    reason = eval_a_still_valid(cat, read_jsonl(EVAL_PAIRS), train) if EVAL_PAIRS.exists() else "no Eval A yet"
+    if reason is None:
+        evals = read_jsonl(EVAL_PAIRS)
+        n_eligible = None
+        print("Eval A kept unchanged (all tracks present and still consistent)")
+    else:
+        evals, n_eligible = generate_eval_a(cat, train)
+        write_jsonl(EVAL_PAIRS, evals)
+        print(f"Eval A regenerated: {reason}")
     eval_b = generate_eval_b({p["query"] for p in train})
     write_jsonl(EVAL_CONTEXT_QUERIES, eval_b)
 
     tr, ev = pd.DataFrame(train), pd.DataFrame(evals)
+    per_q = tr["query"].value_counts()
+    print(f"distinct train query strings: {len(per_q)} | strings with >150 tracks: {(per_q > 150).sum()} "
+          f"(max {per_q.max()}; balanced by per-epoch sampling at training time)")
     print(f"train pairs: {len(tr)}  per type: {tr.type.value_counts().to_dict()}")
-    print(f"eval pairs:  {len(ev)} (eligible tracks {n_eligible})  per type: {ev.type.value_counts().to_dict()}")
+    print(f"eval pairs:  {len(ev)} (eligible tracks {n_eligible if n_eligible is not None else 'n/a, kept'})  per type: {ev.type.value_counts().to_dict()}")
     print(f"train templates used: {tr.template_id.nunique()}/{len(TRAIN_TEMPLATES)}  "
           f"eval templates used: {ev.template_id.nunique()}/{len(EVAL_TEMPLATES)}")
 

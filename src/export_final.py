@@ -13,7 +13,7 @@ from openpyxl.styles import Alignment, Font
 from openpyxl.utils import get_column_letter
 
 from src.analyze_readiness import content_desc
-from src.muse_match import normalize_artist, normalize_title
+from src.muse_match import song_key
 from src.paths import (CATALOG, CONTEXT_LABELS, EVAL_CONTEXT_QUERIES, EVAL_PAIRS, EXPORTS, MUSE_VALIDATION,
                        REAL_USERS, ROOT, RULE_PRECISION, TRAIN_PAIRS)
 
@@ -80,7 +80,7 @@ def oracle_ceiling(cat: pd.DataFrame, track_ids) -> float:
 
 
 def duplicate_count(cat: pd.DataFrame) -> int:
-    key = cat.track_name.map(normalize_title) + "\x1f" + cat.artists.str.split(";").str[0].map(normalize_artist)
+    key = pd.Series([song_key(n, a) for n, a in zip(cat.track_name, cat.artists)])
     return int(key.duplicated().sum())
 
 
@@ -158,7 +158,7 @@ def build_sheets(n_tests: int | None = None) -> tuple[dict[str, pd.DataFrame], l
         ("% general listening (no context tag)", round(100 * (cat.context.str.len() == 0).mean(), 1)),
         ("workout share (% tracks with workout context)", round(100 * cat.context.map(lambda v: "workout" in v)
                                                                  .mean(), 1)),
-        ("duplicate songs (normalized title + first artist)", duplicate_count(cat)),
+        ("duplicate songs (song_key: version-normalized title + first artist)", duplicate_count(cat)),
         ("AUDIO_WEIGHT decision (option B)", AUDIO_WEIGHT_DECISION),
         ("Hit@10 oracle ceiling, Eval A tracks", oracle_ceiling(cat, eval_a.track_id)),
         ("Hit@10 oracle ceiling, readiness v2 sample", ORACLE_READINESS),

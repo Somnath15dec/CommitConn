@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from src.muse_match import normalize_artist, normalize_title
+from src.muse_match import song_key
 from src.paths import CATALOG, ROOT
 
 REPORT = ROOT / "eval" / "readiness_report.md"
@@ -123,7 +123,7 @@ def main() -> None:
                    f"largest groups: {vc.head(10).tolist()}")
 
     # 2. duplicate songs
-    key = list(zip(cat.track_name.map(normalize_title), cat.artists.map(normalize_artist)))
+    key = [song_key(n, a) for n, a in zip(cat.track_name, cat.artists)]
     cat["song_key"] = key
     kc = cat.song_key.value_counts()
     dup_keys = kc[kc > 1]

@@ -1,500 +1,500 @@
-{"query": "any recommendations for feeling good?", "track_id": "3wkG6NehREVt1DhwFP0fuB", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "I'm into dance lately, anything good?", "track_id": "6ZANrVuAMp2rpjhfbOuJly", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["dance"]}
-{"query": "I need happy vibes for a workout", "track_id": "53xK69m0dn1mdWXRRe0GGn", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "give me tracks with a energetic feel", "track_id": "24eZ6CbQsJBDsBqmig5CRx", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "any recommendations for a cathartic release?", "track_id": "2hK67eTuNLPcrzYqB4BjZO", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["cathartic"]}
+{"query": "I'm into hard rock lately, anything good?", "track_id": "6Vjk8MNXpQpi0F4BefdTyq", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "I need energetic vibes for a workout", "track_id": "6Vs53ujCYKgv2OHfFU0FrU", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2MbdDtCv5LUVjYy9RuGTgC", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
 {"query": "I need happy vibes for dancing", "track_id": "6mz1fBdKATx6qP4oP1I65G", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "looking for garage that works for the morning", "track_id": "6wNUBZNWFxdUGof6vkaykE", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["garage", "morning"]}
+{"query": "looking for british that works for relaxing", "track_id": "4M4Q3JLsUbyTkd5WHty1WB", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["british", "relaxing"]}
 {"query": "any recommendations for feeling good?", "track_id": "3cfOd4CMv2snFaKAnMdnvK", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "7E7POHU96XKXbiubARcPBD", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "play me some spanish that feels energetic", "track_id": "15m2Op4d1ZtX0ScPaDNKcd", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["spanish", "energetic"]}
-{"query": "I need energetic vibes for a party", "track_id": "3dJjsWCy6ZwMfw5NbD226G", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "party"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "5EE1IDPjm2vQ4sYqXEdM0s", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "play me some spanish that feels energetic", "track_id": "1LuW4h5s9ZumBbMh7qhDDj", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["spanish", "energetic"]}
+{"query": "I need energetic vibes for a workout", "track_id": "5ynxx6zC4dgzsMHLYQ04Dc", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
 {"query": "give me tracks with a melancholic feel", "track_id": "5pKCDm2fw4k6D6C5Rk646C", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "give me tracks with a energetic feel", "track_id": "7Ji8ejeD78lMEMAzVlGJeD", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "any recommendations for a workout?", "track_id": "2eiAyOIUKz9wUKigb9IXmS", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "play me some metalcore that feels energetic", "track_id": "6RbeLGGRcELEeKjMAplpap", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metalcore", "energetic"]}
-{"query": "any recommendations for a party?", "track_id": "2mKouqwAIdQnMP43zxR89r", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
-{"query": "looking for pagode that works for relaxing", "track_id": "0wS00I7lIeVpkToChXAbfL", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["pagode", "relaxing"]}
-{"query": "I'm into alt rock lately, anything good?", "track_id": "0OtXJQBLb7wPXL2XyN2cFW", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
-{"query": "I'm into psych rock lately, anything good?", "track_id": "6uU0Hu8oVk9gBihokcrDMH", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
-{"query": "play me some pop film that feels melancholic", "track_id": "23bpCCVsTUKviTEfoy4tbM", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["pop-film", "melancholic"]}
-{"query": "any recommendations for a workout?", "track_id": "03jdl5GTBhKsgB1Yw8mVPh", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "play me some industrial that feels energetic", "track_id": "1ivAnRes9mAvhnRoBPpm1o", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["industrial", "energetic"]}
-{"query": "need a energetic soundtrack for the gym", "track_id": "0pyT9W877RcYtVdl1ZmlvQ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I need energetic vibes for a workout", "track_id": "06Zz2l7cVTCTgCNDe1bnEF", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I'm into world music lately, anything good?", "track_id": "37bJkchCs6NwEQeXzuS0uY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["world-music"]}
-{"query": "play me some grunge that feels energetic", "track_id": "3hb2ScEVkGchcAQqrPLP0R", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
-{"query": "I'm into latin lately, anything good?", "track_id": "0Bgj6XMxb7QdNNdTU5mcfd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["latin"]}
-{"query": "give me tracks with a happy feel", "track_id": "7wMq5n8mYSKlQIGECKUgTX", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into ska lately, anything good?", "track_id": "6iaxIVWK1job1FuTIwAYqt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["ska"]}
-{"query": "I'm into j-rock lately, anything good?", "track_id": "1i9VjGOH64iXqMBMNWyHmN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["j-rock"]}
-{"query": "play me some grindcore that feels melancholic", "track_id": "0ELwNEshcw9E3EQwPPtsFQ", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grindcore", "melancholic"]}
-{"query": "give me tracks with a energetic feel", "track_id": "7DXYmyJBH5y4bQ2umda50Y", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I need energetic vibes for a workout", "track_id": "6Slvi85s1hIaeykjvDe1xk", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2QqM6ReiwnpX1uS1HNsKhl", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "any recommendations for a workout?", "track_id": "7pypsyGCvT5yUKXuUuXc3Z", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "play me some hardcore that feels happy", "track_id": "2mKouqwAIdQnMP43zxR89r", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hardcore", "happy"]}
+{"query": "play me some indian that feels energetic", "track_id": "6PxdC82uwjv8M2ZIdV5aeA", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["indian", "energetic"]}
+{"query": "need a melancholic soundtrack for running", "track_id": "0CrJVibIdsL6mqmYI9R9hc", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "running"]}
+{"query": "play me some psych rock that feels happy", "track_id": "0MfMViYWUncklO2ULTW2jl", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "happy"]}
+{"query": "any recommendations for the gym?", "track_id": "2biQljjf8AuYx5u8Se6clY", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "play me some grunge that feels energetic", "track_id": "68pbfPO23QQUl2pxlthi6Q", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
+{"query": "any recommendations for a workout?", "track_id": "4L9UGREMQBfYLmGwlACgTV", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into synth pop lately, anything good?", "track_id": "1ff8lsrJ2kuZuofMw81EQo", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
+{"query": "looking for industrial that works for an intense session", "track_id": "6SyutgkQfLKfcsWvmh02k2", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["industrial", "intense"]}
+{"query": "give me tracks with a energetic feel", "track_id": "1sKyIsaXvyO93UANNEQ2UU", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I'm into folk lately, anything good?", "track_id": "4yyg2J2uXOjCtCyT64984C", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["folk"]}
+{"query": "any recommendations for a workout?", "track_id": "2AXTRWWGTwgp0Ud8cPzT5S", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into alternative lately, anything good?", "track_id": "7MWBaRLGmvflqPoewBGbMj", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alternative"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "4Ev1LZ4uzjnSvDHpgdyBZK", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "can you find slow acoustic stuff", "track_id": "77HH11SsE6IPsDb0RQ6W1T", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
+{"query": "give me tracks with a happy feel", "track_id": "5JbEV8ld23QkcqY11TwM1o", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "any recommendations for the morning?", "track_id": "1Zstms8GsmKgNs5ZNxOiMC", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
 {"query": "give me tracks with a calm feel", "track_id": "27hhIs2fp6w06N5zx4Eaa5", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "need a energetic soundtrack for a cathartic release", "track_id": "1K2fnd52EHmeDmrPfJLcyq", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "cathartic"]}
-{"query": "I need energetic vibes for an intense session", "track_id": "0ILXYaWxMQVEXnKq2eTmjW", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "intense"]}
-{"query": "any recommendations for a coffee break?", "track_id": "08GOw3NsrJ0LsCCeyqzt3b", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "need a melancholic soundtrack for a coffee break", "track_id": "1fEGtTZjrjJW8eUeewnNJR", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
-{"query": "looking for british that works for relaxing", "track_id": "788U1Sqej9M6c4iikuDGxO", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["british", "relaxing"]}
-{"query": "I'm into psych rock lately, anything good?", "track_id": "0Q2dRzhPWFOex89dOjbq5Y", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
-{"query": "I need energetic vibes for dancing", "track_id": "1f5BjEw9fvPClahjx7fQlr", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "dance"]}
-{"query": "I'm into garage lately, anything good?", "track_id": "2LGdO5MtFdyphi2EihANZG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "3gBiC50QtRYGuo9pL4fQfI", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I'm into psych rock lately, anything good?", "track_id": "0bqEyA4bNCrjbQqBMt6hvA", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
+{"query": "I'm into british lately, anything good?", "track_id": "64I0PKLFEKlcvc7fEVUGq0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
+{"query": "looking for spanish that works for a coffee break", "track_id": "4waqcUQWdj0yH26STWl2Rq", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["spanish", "coffee"]}
+{"query": "need a happy soundtrack for feeling good", "track_id": "5d6ZRqgbz26Sg4bk1oifQw", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I need energetic vibes for the gym", "track_id": "0Zh3tKIphLOvQux4dA6PFZ", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "6lvJDlBrtabJWiBlMTGxKs", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "need a calm soundtrack for the morning", "track_id": "1hdDnQRPinE8hxYhW3uy6u", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "morning"]}
+{"query": "looking for indie pop that works for relaxing", "track_id": "6IJ4zWJvkbUk3U4K1RwaxX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["indie-pop", "relaxing"]}
+{"query": "need a energetic soundtrack for running", "track_id": "71SvEDmsOwIWw1IozsZoMA", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I need energetic vibes for a workout", "track_id": "3gBiC50QtRYGuo9pL4fQfI", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "7aaPcFnbJcVZeJyWZLWPXm", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
 {"query": "I'm into piano lately, anything good?", "track_id": "6WCeFNVAXUtNczb7lqLiZU", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["piano"]}
-{"query": "any recommendations for running?", "track_id": "5EbTHYIQQtNNMloPNirkKi", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "any recommendations for running?", "track_id": "5In20kbEsaxFQ3q2RG0TQb", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "can you find slow acoustic stuff", "track_id": "3cJbNaXdqRuuEoksg0j7LC", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
-{"query": "I'm into reggae lately, anything good?", "track_id": "42vMaWQYBqk9kf8P2uaT05", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
-{"query": "any recommendations for the morning?", "track_id": "70Znjq5VPKFrwlB7O26SWT", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "need a happy soundtrack for relaxing", "track_id": "2NeKjEryWM5VZToeosUsUu", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "relaxing"]}
-{"query": "I need happy vibes for feeling good", "track_id": "5izGeTxueiFX1UPFGohY9w", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "I'm into rock lately, anything good?", "track_id": "2GiJYvgVaD2HtM8GqD9EgQ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock"]}
-{"query": "any recommendations for the gym?", "track_id": "5VwYcCKNAgDqDJ9ah9tDGl", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "need a melancholic soundtrack for a coffee break", "track_id": "27tX58NOpv1YKQ0abW7EPy", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
-{"query": "I'm into breakbeat lately, anything good?", "track_id": "4pIjczIeghLHrXH0mBx9PY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
-{"query": "looking for drum and bass that works for a workout", "track_id": "3aE4H40sir4lVzMG7MxYBj", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["drum-and-bass", "workout"]}
-{"query": "I need happy vibes for the gym", "track_id": "5fbrfve4yo0GUWfGNmhFJr", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "gym"]}
-{"query": "I need melancholic vibes for reflective moments", "track_id": "1syFMBjjRvL3uReOM8yWEb", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "rainy day"]}
-{"query": "give me tracks with a energetic feel", "track_id": "1VJBQdDrOblSLmoZMeh1xh", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "need a happy soundtrack for a workout", "track_id": "6DulvzWONaGcej1H2pj3i2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "looking for power pop that works for running", "track_id": "3oyc1mIdCBGaU55wX7otqM", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["power-pop", "running"]}
-{"query": "I'm into garage lately, anything good?", "track_id": "5TTGoX70AFrTvuEtqHK37S", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
-{"query": "I'm into disco lately, anything good?", "track_id": "7wuJGgpTNzbUyn26IOY6rj", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
-{"query": "need a energetic soundtrack for the gym", "track_id": "0z25tUQgEI4cIyNZ1TgWig", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "looking for reggaeton that works for a workout", "track_id": "00zKsjOedBGipmWamt0bdq", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["reggaeton", "workout"]}
-{"query": "any recommendations for relaxing?", "track_id": "0qX8a7BLz0I7XQieYjWfiq", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "I'm into hard rock lately, anything good?", "track_id": "1ju7EsSGvRybSNEsRvc7qY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
-{"query": "need a melancholic soundtrack for a cathartic release", "track_id": "3ZffCQKLFLUvYM59XKLbVm", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "cathartic"]}
-{"query": "I'm into rock lately, anything good?", "track_id": "7iAqvWLgZzXvH38lA06QZg", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock"]}
-{"query": "give me tracks with a happy feel", "track_id": "0KbIwqCAHmXWu7hrszXY6j", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "play me some metalcore that feels energetic", "track_id": "5Y6gse6fdyxs0lFFqyHYgz", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metalcore", "energetic"]}
-{"query": "looking for turkish that works for relaxing", "track_id": "69RuOoiyE8yNt87aiBM2UC", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["turkish", "relaxing"]}
-{"query": "I need energetic vibes for running", "track_id": "4ih3dyFZoeTdaeJW9mPbOI", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
-{"query": "play me some british that feels melancholic", "track_id": "30V02AmDYMRvrHE4L8cZAo", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "melancholic"]}
-{"query": "play me some british that feels happy", "track_id": "5pztwVl6brVgqYjYQ93us6", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "happy"]}
-{"query": "any recommendations for feeling good?", "track_id": "4pU9BNdhUlRKcoZgF8ac08", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "play me some detroit techno that feels melancholic", "track_id": "4ncFRft2xEs4kanULQjaOz", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["detroit-techno", "melancholic"]}
-{"query": "I'm into world music lately, anything good?", "track_id": "14HrSWGYPCDwqAcVFUYKsq", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["world-music"]}
-{"query": "give me tracks with a energetic feel", "track_id": "5CG9qgl3R1zlKbK6sb9q4Z", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "give me tracks with a energetic feel", "track_id": "0vZ97gHhemKm6c64hTfJNA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into alternative lately, anything good?", "track_id": "003vvx7Niy0yvhvHt4a68B", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alternative"]}
-{"query": "I'm into metal lately, anything good?", "track_id": "78PKCefXwDLbl4FVO1Pjzh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metal"]}
-{"query": "I'm into goth lately, anything good?", "track_id": "5GHjhiMYYSCfCGHHfoNVhV", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["goth"]}
-{"query": "any recommendations for relaxing?", "track_id": "3DKI4ZKPLQb1Pk2uTR1zR0", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "play me some trip hop that feels happy", "track_id": "270X9phxJ878KGmloeeQQq", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "happy"]}
+{"query": "I'm into bluegrass lately, anything good?", "track_id": "37OmnzJSoVUC8iwhx1QimF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["bluegrass"]}
+{"query": "any recommendations for the morning?", "track_id": "1PR5pyPiOEEQ02oJYq402x", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "any recommendations for relaxing?", "track_id": "28C1Pa9nFnWwqoUDS2DPaT", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "I'm into rockabilly lately, anything good?", "track_id": "6oM4ryXpuZmbFfBv2sEe7v", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rockabilly"]}
+{"query": "any recommendations for running?", "track_id": "0QDROVQXDVdoM8WMuYRnyD", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
+{"query": "any recommendations for the morning?", "track_id": "2NeKjEryWM5VZToeosUsUu", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "I'm into power pop lately, anything good?", "track_id": "6F2vo4sxRNQ58VYe3pdiaL", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["power-pop"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2GiJYvgVaD2HtM8GqD9EgQ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "looking for rockabilly that works for a coffee break", "track_id": "1aECQTfv5SO42lU4fvrdJJ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rockabilly", "coffee"]}
+{"query": "I need energetic vibes for the gym", "track_id": "1fUacP7XP697l6ry01oO4d", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
+{"query": "any recommendations for a cathartic release?", "track_id": "2W0q5Et7gBSvpZAlnFUxM4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["cathartic"]}
+{"query": "need a happy soundtrack for dancing", "track_id": "5MA7jaAdA1oZ2Jcrz5gqaJ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
+{"query": "I'm into hard rock lately, anything good?", "track_id": "5YjKdeES9QRJ8NmF4Xc8pV", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "I'm into j-dance lately, anything good?", "track_id": "6WS26vbPF2Wd29NUWnPZOi", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["j-dance"]}
+{"query": "I need melancholic vibes for running", "track_id": "3i6AkELMjh7GSnYzM0VV5Z", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "running"]}
+{"query": "I'm into acoustic lately, anything good?", "track_id": "3NCg46FWgnANZc9HQHQOQR", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["acoustic"]}
+{"query": "I'm into power pop lately, anything good?", "track_id": "5r2z0FHOoFI06GZEVGDjzM", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["power-pop"]}
+{"query": "give me tracks with a energetic feel", "track_id": "63OFKbMaZSDZ4wtesuuq6f", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I'm into funk lately, anything good?", "track_id": "1DIXPcTDzTj8ZMHt3PDt8p", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["funk"]}
+{"query": "I'm into electronic lately, anything good?", "track_id": "7o2AeQZzfCERsRmOM86EcB", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["electronic"]}
+{"query": "play me some iranian that feels calm", "track_id": "1sayezH8bWoxHMAQCccCTi", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["iranian", "calm"]}
+{"query": "I'm into hardcore lately, anything good?", "track_id": "0IRPMakNtmITC1G0g3cGRB", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hardcore"]}
+{"query": "play me some hard rock that feels energetic", "track_id": "1ju7EsSGvRybSNEsRvc7qY", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "energetic"]}
+{"query": "looking for punk that works for an intense session", "track_id": "3ZffCQKLFLUvYM59XKLbVm", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["punk", "intense"]}
+{"query": "I'm into disco lately, anything good?", "track_id": "5ubvP9oKmxLUVq506fgLhk", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
+{"query": "play me some grunge that feels melancholic", "track_id": "2ZceU5sfgcH5h7bIsFuuXT", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "melancholic"]}
+{"query": "play me some disney that feels melancholic", "track_id": "55wE2dHkclRCqJxaxIFE7f", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disney", "melancholic"]}
+{"query": "need a calm soundtrack for the morning", "track_id": "6YXbeMDkN4pbnU7IME67T1", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "morning"]}
+{"query": "I'm into new age lately, anything good?", "track_id": "4aqm3AXpo7MI7qET8ZURxD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["new-age"]}
+{"query": "looking for british that works for a workout", "track_id": "78foNmu2hGDPwm3cJVlikF", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["british", "workout"]}
+{"query": "need a melancholic soundtrack for an intense session", "track_id": "42lC6bnDdAjRqZtsFe1tmg", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "intense"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "0vH3ZghvyoUSZmMNL1dTls", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a happy feel", "track_id": "0j4sZBOjI9M1Ll4p8XJJhs", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I'm into power pop lately, anything good?", "track_id": "6nFdjV1Ko66O111x74K2kn", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["power-pop"]}
+{"query": "play me some french that feels happy", "track_id": "41SRUviAhdtZAJLKhJs6Uu", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["french", "happy"]}
+{"query": "give me tracks with a happy feel", "track_id": "0vZ97gHhemKm6c64hTfJNA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I'm into dance lately, anything good?", "track_id": "0TDLuuLlV54CkRRUOahJb4", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["dance"]}
+{"query": "play me some acoustic that feels melancholic", "track_id": "2KhS0LVOw9ralhfbcIi7vL", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["acoustic", "melancholic"]}
+{"query": "I'm into piano lately, anything good?", "track_id": "536YzEwf77mNcYsrWjtjci", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["piano"]}
+{"query": "I need melancholic vibes for a coffee break", "track_id": "6qWGRBzQMq6DXovBZMSE9d", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
+{"query": "I'm into chicago house lately, anything good?", "track_id": "1GfYT8SJcyx3wOPUfX9gpH", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["chicago-house"]}
 {"query": "I'm into funk lately, anything good?", "track_id": "4BxHd0qZINzh99YC1Enwlh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["funk"]}
-{"query": "looking for rock that works for a workout", "track_id": "6YhmCXNLuVzvfc44ZB1uhM", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock", "workout"]}
-{"query": "play me some breakbeat that feels energetic", "track_id": "7utOHiGT5oEq6yOfMvI3LA", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["breakbeat", "energetic"]}
-{"query": "any recommendations for a workout?", "track_id": "5JjHr4GeuAERaa1qgsbv6A", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "I'm into kids lately, anything good?", "track_id": "1SG18kW0egXcvFS1vmpA62", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["kids"]}
-{"query": "looking for folk that works for relaxing", "track_id": "0IKFxQz9YhhnibrGnGSeUw", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["folk", "relaxing"]}
+{"query": "any recommendations for a coffee break?", "track_id": "70C4NyhjD5OZUMzvWZ3njJ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "I'm into idm lately, anything good?", "track_id": "48wphI9LpeSRGIxapTpWbd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["idm"]}
+{"query": "I'm into trip hop lately, anything good?", "track_id": "1Mtwi6CmEHxkZvsNWR9qVE", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
+{"query": "I'm into new age lately, anything good?", "track_id": "4wNIVLMwvz1P4hjWBmyKqa", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["new-age"]}
+{"query": "I'm into hardstyle lately, anything good?", "track_id": "2TgDK4TC5KsywTYafAE4Gd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hardstyle"]}
 {"query": "play me some hard rock that feels melancholic", "track_id": "4OMu5a8sFpcRCPCcsoEaov", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "melancholic"]}
-{"query": "play me some reggae that feels happy", "track_id": "4fxF8ljwryMZX5c9EKrLFE", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["reggae", "happy"]}
-{"query": "need a energetic soundtrack for an intense session", "track_id": "5025qrQ61sslcVl5yw6Lo2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "intense"]}
-{"query": "need a calm soundtrack for a coffee break", "track_id": "1Izwzkicc4P2rEjD5droHU", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "coffee"]}
-{"query": "play me some trip hop that feels melancholic", "track_id": "1BAiFIrzp1umGBo8H2WEfy", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "melancholic"]}
-{"query": "I'm into chicago house lately, anything good?", "track_id": "5uum4myZWC9M7RLc4aL3yH", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["chicago-house"]}
-{"query": "need a calm soundtrack for the morning", "track_id": "7CEV9VwA8XO9wwxTXgYKvY", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "morning"]}
-{"query": "I need happy vibes for a workout", "track_id": "6FCngfdkfRZ0CwL2eZAgnc", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "looking for forro that works for a workout", "track_id": "7JSHyoiW3FGwWF75P9OsG5", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["forro", "workout"]}
-{"query": "looking for heavy metal that works for running", "track_id": "204523f9MSgEfc0oDJycNS", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["heavy-metal", "running"]}
-{"query": "need a happy soundtrack for feeling good", "track_id": "7h14W1uQK7sjpVI1oVTobt", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "give me tracks with a energetic feel", "track_id": "2bf6vmRZyBaqtLGbBgn5Tn", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into j-rock lately, anything good?", "track_id": "4wSehsk6FBUrrLSn6acBtA", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["j-rock"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "2Wv6Mv7PWtv1wst5oYqqQc", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "1q8yOvrVNiZtMuEujDuSPP", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "play me some grunge that feels energetic", "track_id": "00BYitnjj9tACCkLapk5uS", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
-{"query": "any recommendations for studying?", "track_id": "1FInsciTqJKIEIBhC5TqCa", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["study"]}
-{"query": "looking for dancehall that works for relaxing", "track_id": "7iR5sSLTH2ACtcbLpntsdR", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["dancehall", "relaxing"]}
-{"query": "I'm into blues lately, anything good?", "track_id": "65GbQI9VDTs7vo6MJL2iJA", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["blues"]}
-{"query": "looking for blues that works for relaxing", "track_id": "5HQEmiV2lKnSO6qa2fsR7x", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["blues", "relaxing"]}
-{"query": "any recommendations for relaxing?", "track_id": "3N9B5b5buHxACNc3GL5oAJ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "I'm into detroit techno lately, anything good?", "track_id": "0fdGZr8ZHTRNpRLgVGBqlp", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["detroit-techno"]}
-{"query": "play me some trip hop that feels melancholic", "track_id": "2Yz2Z1ENB85nYrK3Rg2qxO", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "melancholic"]}
-{"query": "looking for chicago house that works for a workout", "track_id": "2Fb4UYzXMcKWjeEjbElRIX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["chicago-house", "workout"]}
-{"query": "give me tracks with a energetic feel", "track_id": "38DbjBzICQsrm693uQ4giW", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "any recommendations for a coffee break?", "track_id": "17UVxL0MYEmKzXppfUL5in", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "can you find slow acoustic stuff", "track_id": "0pVzB4T2jiXeO5b8zpI18m", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
-{"query": "can you find fast rap stuff", "track_id": "40sTIn6Iai6cazto5TaCN0", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "spoken word or rap"]}
-{"query": "play me some psych rock that feels melancholic", "track_id": "1tDWVeCR9oWGX8d5J9rswk", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "melancholic"]}
-{"query": "play me some afrobeat that feels happy", "track_id": "3kNVYo6BJE9AENxzokM9YC", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["afrobeat", "happy"]}
-{"query": "I need energetic vibes for a workout", "track_id": "111SaDBbcHW0zedi4RBHDp", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "need a melancholic soundtrack for a coffee break", "track_id": "23g6h7EGpqPAlyj52byZd2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
-{"query": "I'm into rock n roll lately, anything good?", "track_id": "1jFhnVoJkcB4lf9tT0rSZS", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock-n-roll"]}
-{"query": "play me some metal that feels energetic", "track_id": "78XFPcFYN8YFOHjtVwnPsl", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metal", "energetic"]}
-{"query": "I need melancholic vibes for an intense session", "track_id": "2Lg2PtGdXUKcr6jbzntASS", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "intense"]}
-{"query": "any recommendations for the gym?", "track_id": "7pYVIpuFrH2cDMseplG8Jn", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "play me some folk that feels melancholic", "track_id": "7bhI6rnvaVw8qgZPn32qE0", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["folk", "melancholic"]}
-{"query": "give me tracks with a energetic feel", "track_id": "0myB6MFI5O76ebuwKEfALj", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "any recommendations for the gym?", "track_id": "1he9ObwZySgZkyGDyxb00O", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "I'm into folk lately, anything good?", "track_id": "2hnNCZrc32WRuDDVy8jJKd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["folk"]}
-{"query": "I'm into rockabilly lately, anything good?", "track_id": "39lnzOIUCSNaQmgBHoz7rt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rockabilly"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "0Ln5tJyLX5qusquBOtq7wf", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "looking for techno that works for running", "track_id": "0ibYVniVLMJWvc3eNfYk8T", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["techno", "running"]}
-{"query": "I need energetic vibes for running", "track_id": "3JxRyswhWDBro7rdB6LCow", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
-{"query": "looking for rock n roll that works for dancing", "track_id": "0uhwGiAqqhrXp9Rtv9lTLa", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock-n-roll", "dance"]}
-{"query": "I'm into breakbeat lately, anything good?", "track_id": "3sR4m7aR5zxendIxV53Thl", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
-{"query": "play me some hard rock that feels melancholic", "track_id": "2eDdFHgqNJltzlvlZFVDWd", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "melancholic"]}
-{"query": "can you find slow danceable stuff", "track_id": "0Z3OqaTt9u4P2rWWvQQZ31", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "danceable"]}
-{"query": "I'm into new age lately, anything good?", "track_id": "2VUTIRXSvsPxPdb339Gpqt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["new-age"]}
-{"query": "any recommendations for feeling good?", "track_id": "4G3dZN9o3o2X4VKwt4CLts", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "need a happy soundtrack for a workout", "track_id": "2cViIXIe8Pbd1sOJExMJlK", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "any recommendations for a workout?", "track_id": "1K7x1fONfIj7gwGVX6OrHR", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "I need happy vibes for the morning", "track_id": "1m0AvdSjINx9FvsgvvI6ww", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "any recommendations for the gym?", "track_id": "1FTCA6wQwulQFokDddKE68", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "I'm into grunge lately, anything good?", "track_id": "0a5UnIvDUBzqwUduJsouRy", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
-{"query": "any recommendations for a coffee break?", "track_id": "28Zg3EXyibO3UEda2WirSV", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "I'm into pop lately, anything good?", "track_id": "285HeuLxsngjFn4GGegGNm", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop"]}
-{"query": "give me tracks with a energetic feel", "track_id": "2bpHdsoyZUquMFWVill9Aj", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "give me tracks with a calm feel", "track_id": "4GdCiwOXIpmQGUWl5XBqyr", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I'm into reggae lately, anything good?", "track_id": "4fxF8ljwryMZX5c9EKrLFE", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
+{"query": "give me tracks with a energetic feel", "track_id": "3OMqeZU9lQGimMwMjPvBsp", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a calm feel", "track_id": "0XXwP0EmpOEqWxcL9aSreJ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I'm into goth lately, anything good?", "track_id": "13bdSVP2YguoHwN4BIFnOT", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["goth"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "3fW0qHrlcv8y0pc6SHo66V", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into bluegrass lately, anything good?", "track_id": "7CEV9VwA8XO9wwxTXgYKvY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["bluegrass"]}
+{"query": "play me some club that feels happy", "track_id": "6FCngfdkfRZ0CwL2eZAgnc", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["club", "happy"]}
+{"query": "I'm into sertanejo lately, anything good?", "track_id": "7pyF5eghFou5RDlFPOAuJk", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["sertanejo"]}
+{"query": "any recommendations for reflective moments?", "track_id": "2cP9K6CPMznBZlMJiVQIHk", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["rainy day"]}
+{"query": "play me some rockabilly that feels happy", "track_id": "5DwcKHWuKpR3BIDTqe9hkn", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["rockabilly", "happy"]}
+{"query": "looking for pop film that works for a coffee break", "track_id": "3gCljMiGFfcum5sOHTMfwZ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["pop-film", "coffee"]}
+{"query": "play me some classical that feels calm", "track_id": "1dAPazw4JMxZXTZoWGPg0T", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["classical", "calm"]}
+{"query": "I'm into trip hop lately, anything good?", "track_id": "2AFttonwFsCFpC6Cos9pcZ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
+{"query": "any recommendations for a party?", "track_id": "6ubXleMWwmzwmKTBer20PX", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
+{"query": "I need energetic vibes for running", "track_id": "7DiBapaMFCYd3kyTyq19XN", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I'm into garage lately, anything good?", "track_id": "4ileLT7ldd2uX8bMemWqbm", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "0x37pd7WllmDTIMm4T0UaN", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into rock n roll lately, anything good?", "track_id": "5xzdDMhFYiuUONB0Mha9VS", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock-n-roll"]}
+{"query": "I need energetic vibes for a workout", "track_id": "3K4HG9evC7dg3N0R9cYqk4", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "need a energetic soundtrack for the gym", "track_id": "16Of7eeW44kt0a1M0nitHM", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "gym"]}
+{"query": "need a happy soundtrack for feeling good", "track_id": "0qAXmTUtBaQsdfUGvT4bIy", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I'm into disco lately, anything good?", "track_id": "7Kszjzps0xbQXyo1pO4KfE", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
+{"query": "I'm into k-pop lately, anything good?", "track_id": "1nWB8isqs2tviWk20G5pow", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["k-pop"]}
+{"query": "I'm into world music lately, anything good?", "track_id": "2hJtYiDfwn57achG9nuiyl", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["world-music"]}
+{"query": "looking for rockabilly that works for feeling good", "track_id": "0LfJkvPNCNEMLpZJgDQiV1", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rockabilly", "feel-good"]}
+{"query": "any recommendations for sleep?", "track_id": "5yq2FGKwKq4pOUvHB71qdW", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["sleep"]}
+{"query": "give me tracks with a calm feel", "track_id": "2ppRdUUDrsB9SvHeFaGXMo", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "1tDWVeCR9oWGX8d5J9rswk", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "need a happy soundtrack for the morning", "track_id": "3kNVYo6BJE9AENxzokM9YC", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "I'm into jazz lately, anything good?", "track_id": "1FInsciTqJKIEIBhC5TqCa", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["jazz"]}
+{"query": "give me tracks with a energetic feel", "track_id": "0OwpHcn7HdJUIR13F6vP2y", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a calm feel", "track_id": "1jFhnVoJkcB4lf9tT0rSZS", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I'm into groove lately, anything good?", "track_id": "769cLRTw2y6KRdkFWFkxtu", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["groove"]}
+{"query": "I need happy vibes for the gym", "track_id": "1a7ZHtzNCTPuJkStK8WJbq", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "gym"]}
+{"query": "looking for world music that works for sleep", "track_id": "7j1e730A8K1my1mM4knYmr", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["world-music", "sleep"]}
+{"query": "I'm into folk lately, anything good?", "track_id": "7bhI6rnvaVw8qgZPn32qE0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["folk"]}
+{"query": "looking for hip-hop that works for dancing", "track_id": "0myB6MFI5O76ebuwKEfALj", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["hip-hop", "dance"]}
+{"query": "looking for indie pop that works for relaxing", "track_id": "62UEqfAXpFJOLC66EqM7ji", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["indie-pop", "relaxing"]}
+{"query": "looking for blues that works for a coffee break", "track_id": "7M9pPyt8Gr41THLhbz4NSB", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["blues", "coffee"]}
+{"query": "give me tracks with a calm feel", "track_id": "39lnzOIUCSNaQmgBHoz7rt", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "any recommendations for dancing?", "track_id": "34dx8DACTJsc3rsJdaEIQw", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["dance"]}
+{"query": "give me tracks with a happy feel", "track_id": "00Vp4bBQAZ1s9KEIw5MjgQ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I'm into metalcore lately, anything good?", "track_id": "1sqqUxxiUlG4y4KQS0PceJ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metalcore"]}
+{"query": "play me some opera that feels melancholic", "track_id": "03wrmep5c3Dr9JlOXPvFUX", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["opera", "melancholic"]}
+{"query": "I'm into soul lately, anything good?", "track_id": "6kLE4Rnz6Te74Qu4hokQKt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
+{"query": "I'm into hard rock lately, anything good?", "track_id": "2eDdFHgqNJltzlvlZFVDWd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "any recommendations for a workout?", "track_id": "1Abqb6agIOK1XLPaJhWm3G", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "play me some power pop that feels melancholic", "track_id": "1pdDiwTCPxoE3MkoYoagL7", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["power-pop", "melancholic"]}
+{"query": "I need happy vibes for the morning", "track_id": "50RwvvEKX5Q7AZt8FTAwIF", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "I need energetic vibes for running", "track_id": "47IWLfIKOKhFnz1FUEUIkE", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "play me some gospel that feels calm", "track_id": "1vi025C0wcXpUXENOWs5nL", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["gospel", "calm"]}
+{"query": "looking for industrial that works for the gym", "track_id": "0enWaR2RpV7ZaiYJLM5Rkj", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["industrial", "gym"]}
+{"query": "can you find fast instrumental stuff", "track_id": "4XKEVz0X1BIDhCAfb782tm", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
+{"query": "any recommendations for running?", "track_id": "0a5UnIvDUBzqwUduJsouRy", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
+{"query": "I'm into psych rock lately, anything good?", "track_id": "1AAYbsAIgEJMbxgLgpjE9y", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
+{"query": "looking for rock that works for a workout", "track_id": "1sWeSMifj6Z6kZyI6z3bRc", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock", "workout"]}
+{"query": "I need melancholic vibes for relaxing", "track_id": "2M2uYbBRv7ENTKef7wrSOs", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "relaxing"]}
+{"query": "I need calm vibes for a coffee break", "track_id": "1QchiD6sdsjMn4r72a2BOb", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "coffee"]}
 {"query": "looking for grunge that works for a workout", "track_id": "5wvYib82q05wiNjLElD8GJ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "workout"]}
-{"query": "need a happy soundtrack for dancing", "track_id": "4FeczSomVWVyU4FW7xDeAI", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "give me tracks with a happy feel", "track_id": "7Di7t9yGoxdZRLAt5a4pi0", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into progressive house lately, anything good?", "track_id": "65hRZOQkVjmBdusz1N7aOv", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["progressive-house"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "7xFLjZhmTT8sLHJGqgoIpq", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "I'm into alt rock lately, anything good?", "track_id": "0wMGxaOeu5zZfbx3gWctMx", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
-{"query": "I need happy vibes for feeling good", "track_id": "41TqRBgF4Ahyr4vGmZVk8b", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "5VMPBdWTXlBkTOinoxfhHI", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "looking for metalcore that works for a workout", "track_id": "0P5D7ji9AJi85bEdQhq50a", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["metalcore", "workout"]}
-{"query": "need a calm soundtrack for focusing", "track_id": "3FlyGsMdfPz50sWYpkPpQx", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "study"]}
-{"query": "any recommendations for a coffee break?", "track_id": "34ieem3brfX3EJApCl440A", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "I'm into garage lately, anything good?", "track_id": "78Gzxi27GuNHTfkn2BylG4", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
-{"query": "play me some psych rock that feels happy", "track_id": "6PUabSMXmPnZna361Wwmf7", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "happy"]}
-{"query": "looking for drum and bass that works for an intense session", "track_id": "3aiycOKS6P30BnR7dUfrnA", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["drum-and-bass", "intense"]}
-{"query": "I'm into techno lately, anything good?", "track_id": "7xxgqdJBcLG33vo6KXqV6S", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["techno"]}
-{"query": "play me some alt rock that feels melancholic", "track_id": "3dPQuX8Gs42Y7b454ybpMR", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alt-rock", "melancholic"]}
-{"query": "play me some trip hop that feels melancholic", "track_id": "5Rq2hPEd7UWN6i9tME54dj", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "melancholic"]}
-{"query": "looking for trip hop that works for dancing", "track_id": "39qTXRJZd7omJi2KZCd0nJ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["trip-hop", "dance"]}
-{"query": "looking for ambient that works for studying", "track_id": "3cIG78oBauowzEbkBwWADN", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["ambient", "study"]}
-{"query": "I'm into disco lately, anything good?", "track_id": "17CPezzLWzvGfpZW6X8XT0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
-{"query": "I'm into psych rock lately, anything good?", "track_id": "3Tsh9pjiJ5cvmuiZALdgVz", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "2HHAxkrJbuWZ7JWdxYbsWO", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "give me tracks with a calm feel", "track_id": "4tU5lDV1TwvnICIGreHKrT", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "play me some trip hop that feels happy", "track_id": "4ZX7QjwBqZTelll7to0d5S", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "happy"]}
-{"query": "looking for world music that works for a workout", "track_id": "4DosgMYWthi2sAHwiOQte2", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["world-music", "workout"]}
-{"query": "need a energetic soundtrack for running", "track_id": "2E43WFS4rRc09za2r2GmZl", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
-{"query": "I'm into dance lately, anything good?", "track_id": "3omnDqXnlC4awZfUrGQSDN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["dance"]}
-{"query": "give me tracks with a calm feel", "track_id": "4RCWB3V8V0dignt99LZ8vH", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "I'm into alt rock lately, anything good?", "track_id": "4kl3TXOlj8JXMPtZXUmRXI", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
+{"query": "any recommendations for the morning?", "track_id": "1bZH8L8V2m454tdcSPEIl7", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "any recommendations for the morning?", "track_id": "7Di7t9yGoxdZRLAt5a4pi0", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "play me some grunge that feels melancholic", "track_id": "3bwAS8cN7Xtzvv5UurJOOX", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "melancholic"]}
+{"query": "any recommendations for running?", "track_id": "3vKpN5tpzBDa4pFxz32U5K", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
+{"query": "looking for ambient that works for a coffee break", "track_id": "285ieonEuLkll3zknYK2TY", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["ambient", "coffee"]}
+{"query": "I'm into metal lately, anything good?", "track_id": "4PkJ7c9y1CwpuVOiJODnCZ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metal"]}
+{"query": "I need energetic vibes for a workout", "track_id": "4Qhrm7g3QItkvInW5zgvaV", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a happy feel", "track_id": "6phmKeRhJUsiSBJgMkgjg8", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "give me tracks with a energetic feel", "track_id": "7vcDJCAO356RYkCfiUozmE", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I'm into cantopop lately, anything good?", "track_id": "6LynWEVQwU5cLa9LZAD6yP", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["cantopop"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "5GKVcvTgnFYtfh25qKQtRg", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "0RdUX4WE0fO30VnlUbDVL6", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "give me tracks with a happy feel", "track_id": "11fNLqDB47gMKj7BHhR2Qr", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "looking for synth pop that works for dancing", "track_id": "6SsEaNkApgjnuFBgGNJTKa", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["synth-pop", "dance"]}
+{"query": "need a happy soundtrack for a workout", "track_id": "7o2CTH4ctstm8TNelqjb51", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
+{"query": "need a happy soundtrack for running", "track_id": "5cCcTvZstIyX4Rg18MhVOJ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "running"]}
+{"query": "any recommendations for reflective moments?", "track_id": "7AsWhzj5nIlWTlOMdzBM5B", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["rainy day"]}
+{"query": "looking for hardcore that works for feeling good", "track_id": "4qYTGNNVrsKUkJdLaqDC5L", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["hardcore", "feel-good"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "17CPezzLWzvGfpZW6X8XT0", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I need energetic vibes for the gym", "track_id": "3Ky8IzV8IVSwijtaTWB2SK", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
+{"query": "any recommendations for studying?", "track_id": "4IoqGTH2D6zMrGzg9gW0DL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["study"]}
+{"query": "I'm into pagode lately, anything good?", "track_id": "4wrwfb8pbzPcvevMwUVaDm", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pagode"]}
+{"query": "I'm into breakbeat lately, anything good?", "track_id": "6IxhlGtqmnnCIZX7j0nJtt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
+{"query": "looking for british that works for a cathartic release", "track_id": "1bYI5bQggwEA4JAwr0qD31", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["british", "cathartic"]}
+{"query": "play me some grunge that feels energetic", "track_id": "6GtX0jaNL8IjVQfrDBx81z", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
+{"query": "give me tracks with a energetic feel", "track_id": "6zK6tHtbYjmc8zesa7e8br", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "looking for rock that works for relaxing", "track_id": "4RCWB3V8V0dignt99LZ8vH", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock", "relaxing"]}
+{"query": "I'm into punk lately, anything good?", "track_id": "5KpBYmEiClvljtwbjEhIJq", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["punk"]}
 {"query": "I'm into psych rock lately, anything good?", "track_id": "0i19MAZbyn8uTir7FprXId", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
-{"query": "I'm into reggae lately, anything good?", "track_id": "6OUTbAEIxmP8RVEAFNMq1d", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
-{"query": "I need happy vibes for the morning", "track_id": "4r2I7ioBFYcUezMRnPVlYx", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "looking for rockabilly that works for a coffee break", "track_id": "1KLpjQFgubHI3GkAICCNH3", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rockabilly", "coffee"]}
-{"query": "play me some turkish that feels energetic", "track_id": "5dJRxKI4Wqvsi5z9eeDOYB", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["turkish", "energetic"]}
+{"query": "I need energetic vibes for running", "track_id": "42ZVk59gT4tMlrZmd8Ijxf", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I'm into reggae lately, anything good?", "track_id": "2rywMGsAUqyYC5mqCSG46N", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
+{"query": "give me tracks with a happy feel", "track_id": "46bTgJAQkrkNRxMuFnpRyD", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I need energetic vibes for a workout", "track_id": "31T4GHCanROxRbSTnwwSpI", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
 {"query": "give me tracks with a happy feel", "track_id": "2RnPATK99oGOZygnD2GTO6", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "need a melancholic soundtrack for running", "track_id": "6741g9k5VqpvTNpFukJMmQ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "running"]}
-{"query": "play me some french that feels energetic", "track_id": "4vRo3l3lAvBPHnSRBnjQln", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["french", "energetic"]}
-{"query": "looking for grunge that works for a workout", "track_id": "35GwlKlVXgFCMF5uTp5r7P", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "workout"]}
-{"query": "I'm into soul lately, anything good?", "track_id": "6MnQUdBP9yW2xcmHMCtcqN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "I need energetic vibes for the gym", "track_id": "7zscdQe9CjzXnqT3P1Ey7K", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I'm into british lately, anything good?", "track_id": "7Bn7blCyMlPaMIiSFzQjSp", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
-{"query": "I'm into jazz lately, anything good?", "track_id": "0oTICiR6tPDmIPCmHS4qby", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["jazz"]}
-{"query": "I'm into gospel lately, anything good?", "track_id": "6x3OZsw5KqSL0nBsG5P5ch", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["gospel"]}
-{"query": "I'm into industrial lately, anything good?", "track_id": "4RqukTe8L59wgiO6fzHvzf", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["industrial"]}
-{"query": "any recommendations for the morning?", "track_id": "1D2Iygsy0wXVAZaM1W8ds4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "looking for trip hop that works for relaxing", "track_id": "6TdnvxC5E146AXv1doDshO", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["trip-hop", "relaxing"]}
-{"query": "need a melancholic soundtrack for the morning", "track_id": "6i81qFkru6Kj1IEsB7KNp2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "morning"]}
+{"query": "give me tracks with a happy feel", "track_id": "0jNK1AuiTEZaWcq84wlYre", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "need a happy soundtrack for running", "track_id": "3DmHaJ9zYKj5Snos05lkVF", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "running"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "4QB2cdh2v5zeRD1khGF9A5", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "looking for funk that works for feeling good", "track_id": "6MnQUdBP9yW2xcmHMCtcqN", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["funk", "feel-good"]}
+{"query": "play me some hard rock that feels energetic", "track_id": "7zscdQe9CjzXnqT3P1Ey7K", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "energetic"]}
+{"query": "I need energetic vibes for a workout", "track_id": "05tQHifEgbVLavnO3GcuxN", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "looking for jazz that works for winding down", "track_id": "0oTICiR6tPDmIPCmHS4qby", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["jazz", "sleep"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "10RfOpNojeT8HkxqLQ4GJW", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "play me some breakbeat that feels melancholic", "track_id": "376cn6Fo1LCkScw9jtkgvT", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["breakbeat", "melancholic"]}
+{"query": "play me some songwriter that feels calm", "track_id": "164OriBVFeVRcwOKdglRRb", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["songwriter", "calm"]}
+{"query": "give me tracks with a happy feel", "track_id": "1xuYajTJZh8zZrPRmUaagf", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "give me tracks with a happy feel", "track_id": "43DeSV93pJPT4lCZaWZ6b1", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
 {"query": "I'm into soul lately, anything good?", "track_id": "4osgfFTICMkcGbbigdsa53", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "give me tracks with a happy feel", "track_id": "3Xga5XDH8FiTNgF8r2Pisd", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "give me tracks with a energetic feel", "track_id": "5lJUXSjRjevVy7I3P87wuK", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "need a happy soundtrack for feeling good", "track_id": "7jIAttgQTpLDoNtykIQXjH", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "I need happy vibes for studying", "track_id": "0XvCNCQX5ijIhjQ25wPijx", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "study"]}
+{"query": "I'm into gospel lately, anything good?", "track_id": "6kRyHBN2bEncifnisnxtCN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["gospel"]}
+{"query": "play me some garage that feels energetic", "track_id": "5lJUXSjRjevVy7I3P87wuK", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["garage", "energetic"]}
+{"query": "I'm into alt rock lately, anything good?", "track_id": "73jVPicY2G9YHmzgjk69ae", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
+{"query": "need a energetic soundtrack for an intense session", "track_id": "6mTnH6xSYwKohtsO9RFzcc", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "intense"]}
 {"query": "give me tracks with a energetic feel", "track_id": "0Ti2dlF2xLjXblvdU5fCxM", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "play me some drum and bass that feels energetic", "track_id": "4Y2glvLjQGOb4dXnwm1hQf", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["drum-and-bass", "energetic"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "6uwjUM0Y0NfPmLBKVAbUXW", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I need happy vibes for feeling good", "track_id": "7aGyRfJWtLqgJaZoG9lJhE", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "give me tracks with a happy feel", "track_id": "3Xrasa4unuME8UMwOnqIP9", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "20fUrFnUxqCJvTO40j6DbA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "play me some deep house that feels energetic", "track_id": "2SFCdSu7HJnsLlTGC7cc8f", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["deep-house", "energetic"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "3fsQsL36PH1G8mn68lsFRK", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "looking for ambient that works for relaxing", "track_id": "5L8f98adkgyzT8DLL5ppec", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["ambient", "relaxing"]}
-{"query": "any recommendations for running?", "track_id": "5Zft9zIODo7ZnImwcbaO4Z", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "looking for gospel that works for a coffee break", "track_id": "6j4oYcdhFIX9EdBR51mMCG", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["gospel", "coffee"]}
-{"query": "play me some disco that feels happy", "track_id": "5yGTQzYbEdY6B9RFZJypgt", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disco", "happy"]}
-{"query": "play me some country that feels calm", "track_id": "11y8GSP2ASv8S9n0FiiDva", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["country", "calm"]}
-{"query": "I'm into groove lately, anything good?", "track_id": "2tbMiz9p19QbSJlbHiMs2y", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["groove"]}
-{"query": "I'm into industrial lately, anything good?", "track_id": "7wwLxmUVLCfySaJ0fdyelI", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["industrial"]}
-{"query": "give me tracks with a calm feel", "track_id": "32yHd903J5GbnZasbvvRRX", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "I need happy vibes for feeling good", "track_id": "56NkIxSZZiMpFP5ZNSxtnT", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "1Pg7pX24fz55TgRcnDi9YE", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "08wnOyN1wyMaNrup3m353f", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "give me tracks with a energetic feel", "track_id": "7GkCm4wRDhB0WhyOovlLfm", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into spanish lately, anything good?", "track_id": "1msphInQ8bBBQGFZkll7FX", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["spanish"]}
-{"query": "play me some trip hop that feels happy", "track_id": "1vMrhsVcrByysJf0ru2SqL", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["trip-hop", "happy"]}
-{"query": "I'm into industrial lately, anything good?", "track_id": "3aN2V18W3EiW7eg5tHALpF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["industrial"]}
-{"query": "give me tracks with a energetic feel", "track_id": "51vDlsnceeNkbpjCQ7tk5k", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "0T64SYe5jQTQq57E6d94N3", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "I'm into hardcore lately, anything good?", "track_id": "42qK1JWm8fDy3qHZbIZNuQ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hardcore"]}
-{"query": "looking for reggae that works for relaxing", "track_id": "26PwuMotZqcczKLHi4Htz3", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["reggae", "relaxing"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "5LbyynvLKEoD8gyenfauoi", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "I'm into breakbeat lately, anything good?", "track_id": "2eJe8tEzBfIFi8OvVv576t", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
-{"query": "need a happy soundtrack for the morning", "track_id": "3koCCeSaVUyrRo3N2gHrd8", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "looking for metalcore that works for a cathartic release", "track_id": "5PQ3KfvXm88J5h5mXJusPz", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["metalcore", "cathartic"]}
+{"query": "I need melancholic vibes for an intense session", "track_id": "4Y2glvLjQGOb4dXnwm1hQf", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "intense"]}
+{"query": "play me some alternative that feels melancholic", "track_id": "7pluJ15vmT0NZdX2lmIbBI", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alternative", "melancholic"]}
+{"query": "any recommendations for relaxing?", "track_id": "0uy2NMV7ALGlp1vAh2PRAj", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "I'm into metal lately, anything good?", "track_id": "0S7Eb7sl3eqRPR9kVUxCQl", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metal"]}
+{"query": "any recommendations for a workout?", "track_id": "7pYwIAHOX0YvKFLOg5hhZm", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into psych rock lately, anything good?", "track_id": "4fUKE8EULjQdHF4zb0M8FO", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
+{"query": "need a happy soundtrack for feeling good", "track_id": "3LqvmDtXWXjF7fg8mh8iZh", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I need energetic vibes for a workout", "track_id": "3kU2XrKndUNFrVW6UwVML1", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "can you find fast instrumental stuff", "track_id": "3JZjPBwqL5F4PE55nm8iNV", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
+{"query": "any recommendations for a workout?", "track_id": "1wjH0173CvH5ZqR9LF8aZY", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "any recommendations for relaxing?", "track_id": "6xjxMWGsprmtUVMDaMhgH0", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "give me tracks with a energetic feel", "track_id": "1D7UBHqaPWDbBHs2S5YXge", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I'm into latin lately, anything good?", "track_id": "2UMa1JLJUJUyaWulNY92Og", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["latin"]}
+{"query": "need a happy soundtrack for feeling good", "track_id": "2Hbad5lRjdQBvKRahhFTsw", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I need happy vibes for a party", "track_id": "38XLUjlR84JEwK0SOvX77a", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "party"]}
+{"query": "give me tracks with a energetic feel", "track_id": "3kMrazSvILsgcwtidZd1Qd", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "3HSt1ZgyKd8MONJ722o8PT", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into songwriter lately, anything good?", "track_id": "73uJybGAhwGRD9MZYrOmTY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["songwriter"]}
+{"query": "give me tracks with a happy feel", "track_id": "7CQHnCZYWafgbHRWIxOu4S", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I need energetic vibes for a cathartic release", "track_id": "2KPcujYDaukvtfRR0Zmu0O", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "cathartic"]}
+{"query": "any recommendations for a workout?", "track_id": "1vMrhsVcrByysJf0ru2SqL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "any recommendations for feeling good?", "track_id": "228BxWXUYQPJrJYHDLOHkj", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
+{"query": "any recommendations for a coffee break?", "track_id": "3h4ChMXKBUUqbTeYyo7gLr", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "any recommendations for a party?", "track_id": "3QiO2NizblLpcuVtiT3DDY", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
+{"query": "play me some black metal that feels melancholic", "track_id": "5faD0zZ9fMa3J5ZN3lIWtp", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["black-metal", "melancholic"]}
+{"query": "play me some alternative that feels energetic", "track_id": "55yvzYuvJYG2RUEnMK78tr", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alternative", "energetic"]}
+{"query": "I'm into metalcore lately, anything good?", "track_id": "0XT70Wk9pP8JZkmJhfntuL", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metalcore"]}
+{"query": "I'm into grunge lately, anything good?", "track_id": "2HaUEu0wAO5AOT0UB3i0LO", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
+{"query": "play me some metal that feels melancholic", "track_id": "4wfyFIRnxdIN0v4OGtXcX3", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metal", "melancholic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "4e14E9xoK5VZlnZOv0PEZF", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
 {"query": "I'm into pop lately, anything good?", "track_id": "3RiPr603aXAoi4GHyXx0uy", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop"]}
-{"query": "give me tracks with a happy feel", "track_id": "09nEPqqMCJ5gNioi7M2dth", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "give me tracks with a happy feel", "track_id": "4gEiBVITQxqb6xqXSkoLwN", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I need energetic vibes for the gym", "track_id": "5PRRthP9SLfbXB359MfIWv", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I need calm vibes for winding down", "track_id": "3Qvp6nDPHp70nejdyYR4Nw", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "sleep"]}
-{"query": "I'm into goth lately, anything good?", "track_id": "5FMsd0fQLiSM2IQKRmMAVM", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["goth"]}
-{"query": "I'm into bluegrass lately, anything good?", "track_id": "6PMrfB4IU8XQ2RqoKkTCEb", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["bluegrass"]}
-{"query": "I need happy vibes for the morning", "track_id": "5BvuyYHjA98IxU0nQUGzZr", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "play me some chicago house that feels happy", "track_id": "4mNwbj8hTUjbyZSHdQVIuL", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["chicago-house", "happy"]}
-{"query": "looking for trip hop that works for a workout", "track_id": "5B5nloaA2UpNrjweosqVe3", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["trip-hop", "workout"]}
-{"query": "play me some psych rock that feels melancholic", "track_id": "0Q7sFMIqfp3eMtjF3w3S6F", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "melancholic"]}
-{"query": "I need melancholic vibes for an intense session", "track_id": "3UULkHdmLDqBDPmBYltoRE", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "intense"]}
-{"query": "give me tracks with a energetic feel", "track_id": "2gQaQUhDCNGfBVXTvxAmXQ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into j-idol lately, anything good?", "track_id": "2pQIh0AgH0WWl0Q3wj8e5E", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["j-idol"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "1fmoCZ6mtMiqA5GHWPcZz9", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "any recommendations for a coffee break?", "track_id": "2uzlv8PjqsVvF1DhEahyhy", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "play me some metalcore that feels energetic", "track_id": "4DT9fqXi4JtaBDhbPjfbRc", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metalcore", "energetic"]}
-{"query": "I'm into pop film lately, anything good?", "track_id": "2wJ9d1Gfj8OqcznPAroqvh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop-film"]}
-{"query": "play me some synth pop that feels energetic", "track_id": "5KXKhCfPNS4342ly8tTf6w", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["synth-pop", "energetic"]}
-{"query": "play me some swedish that feels energetic", "track_id": "6HGm0lE0Oh7pdOVBFKdFLY", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["swedish", "energetic"]}
-{"query": "need a energetic soundtrack for a party", "track_id": "5qTvkDrSfvwDv6RBjjcfQr", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "45u1g3oY1Tb0Ibmlwqo8f2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "need a melancholic soundtrack for a cathartic release", "track_id": "07rz54LA3Y2lagmY0DnChZ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "cathartic"]}
-{"query": "I'm into soul lately, anything good?", "track_id": "1652voE1ZeLyehNC2kbHMb", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "I need happy vibes for dancing", "track_id": "5ubvP9oKmxLUVq506fgLhk", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "I need energetic vibes for running", "track_id": "3nVpsnFAnFx3BZiZL0vzPu", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "47y8hRlWLEJ4VafE6LMjEZ", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "looking for grunge that works for an intense session", "track_id": "5yBSe9ngIvMgZB3IAI6qw6", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "intense"]}
-{"query": "looking for samba that works for the morning", "track_id": "6YWMJefmWqHxxfg6YF6zI6", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["samba", "morning"]}
-{"query": "play me some detroit techno that feels melancholic", "track_id": "6Au8dwqW17E3rykzOtXzqn", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["detroit-techno", "melancholic"]}
-{"query": "play me some psych rock that feels melancholic", "track_id": "1057KuzIH4fWCyI5Gb5kX2", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "melancholic"]}
-{"query": "looking for afrobeat that works for feeling good", "track_id": "6sJRYw9CnzDyZ3mBOAVtNN", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["afrobeat", "feel-good"]}
-{"query": "I need energetic vibes for a workout", "track_id": "4KacUpvbA3Mfo05gttTjhN", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I need happy vibes for a workout", "track_id": "0IaR6HCEObaHxA52i0fdKU", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "any recommendations for an intense session?", "track_id": "2mZ7SXzf5mZkohPfDFIUET", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["intense"]}
-{"query": "I'm into idm lately, anything good?", "track_id": "1zSW8GcSydEQmCCJA5vyn9", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["idm"]}
-{"query": "need a happy soundtrack for a coffee break", "track_id": "2QfiRTz5Yc8DdShCxG1tB2", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "coffee"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "50oS45iNMFp7pKIQRAWIUP", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "any recommendations for relaxing?", "track_id": "0MO1qNhm8aRZchi8CJlIRo", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "I'm into indie lately, anything good?", "track_id": "2usrT8QIbIk9y0NEtQwS4j", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["indie"]}
-{"query": "I need happy vibes for a workout", "track_id": "7Gg6RHdXJQeOp7rMChprbT", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "give me tracks with a energetic feel", "track_id": "5yUFxEu2kx3WBghRvaHVcn", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "looking for power pop that works for running", "track_id": "5cLTu5D17jWS3gsDZXZ7bU", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["power-pop", "running"]}
-{"query": "I'm into trance lately, anything good?", "track_id": "7Dv1rYPkx3v2QVCPUY0yhj", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trance"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "7FIVwwom9PjxFwwmJeLl9v", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "looking for deep house that works for a workout", "track_id": "412luShbmlgqqgYFStIB1s", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["deep-house", "workout"]}
-{"query": "any recommendations for the morning?", "track_id": "2zGN2Pjf8FRZb3xYM0PkF3", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "I'm into soul lately, anything good?", "track_id": "1Yk0cQdMLx5RzzFTYwmuld", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "7N1Vjtzr1lmmCW9iasQ8YO", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "give me tracks with a happy feel", "track_id": "5stZnlPMYz3Ba8Hbo3ajlP", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "any recommendations for relaxing?", "track_id": "1DHQp3XEer6Ph69DI1mjlm", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "give me tracks with a calm feel", "track_id": "6V26ygROyqGGHACxRdtxHQ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "need a energetic soundtrack for a party", "track_id": "6FvH7HIZsl5AyYZQcGBKQr", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
-{"query": "I'm into new age lately, anything good?", "track_id": "4dGKKxPAhlFWMVoSPue3je", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["new-age"]}
-{"query": "play me some world music that feels calm", "track_id": "366BwPapHtQuX7vS2DoZ3o", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["world-music", "calm"]}
-{"query": "give me tracks with a calm feel", "track_id": "1yGTwR9AcrzQ67JGnwO3jZ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "I'm into goth lately, anything good?", "track_id": "1nqAl7yngUuHTqoRbmPoTj", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["goth"]}
-{"query": "need a melancholic soundtrack for relaxing", "track_id": "2Ivtk3iVMAfp2XaWhgDNAn", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "relaxing"]}
-{"query": "need a energetic soundtrack for a party", "track_id": "4E7B45OimTovLiETRzSBly", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
-{"query": "any recommendations for sleep?", "track_id": "7GPKkJbfSduDWyoVvuaGq9", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["sleep"]}
-{"query": "looking for dance that works for dancing", "track_id": "71R6zJsrF3ffc3TBFHfivX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["dance"]}
-{"query": "I'm into industrial lately, anything good?", "track_id": "44sz0rNbTA687rs9CYi0IN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["industrial"]}
-{"query": "I'm into garage lately, anything good?", "track_id": "0dy6iXYIF0piirySAzCBwF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
-{"query": "need a calm soundtrack for relaxing", "track_id": "5k3U0OGYBccHdKJJu3HrUN", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "relaxing"]}
-{"query": "I'm into hard rock lately, anything good?", "track_id": "1JLn8RhQzHz3qDqsChcmBl", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
-{"query": "need a happy soundtrack for dancing", "track_id": "6KUI3A3jmZ0cGLDzOT41lX", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "looking for heavy metal that works for a workout", "track_id": "45LUviPG6Y7iPG1qTAMlLI", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["heavy-metal", "workout"]}
-{"query": "I'm into indian lately, anything good?", "track_id": "0MjW6RXyiW4zIBKubIghx5", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["indian"]}
-{"query": "I'm into jazz lately, anything good?", "track_id": "4T6HLdP6OcAtqC6tGnQelG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["jazz"]}
-{"query": "looking for cantopop that works for relaxing", "track_id": "4jdbuSQAlNrYHPKHUPLGg2", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["cantopop", "relaxing"]}
-{"query": "can you find slow acoustic stuff", "track_id": "07UDTaRYJAsIhUZTyZSUzM", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
-{"query": "any recommendations for the morning?", "track_id": "0iASz3FoYYtX1SL1iQra8r", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "4m8ttWM8IKXyhpv89E867J", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "I'm into power pop lately, anything good?", "track_id": "1VrIr1toXX6bOSdotodB71", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["power-pop"]}
-{"query": "I'm into breakbeat lately, anything good?", "track_id": "1gNDbq3ufi6VZJJuQWJiPe", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
-{"query": "any recommendations for winding down?", "track_id": "4Jab4dZJ6E6T0nXNN8hhYR", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["sleep"]}
-{"query": "play me some piano that feels melancholic", "track_id": "1J9iVCaEriyoMXpj2XszhU", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["piano", "melancholic"]}
-{"query": "looking for pop film that works for the gym", "track_id": "1GjRIaC1VRaPw8cl5CAjuF", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["pop-film", "gym"]}
-{"query": "play me some disney that feels happy", "track_id": "5e0O7MjhNHq9G67qDFM8nR", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disney", "happy"]}
-{"query": "I need calm vibes for the morning", "track_id": "2CI0FjLbfzLlh8ftgFBHNy", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "morning"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "4JexFFm0DJLQ8IodTQ72Yh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "I'm into bluegrass lately, anything good?", "track_id": "0Sd2oMVyAhGbIyKJPvrQgT", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["bluegrass"]}
-{"query": "looking for turkish that works for an intense session", "track_id": "2rDGftPrTLAsxt67i03HoU", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["turkish", "intense"]}
-{"query": "I'm into idm lately, anything good?", "track_id": "1HnvroYwxS6iYqeUEfWOnC", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["idm"]}
-{"query": "looking for progressive house that works for the morning", "track_id": "2edcAWwKM7SQajsFGP0edC", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["progressive-house", "morning"]}
-{"query": "any recommendations for the gym?", "track_id": "15d5KE4LxgkqkwFLeuwzIL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "give me tracks with a happy feel", "track_id": "24vNw0Z0srb4zYXwrakw8E", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into minimal techno lately, anything good?", "track_id": "439ZObTQ35Py7TMGNUJmlp", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["minimal-techno"]}
-{"query": "any recommendations for sleep?", "track_id": "5yGVHzJ2Se8pDzR7FIYUlU", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["sleep"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "2Aujipv9QnsdezNWnb7s4W", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "play me some psych rock that feels happy", "track_id": "5E3BVY66TEDexFutOO5GeS", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "happy"]}
-{"query": "I'm into songwriter lately, anything good?", "track_id": "0HLWvLKQWpFdPhgk6ym58n", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["songwriter"]}
-{"query": "any recommendations for a coffee break?", "track_id": "1VxrYvOkWTCRs7Ikx2IsCN", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "need a calm soundtrack for the morning", "track_id": "2MddqD0MryxIAKS03raHsz", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "morning"]}
-{"query": "need a happy soundtrack for running", "track_id": "0uLhNT7UIH3nZCCDZd3OBl", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "running"]}
-{"query": "I'm into minimal techno lately, anything good?", "track_id": "4H6S5R1fmHD3dxZxtumCWv", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["minimal-techno"]}
-{"query": "need a melancholic soundtrack for a cathartic release", "track_id": "3EPd9riN2R8Zjl6GkrxxGl", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "cathartic"]}
+{"query": "play me some garage that feels happy", "track_id": "7qxDU2QyH24KHW0OSGotVw", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["garage", "happy"]}
+{"query": "need a calm soundtrack for dancing", "track_id": "6WSzh5vVCF5CGg3Qr4ax2e", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "dance"]}
+{"query": "I'm into rock lately, anything good?", "track_id": "5qqabIl2vWzo9ApSC317sa", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock"]}
+{"query": "looking for children that works for dancing", "track_id": "03UUlyT64WFftDMfPuyXYy", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["children", "dance"]}
+{"query": "I'm into funk lately, anything good?", "track_id": "1c9MeAa2tLEoZl5osXf5Ts", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["funk"]}
+{"query": "looking for jazz that works for sleep", "track_id": "4keovyJwAJest604xwXXEC", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["jazz", "sleep"]}
+{"query": "give me tracks with a energetic feel", "track_id": "79pY2Z5eFvXMt9bSdHLrnA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "2DHDuADAHoUW6n0z80RLQF", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into swedish lately, anything good?", "track_id": "6hHXft1nFyvfVv6UoRToPZ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["swedish"]}
+{"query": "I'm into club lately, anything good?", "track_id": "7pYVIpuFrH2cDMseplG8Jn", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["club"]}
+{"query": "give me tracks with a energetic feel", "track_id": "4YIoQqE50AdyG4BQafCi3u", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a happy feel", "track_id": "0n2SEXB2qoRQg171q7XqeW", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I need calm vibes for the morning", "track_id": "78MaTag4E7UiNjI6d7KCeT", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "morning"]}
+{"query": "play me some minimal techno that feels melancholic", "track_id": "1fmoCZ6mtMiqA5GHWPcZz9", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["minimal-techno", "melancholic"]}
+{"query": "I'm into groove lately, anything good?", "track_id": "2YmNcSuE0Bv2KdHf9Ehewu", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["groove"]}
+{"query": "I'm into soul lately, anything good?", "track_id": "4M7cwc9BrGlSQzSxwx6x0P", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
+{"query": "need a happy soundtrack for dancing", "track_id": "4y2QEmnp3DRgXjdbZfUs3X", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
+{"query": "any recommendations for an intense session?", "track_id": "0o995gJCGebaza0LWybToU", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["intense"]}
+{"query": "can you find fast instrumental stuff", "track_id": "3MCsJ80r4QxeWBFEG2bUPG", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
+{"query": "play me some dancehall that feels happy", "track_id": "5qTvkDrSfvwDv6RBjjcfQr", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["dancehall", "happy"]}
+{"query": "give me tracks with a happy feel", "track_id": "5dUMh0ugelpKfoFp3qChuK", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I need melancholic vibes for a coffee break", "track_id": "6Mk96t3t5qR5YJ8ftCW18V", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
+{"query": "I'm into samba lately, anything good?", "track_id": "1i5gtw8FVdPh3EXTSVGcZI", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["samba"]}
+{"query": "looking for edm that works for a workout", "track_id": "7ks6AZmFcm3Y6PGGxGSmlB", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["edm", "workout"]}
+{"query": "any recommendations for relaxing?", "track_id": "0EkSHAQktdf7R26LRQiKGQ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "any recommendations for the gym?", "track_id": "1sET08h4qtpkUrwBZnvYIm", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "play me some swedish that feels energetic", "track_id": "0DqLuhTD1xI8mb2gY5YoLM", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["swedish", "energetic"]}
+{"query": "any recommendations for a coffee break?", "track_id": "6hexxZOCK970tccs7eKuLQ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "give me tracks with a happy feel", "track_id": "7DD1ojeTUwnW65g5QuZw7X", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2WmbbiWfFEKsSZe6E5GeVe", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "any recommendations for a coffee break?", "track_id": "5G6QZFXZLjkYImJOj09aOL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "I'm into alt rock lately, anything good?", "track_id": "1f2V8U1BiWaC9aJWmpOARe", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
+{"query": "any recommendations for feeling good?", "track_id": "0WLkA0mFv7qaLvezawHXsd", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
+{"query": "can you find fast instrumental stuff", "track_id": "1jmq9ekr49AjpLTvI8LHHi", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
+{"query": "I need energetic vibes for dancing", "track_id": "1cufbeYwK8LYLX8r63zKup", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "dance"]}
+{"query": "need a energetic soundtrack for running", "track_id": "09nZ9ZDWq1rTkmM3WjvMvF", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "looking for punk that works for running", "track_id": "50oS45iNMFp7pKIQRAWIUP", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["punk", "running"]}
+{"query": "any recommendations for a workout?", "track_id": "3V1NX0a5YesqBlhnX95saJ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into house lately, anything good?", "track_id": "2cGxRwrMyEAp8dEbuZaVv6", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["house"]}
+{"query": "play me some iranian that feels melancholic", "track_id": "2qc8gnZD171s1fNM65hNmC", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["iranian", "melancholic"]}
+{"query": "looking for trance that works for the gym", "track_id": "2bcYHFk3XWcPnDXYY3tdJX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["trance", "gym"]}
+{"query": "I need energetic vibes for a party", "track_id": "5GD4MhhuqzRCTU7EZp3qLG", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "party"]}
+{"query": "I need happy vibes for the morning", "track_id": "1ITQbrueGLl581a25XXm9c", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "I'm into reggaeton lately, anything good?", "track_id": "2FSGUA0gFgGeQdprjtGM2M", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggaeton"]}
+{"query": "any recommendations for a coffee break?", "track_id": "2v8B8d17Xxu9uLU5sNiHSL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "I'm into forro lately, anything good?", "track_id": "3fTC2g9Po4DW8MKvcKdpMD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["forro"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "0yac0FPhLRH9i9lOng3f81", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a happy feel", "track_id": "391TUcoPonqYykPkSZ5Z9U", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "looking for hardcore that works for dancing", "track_id": "5stZnlPMYz3Ba8Hbo3ajlP", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["hardcore", "dance"]}
+{"query": "can you find slow instrumental stuff", "track_id": "43it2uOXLmBC0lHDAmWrU1", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "instrumental"]}
+{"query": "play me some grunge that feels energetic", "track_id": "1k0FCgVwb1jZR57ESOWUVa", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
+{"query": "give me tracks with a happy feel", "track_id": "36DQ8jmugcqNQPelDRTtKn", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "looking for rockabilly that works for running", "track_id": "7DgAvD18BX3KeUSVUtwTL2", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rockabilly", "running"]}
+{"query": "looking for bluegrass that works for relaxing", "track_id": "4KTf2qVdfkOgUZ0Ojpix7x", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["bluegrass", "relaxing"]}
+{"query": "I'm into pop lately, anything good?", "track_id": "17CUnFLtOsXnhheOT7rEvF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop"]}
+{"query": "I need energetic vibes for a workout", "track_id": "0akM7cwQ5xLQIIlTeWzubk", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "I'm into reggae lately, anything good?", "track_id": "2y8pG9CF0HC4cttJ50Pufk", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
+{"query": "looking for breakbeat that works for a workout", "track_id": "3JT4mPrjHOCqqIlAtQESce", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["breakbeat", "workout"]}
+{"query": "I'm into classical lately, anything good?", "track_id": "69kZsoRrSf7GBTSdJ4BjqA", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["classical"]}
+{"query": "any recommendations for dancing?", "track_id": "4sNwdacKyi2S26WrRtNama", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["dance"]}
+{"query": "I'm into rockabilly lately, anything good?", "track_id": "6fSNK6QlZskYmKTvJnNH5P", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rockabilly"]}
+{"query": "I'm into swedish lately, anything good?", "track_id": "17OqI90oTFZ3J8PVu6j07V", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["swedish"]}
+{"query": "give me tracks with a calm feel", "track_id": "5k3U0OGYBccHdKJJu3HrUN", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "play me some power pop that feels happy", "track_id": "4qO03RMQm88DdpTJcxlglY", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["power-pop", "happy"]}
+{"query": "play me some j-dance that feels happy", "track_id": "6KUI3A3jmZ0cGLDzOT41lX", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["j-dance", "happy"]}
+{"query": "need a happy soundtrack for the morning", "track_id": "456xBIOmLRoLzCvCzZrWge", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "4ys3qPP1YnF2IgEB2x8EOW", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into j-pop lately, anything good?", "track_id": "4T6HLdP6OcAtqC6tGnQelG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["j-pop"]}
+{"query": "I'm into reggaeton lately, anything good?", "track_id": "4MUqlINdPK2nTROafnpB4Z", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggaeton"]}
+{"query": "looking for indian that works for dancing", "track_id": "0OmPvl0dMgwjN6XrKdGyv4", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["indian", "dance"]}
+{"query": "looking for death metal that works for the gym", "track_id": "1mjC68qU0Q9HlCIZHZAEko", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["death-metal", "gym"]}
+{"query": "play me some ambient that feels energetic", "track_id": "4m8ttWM8IKXyhpv89E867J", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["ambient", "energetic"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "1AfCr2crYk0KtVxUqDbhDX", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "I'm into hard rock lately, anything good?", "track_id": "0tKjVEJlX3IZ5L1rEJc5hh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "need a energetic soundtrack for a party", "track_id": "7h2jT3YLmtDAxf4cF6rSQu", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
+{"query": "any recommendations for feeling good?", "track_id": "4pU9BNdhUlRKcoZgF8ac08", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
+{"query": "looking for children that works for relaxing", "track_id": "3AAsiwefE8spREBj95cERE", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["children", "relaxing"]}
+{"query": "any recommendations for relaxing?", "track_id": "5e0O7MjhNHq9G67qDFM8nR", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "any recommendations for the gym?", "track_id": "6zMrbDx9STcodQe6BP0zih", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "any recommendations for a workout?", "track_id": "0DKNNR9iDjwfCEpMiFXMJq", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into disco lately, anything good?", "track_id": "0Sw8OEQUKHKya2521D0L6v", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
+{"query": "looking for ska that works for the gym", "track_id": "4blBHK4RMT3qrBeaRpaeJi", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["ska", "gym"]}
+{"query": "any recommendations for a workout?", "track_id": "0pyT9W877RcYtVdl1ZmlvQ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "any recommendations for focusing?", "track_id": "2SRBtj64W0Wbs7YMbmxFBw", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["study"]}
+{"query": "any recommendations for the morning?", "track_id": "0MO1qNhm8aRZchi8CJlIRo", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "I need energetic vibes for feeling good", "track_id": "3IBoPIzNR8NhllqeWQV3ML", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "feel-good"]}
+{"query": "play me some industrial that feels melancholic", "track_id": "2g0jtidDDdmUMrSjGSPzP1", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["industrial", "melancholic"]}
+{"query": "can you find slow acoustic stuff", "track_id": "5yGVHzJ2Se8pDzR7FIYUlU", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
+{"query": "give me tracks with a happy feel", "track_id": "3dvYujyJXn2fuNalpg6r0E", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I need energetic vibes for running", "track_id": "7q6lr1W6cmGWijl5kCv5RG", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I'm into singer songwriter lately, anything good?", "track_id": "0HLWvLKQWpFdPhgk6ym58n", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["singer-songwriter"]}
+{"query": "I'm into disco lately, anything good?", "track_id": "0rHzzvvRBK2Ch3NC1X1MV0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
+{"query": "I'm into synth pop lately, anything good?", "track_id": "4yDCTzaFfr7YOuYKpwgidL", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
+{"query": "looking for grunge that works for a workout", "track_id": "0uLhNT7UIH3nZCCDZd3OBl", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "workout"]}
+{"query": "looking for dub that works for dancing", "track_id": "4VK6BFsd38Gl9jDuLdPMZw", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["dub", "dance"]}
+{"query": "any recommendations for feeling good?", "track_id": "3l5R0ltI7UufbrjK6Kj0Nv", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
 {"query": "I'm into metal lately, anything good?", "track_id": "1Eolhana7nKHYpcYpdVcT5", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metal"]}
-{"query": "looking for indian that works for a cathartic release", "track_id": "2C6l8EGcbfcLXu0mWfAadB", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["indian", "cathartic"]}
-{"query": "any recommendations for a coffee break?", "track_id": "1ZjYhlyj6lSDEJQvLgngyV", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "looking for r&b that works for running", "track_id": "6I7GpxOjlDzO1Iur14FEfy", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["r-n-b", "running"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "3zOeueIyWEHCPhDz6C8LE7", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "any recommendations for a party?", "track_id": "0tj1GPlAwcdSHAnvlTFUS2", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
-{"query": "looking for hardcore that works for a party", "track_id": "3UQAKY0SUEonxneROvv4jy", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["hardcore", "party"]}
-{"query": "give me tracks with a happy feel", "track_id": "5z2Gef9D3UgRquZXe7UUW4", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "give me tracks with a happy feel", "track_id": "0ZfVDDiukzbY5zai8OSo0g", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "6noSuYjYAXxM91DEaTAaFy", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "play me some dancehall that feels happy", "track_id": "4mYvuqbaWcIP3RNn1mkOYP", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["dancehall", "happy"]}
-{"query": "need a happy soundtrack for running", "track_id": "7iXF2W9vKmDoGAhlHdpyIa", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "running"]}
-{"query": "play me some hardcore that feels happy", "track_id": "4qYTGNNVrsKUkJdLaqDC5L", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hardcore", "happy"]}
-{"query": "I'm into show tunes lately, anything good?", "track_id": "0jkGkwy510cvhy0jYPFme4", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["show-tunes"]}
-{"query": "give me tracks with a happy feel", "track_id": "7falOwHJ9MjskdcNehIh79", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I need melancholic vibes for relaxing", "track_id": "4cmCWVR8RlLYyASMarxU0e", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "relaxing"]}
-{"query": "any recommendations for running?", "track_id": "0w31zvTA5aSunSMeimCtYp", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "4vaxvNDaLSoD36iZX515ug", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "need a energetic soundtrack for a cathartic release", "track_id": "7f2cMfMFxi4uaboTcwrXNq", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "cathartic"]}
-{"query": "any recommendations for a cathartic release?", "track_id": "16Fp67kTFhH0XK5Cl6Oz7r", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["cathartic"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "24ylIO48nRsdaONlM8l2HF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "give me tracks with a happy feel", "track_id": "4QBrx05HrLnohYaS1cPGHO", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "looking for latin that works for dancing", "track_id": "2lnzGkdtDj5mtlcOW2yRtG", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["latin", "dance"]}
-{"query": "need a energetic soundtrack for running", "track_id": "11lFSEnkj3810ojPLj53RO", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
-{"query": "give me tracks with a energetic feel", "track_id": "52m9IF3nfNwL4MCL2hg35v", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into rock n roll lately, anything good?", "track_id": "5vZtw6zhx8bd7Umsv2w35x", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock-n-roll"]}
-{"query": "I'm into goth lately, anything good?", "track_id": "3CCZIsuPjVXXe5Fk1n3RUR", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["goth"]}
-{"query": "I'm into metalcore lately, anything good?", "track_id": "15zUfY9L1p7bN9JsgaTAP0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metalcore"]}
-{"query": "I'm into techno lately, anything good?", "track_id": "7mazffu6nlIv0rtRyPDMTD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["techno"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "1Lim1Py7xBgbAkAys3AGAG", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "any recommendations for relaxing?", "track_id": "0X7PNxujXmyMBRZHSzw9sl", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "I'm into acoustic lately, anything good?", "track_id": "7oGGmUTUwH6EooJGeZBJdj", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["acoustic"]}
-{"query": "I'm into classical lately, anything good?", "track_id": "5Dv1GseAsI7L35WsR0pN0o", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["classical"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "53b1icRPhYU9dvy8p1qZkS", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "I need energetic vibes for a workout", "track_id": "20yPPvSSfIomexVwLdgXSo", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "any recommendations for a coffee break?", "track_id": "22DtOupaRmIbY3GcP165Ly", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "I'm into show tunes lately, anything good?", "track_id": "0PKmDncVOiNQLO6D1P6PXi", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["show-tunes"]}
+{"query": "any recommendations for a workout?", "track_id": "68k8LJZSquZeUFIkicIPTI", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "play me some grunge that feels energetic", "track_id": "4a9i7rCLfPjbS1sNamZeQN", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
+{"query": "give me tracks with a energetic feel", "track_id": "3VA8T3rNy5V24AXxNK5u9E", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "00t7QTffOR3SA3L1BvSQVq", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "any recommendations for feeling good?", "track_id": "5dzTfHXcdHjxoJbpdy4DUu", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
+{"query": "need a energetic soundtrack for an intense session", "track_id": "3M0NUo9eoV5otcWVIPNrwD", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "intense"]}
+{"query": "need a melancholic soundtrack for relaxing", "track_id": "6MY1xABxoZATrEr4FeUhEM", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "relaxing"]}
+{"query": "I'm into chicago house lately, anything good?", "track_id": "02ePVbyZRQs0LQB5XrofKa", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["chicago-house"]}
+{"query": "I'm into piano lately, anything good?", "track_id": "3gdewACMIVMEWVbyb8O9sY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["piano"]}
+{"query": "I'm into hardcore lately, anything good?", "track_id": "4TY4VeLpmiNY9otITGA8sn", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hardcore"]}
+{"query": "I'm into disney lately, anything good?", "track_id": "0jkGkwy510cvhy0jYPFme4", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disney"]}
+{"query": "play me some metal that feels energetic", "track_id": "6gCVA6ja6g0foIsWv0RuSZ", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metal", "energetic"]}
+{"query": "need a energetic soundtrack for a cathartic release", "track_id": "0Qgs6zkdRXT7nAf6q61LmV", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "cathartic"]}
+{"query": "need a calm soundtrack for a coffee break", "track_id": "4CM2CpR5UpFoObTmuFOUIj", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "coffee"]}
+{"query": "play me some emo that feels melancholic", "track_id": "4vaxvNDaLSoD36iZX515ug", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["emo", "melancholic"]}
+{"query": "looking for hardstyle that works for a cathartic release", "track_id": "7aZXTNQVlBypYUrj0WF8bH", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["hardstyle", "cathartic"]}
+{"query": "any recommendations for an intense session?", "track_id": "16Fp67kTFhH0XK5Cl6Oz7r", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["intense"]}
+{"query": "looking for british that works for running", "track_id": "4nnKiBEsbY3MmUpqEGXnxY", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["british", "running"]}
+{"query": "need a melancholic soundtrack for a coffee break", "track_id": "3b9Dae2aPvOGKNOcdhj9CP", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
+{"query": "play me some latin that feels happy", "track_id": "2lnzGkdtDj5mtlcOW2yRtG", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["latin", "happy"]}
+{"query": "play me some punk rock that feels energetic", "track_id": "0kuL28JVeWVO86sXrCYFar", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["punk-rock", "energetic"]}
+{"query": "need a energetic soundtrack for running", "track_id": "3kZ7Zceq5hU9qPoxMwqnTd", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I'm into british lately, anything good?", "track_id": "2xwiFAUJeS3K0QJtXRr6dd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
+{"query": "any recommendations for the morning?", "track_id": "1Z3N0DN1hgaQDe7CwwSiXL", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "I need energetic vibes for a cathartic release", "track_id": "2KvCLvH4Z749CQOgGSDKpl", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "cathartic"]}
+{"query": "need a melancholic soundtrack for an intense session", "track_id": "6c9EGVj5CaOeoKd9ecMW1U", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "intense"]}
+{"query": "play me some alt rock that feels calm", "track_id": "0z1o5L7HJx562xZSATcIpY", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alt-rock", "calm"]}
+{"query": "give me tracks with a happy feel", "track_id": "0JNV2KO1DCwcyr4dqatad9", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "any recommendations for a workout?", "track_id": "4wQdNXWC9oXoVVoJRMMCdH", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into pop lately, anything good?", "track_id": "5AapsFftm3jjb3e2eMLG1E", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "4WiiRw2PHMNQE0ad6y6GdD", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a energetic feel", "track_id": "5DGvwXAzpohcIjQkoPcWUO", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
 {"query": "can you find slow instrumental stuff", "track_id": "27wq82gy6a868oA5HNLRGv", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "instrumental"]}
-{"query": "I need calm vibes for winding down", "track_id": "63OJHHu2ambZAvdrvhdT2b", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "sleep"]}
-{"query": "need a energetic soundtrack for a workout", "track_id": "3T76zPJz3tWL27FrjJe2ot", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I'm into garage lately, anything good?", "track_id": "4dtP86vkhzwNXCFpCtizce", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
-{"query": "play me some disney that feels melancholic", "track_id": "1O6e8ewSwx8ijeMoVUrW5I", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disney", "melancholic"]}
-{"query": "play me some industrial that feels energetic", "track_id": "4ukiv6Rp5N4tQZSBT9JRLo", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["industrial", "energetic"]}
-{"query": "I'm into mandopop lately, anything good?", "track_id": "6KDFXYRMTHDEL1CZxunACW", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["mandopop"]}
-{"query": "play me some alternative that feels energetic", "track_id": "2O9O26335YYVckmRgPKY3s", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alternative", "energetic"]}
-{"query": "looking for new age that works for relaxing", "track_id": "7ryUfJfr9GehdSJrTTybbC", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["new-age", "relaxing"]}
-{"query": "I'm into power pop lately, anything good?", "track_id": "5Zx0Rrkn5RFBMD2PRxX3mI", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["power-pop"]}
-{"query": "give me tracks with a happy feel", "track_id": "00FDHurakzVEiPutdUxXXq", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "give me tracks with a calm feel", "track_id": "63OJHHu2ambZAvdrvhdT2b", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I'm into garage lately, anything good?", "track_id": "1j9rezdE3YeC7yktZXC1em", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["garage"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2uXkW8uJcOIhlbUatEPLPs", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "I'm into emo lately, anything good?", "track_id": "203zTFd1zbfG0fiOG9OREv", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["emo"]}
+{"query": "looking for rock that works for feeling good", "track_id": "3QO2QeKbBQgx1ZTezCThPX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock", "feel-good"]}
+{"query": "can you find fast instrumental stuff", "track_id": "4WRSAREjHbW6vc5WCfOiVL", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
+{"query": "need a energetic soundtrack for dancing", "track_id": "4cluDES4hQEUhmXj6TXkSo", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "dance"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "2zqfPLM5cv0x7wWoRv3WTX", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "2q04AFjRX4GKTnFj2eUb5W", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into reggae lately, anything good?", "track_id": "6t1ahr2f1t9iSjjNFwFb4C", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
 {"query": "I'm into reggae lately, anything good?", "track_id": "0sQLhT32E9ZG2zn5iYR6nN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "23STcG7v9HNwdqnROFSS8n", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "I need energetic vibes for the gym", "track_id": "3zSX5AEN95Iq7F5sr22TpB", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I need calm vibes for late nights", "track_id": "7DDvRmOSP2Yx28CfL6W7aw", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "study"]}
-{"query": "I need energetic vibes for relaxing", "track_id": "082lUcNwQkwBxSSXoWtGm5", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "relaxing"]}
-{"query": "I'm into electronic lately, anything good?", "track_id": "5drK2kTE2mrUdV33iHWyrx", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["electronic"]}
-{"query": "looking for swedish that works for a coffee break", "track_id": "56SfXTvp5ABdNmbqmG9Zpk", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["swedish", "coffee"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "23eNu1Z3GB7FGvI2VQYhYu", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "looking for industrial that works for a coffee break", "track_id": "7MZBQeYiGTwXPkDigjFpKo", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["industrial", "coffee"]}
-{"query": "play me some world music that feels melancholic", "track_id": "5mukyVBO2iWwXEh3x33im7", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["world-music", "melancholic"]}
-{"query": "I'm into soul lately, anything good?", "track_id": "1CRtJS94Hq3PbBZT9LuF90", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "any recommendations for the gym?", "track_id": "2tVCFmn2zKg2wGXS1TCIIA", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "I'm into grunge lately, anything good?", "track_id": "16AFbRYIdpesOleGTKClHs", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
-{"query": "play me some synth pop that feels melancholic", "track_id": "7o7E1nrHWncYY7PY94gCiX", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["synth-pop", "melancholic"]}
-{"query": "give me tracks with a happy feel", "track_id": "03pgAGtsNrSoZtXDUR1Rom", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "looking for drum and bass that works for the gym", "track_id": "67fsmXL8FEAJk5iJDzDnpp", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["drum-and-bass", "gym"]}
-{"query": "play me some hard rock that feels melancholic", "track_id": "1ugRmaf5TDDf1fO3hFSIs1", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "melancholic"]}
-{"query": "any recommendations for running?", "track_id": "5sALzGY80LqeXe1AcWWt0b", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "give me tracks with a energetic feel", "track_id": "51i1huKxsr97gLFGFufGWn", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "any recommendations for a cathartic release?", "track_id": "0wcPVFqUw4435IwsQtLLTy", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["cathartic"]}
-{"query": "looking for singer songwriter that works for the morning", "track_id": "6gJKvK7qlt0TvwzwmmATK2", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["singer-songwriter", "morning"]}
-{"query": "play me some metal that feels energetic", "track_id": "6xtQ23d8GEXgcxyUKPtwc5", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metal", "energetic"]}
-{"query": "I need energetic vibes for a workout", "track_id": "2zphznHEwLRNCC6P1lJoIX", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "play me some hardcore that feels energetic", "track_id": "7q6lr1W6cmGWijl5kCv5RG", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hardcore", "energetic"]}
-{"query": "play me some power pop that feels energetic", "track_id": "3g2gQMeeQAEPztiQKMlGSl", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["power-pop", "energetic"]}
-{"query": "any recommendations for a party?", "track_id": "0VffaI2jwQknRrxpECYHsF", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
-{"query": "any recommendations for running?", "track_id": "1W7bwcFITuMrUThlgKTjKP", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "play me some grunge that feels melancholic", "track_id": "7I08C1Y8aVtTM89PlRqdd9", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "melancholic"]}
-{"query": "give me tracks with a happy feel", "track_id": "1ANDclFAxfuLB8WPgVuMqS", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "play me some dub that feels melancholic", "track_id": "4OpPtBlAU2ayk7rS0SyxlM", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["dub", "melancholic"]}
-{"query": "I need happy vibes for the morning", "track_id": "6vX3f406IBBmI6mAHLARGa", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "play me some world music that feels melancholic", "track_id": "6jAAYLKxXPyeEoddXu6Gf7", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["world-music", "melancholic"]}
-{"query": "need a energetic soundtrack for the gym", "track_id": "2ykddKlnrxzo8gAozmOTFT", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I need energetic vibes for a workout", "track_id": "2cC4DfpPa7x1QZTKQpe3TP", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "looking for latin that works for a workout", "track_id": "38NpbYn9qyO0x69OvtxDTl", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["latin", "workout"]}
-{"query": "I need happy vibes for dancing", "track_id": "1gcESexgftSuLuML57Y69q", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "I'm into cantopop lately, anything good?", "track_id": "5uMkdWf1H6JEcpcdnPOSZM", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["cantopop"]}
-{"query": "play me some grunge that feels energetic", "track_id": "4wyxBb3LEuEKPO5Huxwc9R", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
-{"query": "looking for industrial that works for running", "track_id": "55qExvsCf5eGfZXDQbT7DR", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["industrial", "running"]}
-{"query": "I'm into alt rock lately, anything good?", "track_id": "4ckTIXFjIHbZkK1HxisLFG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["alt-rock"]}
-{"query": "I need energetic vibes for a workout", "track_id": "2iFgHPoa7FNHwgLnjXzu7F", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I'm into disco lately, anything good?", "track_id": "0F2BxpbxH8Yc3pLub48hrb", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["disco"]}
-{"query": "I'm into trip hop lately, anything good?", "track_id": "4JDCehi2qnkGoyHyuMaBFf", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
-{"query": "any recommendations for the gym?", "track_id": "30OMJsnuS3TWACLrf2YggT", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
-{"query": "give me tracks with a happy feel", "track_id": "19C3bmijuVj9xJdXvPhQsa", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into breakbeat lately, anything good?", "track_id": "1D2j6pnnMigomGUx1qgukh", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["breakbeat"]}
-{"query": "I need happy vibes for feeling good", "track_id": "1zA4fFerBRVJz22AOLXwPq", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "need a energetic soundtrack for the gym", "track_id": "6wNeKPXF0RDKyvfKfri5hf", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "I'm into country lately, anything good?", "track_id": "1QEEqeFIZktqIpPI4jSVSF", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["country"]}
-{"query": "I'm into reggae lately, anything good?", "track_id": "68BcN05HQw9WR0dYi3cwUO", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
-{"query": "play me some british that feels melancholic", "track_id": "2NIeqDoYuMWaX8KtAz4C5o", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "melancholic"]}
-{"query": "looking for chicago house that works for feeling good", "track_id": "796T2ROxTNibXRjVhjSzCa", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["chicago-house", "feel-good"]}
-{"query": "give me tracks with a energetic feel", "track_id": "11VGhd5i7deLL0YB0ayicY", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "play me some german that feels melancholic", "track_id": "5Di0EOfzgABjIldD2GaMVm", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["german", "melancholic"]}
-{"query": "need a melancholic soundtrack for studying", "track_id": "40FDafNFtz0jDyzCn3MaMs", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "study"]}
-{"query": "any recommendations for late nights?", "track_id": "4LX2o9t2630MhOhdLwewU4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["study"]}
-{"query": "play me some dub that feels energetic", "track_id": "2A0wCdXcNJbHUuw4VTq94A", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["dub", "energetic"]}
-{"query": "I'm into metalcore lately, anything good?", "track_id": "2xnlCGTDKbnnVe9sf85RXy", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metalcore"]}
-{"query": "give me tracks with a energetic feel", "track_id": "6tASfEUyB7lE2r6DLzURji", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "need a melancholic soundtrack for a party", "track_id": "34dx8DACTJsc3rsJdaEIQw", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "party"]}
-{"query": "I'm into swedish lately, anything good?", "track_id": "3c6MxydKiCijt0Lo09l4bt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["swedish"]}
-{"query": "give me tracks with a calm feel", "track_id": "7nTWWVvcAqC34Q4JVyovdG", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
-{"query": "any recommendations for feeling good?", "track_id": "1hOqxeZappRsi9FAmBUCpS", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "any recommendations for a workout?", "track_id": "4JXfNOePhdgMOI7KZ1L25U", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "I'm into grunge lately, anything good?", "track_id": "10fddGyyeUquZZ2uPTjD7P", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
-{"query": "I'm into psych rock lately, anything good?", "track_id": "6iI6NXjtI3IkjK2k1juqaX", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["psych-rock"]}
-{"query": "any recommendations for a workout?", "track_id": "5j2LDsUsxbCnZkhJwLkbKp", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "I'm into punk rock lately, anything good?", "track_id": "58HpsDKeYoLtNhXFQyQmz5", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["punk-rock"]}
-{"query": "play me some songwriter that feels happy", "track_id": "7hR5toSPEgwFZ78jfHdANM", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["songwriter", "happy"]}
-{"query": "I need melancholic vibes for studying", "track_id": "1ilA1w8ewwREeAEHY2rqKa", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "study"]}
-{"query": "I'm into british lately, anything good?", "track_id": "349eMAQNz3QBhlrdoXMO0C", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
-{"query": "I need energetic vibes for the gym", "track_id": "77wihvKjsijCbjkGnuAnnn", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
-{"query": "looking for singer songwriter that works for the morning", "track_id": "5vd1QZ0tdXOExiegC55IAS", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["singer-songwriter", "morning"]}
-{"query": "need a happy soundtrack for a workout", "track_id": "6maAQosT6FTMoLNEOexeZE", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "any recommendations for running?", "track_id": "0eTNLIPzgURsXMdgX4cdpJ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "I'm into soul lately, anything good?", "track_id": "7azo4rpSUh8nXgtonC6Pkq", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
-{"query": "any recommendations for a workout?", "track_id": "4L6mJJhYx3PNhKhaXX4BCw", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
-{"query": "need a calm soundtrack for dancing", "track_id": "7zVpVwxSOKdBIfua1bTyvC", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "dance"]}
-{"query": "play me some garage that feels energetic", "track_id": "5eyTC5GZzpzlN7YRO9AoPf", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["garage", "energetic"]}
-{"query": "I'm into grunge lately, anything good?", "track_id": "05tn6MGYoFRaXPYQpZmPcc", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
-{"query": "I need happy vibes for the morning", "track_id": "7LbfuQVct78YoghmoPtsQ8", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
-{"query": "I'm into british lately, anything good?", "track_id": "71AATBHZGo82EnjZnG53Zx", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
-{"query": "need a happy soundtrack for a workout", "track_id": "685bKO7yPFcoSgs4JTOUE9", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
+{"query": "I'm into soul lately, anything good?", "track_id": "1sIycj2RfpZbI4Msmgzlt8", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["soul"]}
+{"query": "looking for synth pop that works for the gym", "track_id": "1QFJpg154LuFMYfTryKadD", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["synth-pop", "gym"]}
+{"query": "give me tracks with a energetic feel", "track_id": "6TZ9bryRYVFYrvmEtzAvDu", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "looking for blues that works for the morning", "track_id": "5AQpbyFoQmkOVwmlhKN4ii", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["blues", "morning"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "457p7UH7hoHrbA2iI4PSCA", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "I'm into singer songwriter lately, anything good?", "track_id": "6PrnqAkxifshpNad1rFk5t", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["singer-songwriter"]}
+{"query": "looking for j-pop that works for running", "track_id": "2d8JP84HNLKhmd6IYOoupQ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["j-pop", "running"]}
+{"query": "play me some death metal that feels energetic", "track_id": "7IDQX9EUgMNQTgYcZSpO1d", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["death-metal", "energetic"]}
+{"query": "looking for swedish that works for a coffee break", "track_id": "6TvxPS4fj4LUdjw2es4g21", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["swedish", "coffee"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "1CRtJS94Hq3PbBZT9LuF90", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "0x0h9kwGhCv78fMRo8ChhZ", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "looking for grunge that works for a workout", "track_id": "6wAdJF85cna96BwQn2Pg8c", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "workout"]}
+{"query": "I need melancholic vibes for running", "track_id": "48vDCZIRmrFO33fH4QU4ij", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "running"]}
+{"query": "I need melancholic vibes for focusing", "track_id": "346d2tSxhrRUpL4bp4xn2b", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "study"]}
+{"query": "I need happy vibes for the morning", "track_id": "7s1upm7yr7ZjrzXMwHawtG", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "I need melancholic vibes for a rainy day", "track_id": "6L5BZEcZmD6RBJnimzlyKr", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "rainy day"]}
+{"query": "can you find slow acoustic stuff", "track_id": "6uZF7xC32ewhpsm36IaM5T", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
+{"query": "I'm into electronic lately, anything good?", "track_id": "21Phj46KeUHOWyZW9A9b7P", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["electronic"]}
+{"query": "I'm into rock lately, anything good?", "track_id": "0sosYeHBP6O8C13IVW8YbG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock"]}
+{"query": "play me some british that feels happy", "track_id": "4BRkPBUxOYffM2QXVlq7aC", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "happy"]}
+{"query": "I'm into grunge lately, anything good?", "track_id": "2smax1OWAxOo63p14G8KZx", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
+{"query": "give me tracks with a happy feel", "track_id": "3WNYZX9nMweT6S3s7BrEQ7", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "any recommendations for the morning?", "track_id": "6Nnohe4qA8s5BiuoIAn560", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
+{"query": "I'm into hard rock lately, anything good?", "track_id": "0PdM2a6oIjqepoEfcJo0RO", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "any recommendations for the gym?", "track_id": "34iOH7LY3vme5rQxsVILZ4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "any recommendations for the gym?", "track_id": "5xFpHMkrDnp1YnLrQDTzYq", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "need a energetic soundtrack for feeling good", "track_id": "11VKZIFqVjUnmizg4FTbUv", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "feel-good"]}
+{"query": "play me some soul that feels calm", "track_id": "2s5R5rxIuldG5E7d7U1hz4", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["soul", "calm"]}
+{"query": "need a happy soundtrack for a party", "track_id": "5pItoLGobnz7q0oEiEKonX", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "party"]}
+{"query": "need a happy soundtrack for dancing", "track_id": "6sXtdCMxgpmRVctBlYgWLu", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
+{"query": "play me some british that feels melancholic", "track_id": "07nYZZQT49i7yAIs3k3tOe", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "melancholic"]}
+{"query": "I'm into french lately, anything good?", "track_id": "7cQ0dT1Xt0k5j3n2jc0ry0", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["french"]}
+{"query": "play me some salsa that feels happy", "track_id": "6R1Szn6bHik6KOa5skXSbQ", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["salsa", "happy"]}
+{"query": "can you find slow acoustic stuff", "track_id": "2VGkf2IJXOSWouDhatlH3i", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["slow", "acoustic"]}
+{"query": "give me tracks with a happy feel", "track_id": "1gcESexgftSuLuML57Y69q", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "need a melancholic soundtrack for a coffee break", "track_id": "58iOVhZsIfpbU0QumsTBZT", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "coffee"]}
+{"query": "play me some metal that feels energetic", "track_id": "0MoCAi2bKmgWIzJ6A53jml", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["metal", "energetic"]}
+{"query": "any recommendations for a workout?", "track_id": "11Ojp7JniVvwd0gmgvyKkd", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["workout"]}
+{"query": "I'm into trance lately, anything good?", "track_id": "3SbCWIF7UaSewGfGHkFEI2", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trance"]}
+{"query": "give me tracks with a energetic feel", "track_id": "2iFgHPoa7FNHwgLnjXzu7F", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "play me some disco that feels happy", "track_id": "0F2BxpbxH8Yc3pLub48hrb", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disco", "happy"]}
+{"query": "play me some alt rock that feels happy", "track_id": "41Q87dXXetURXvHWQb3Yuo", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alt-rock", "happy"]}
+{"query": "looking for iranian that works for relaxing", "track_id": "5Sl4pcL8zbTl1I9j4GQJEO", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["iranian", "relaxing"]}
+{"query": "give me tracks with a calm feel", "track_id": "0IkUTWDCxVIadHAl997Ueq", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I need energetic vibes for the gym", "track_id": "4h6M2oyJNWmAmG4vTa5fDd", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
+{"query": "I'm into pop film lately, anything good?", "track_id": "4HDzsx1dJKbuL0YkffBuBm", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop-film"]}
+{"query": "looking for electro that works for a party", "track_id": "6wNeKPXF0RDKyvfKfri5hf", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["electro", "party"]}
+{"query": "I'm into british lately, anything good?", "track_id": "6H3kDe7CGoWYBabAeVWGiD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
+{"query": "I need energetic vibes for a workout", "track_id": "5lamTc8XYjDFM0bC6Ir8h1", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "play me some grunge that feels energetic", "track_id": "0n3sHHfdOq6Awix3JPe3xl", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["grunge", "energetic"]}
+{"query": "looking for club that works for a party", "track_id": "5HuOQHBDbb0UJjEE2fw6Uq", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["club", "party"]}
+{"query": "I'm into trip hop lately, anything good?", "track_id": "5drK2kTE2mrUdV33iHWyrx", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
+{"query": "any recommendations for relaxing?", "track_id": "3x3zdepy3au5Uo81WIA9MG", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "play me some forro that feels happy", "track_id": "3zS4Wwzui8g0eAxow8UPyj", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["forro", "happy"]}
+{"query": "looking for new age that works for relaxing", "track_id": "3sL97NMeD5EI5ORPforsmh", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["new-age", "relaxing"]}
+{"query": "give me tracks with a calm feel", "track_id": "3eYCJXTViFwl5mdtcTsF4G", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "I need calm vibes for relaxing", "track_id": "2SwS01bg6tSCqeo4SSTHzB", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["calm", "relaxing"]}
+{"query": "I need energetic vibes for a workout", "track_id": "7nCONy10IHp7XD3oYZ0lcx", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "need a calm soundtrack for winding down", "track_id": "273QnyCvJB65rScHJ1nPZb", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "sleep"]}
+{"query": "play me some psych rock that feels happy", "track_id": "0SygxxULjgO73eoWGVFleR", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["psych-rock", "happy"]}
+{"query": "play me some club that feels happy", "track_id": "7iMyX6FTRrY4fO8dHQhAUs", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["club", "happy"]}
+{"query": "give me tracks with a energetic feel", "track_id": "5pLcVrHtA4bWr5goYCy87n", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "need a happy soundtrack for feeling good", "track_id": "4YCnTYbq3oL1Lqpyxg33CU", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "10fddGyyeUquZZ2uPTjD7P", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "need a calm soundtrack for relaxing", "track_id": "3RTsCWzv0pfLiYfkR4EVFu", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["calm", "relaxing"]}
+{"query": "need a energetic soundtrack for running", "track_id": "5k36jOrSCeopuvRVjeVs7J", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "running"]}
+{"query": "I need energetic vibes for a workout", "track_id": "58HpsDKeYoLtNhXFQyQmz5", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a happy feel", "track_id": "7hR5toSPEgwFZ78jfHdANM", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "play me some edm that feels happy", "track_id": "0KiWEnqkaRBjsnOuF5w4w6", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["edm", "happy"]}
+{"query": "give me tracks with a calm feel", "track_id": "43sdRsmJFcSnlTWTVRhYtz", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "give me tracks with a happy feel", "track_id": "64ocQRAYuQW5zfPNTUDVjA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
+{"query": "I'm into grunge lately, anything good?", "track_id": "6tsojOQ5wHaIjKqIryLZK6", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
+{"query": "I'm into kids lately, anything good?", "track_id": "1SG18kW0egXcvFS1vmpA62", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["kids"]}
+{"query": "I'm into grunge lately, anything good?", "track_id": "22sDLvlzAJzH0BHiMSOfRP", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
+{"query": "need a energetic soundtrack for a party", "track_id": "7azo4rpSUh8nXgtonC6Pkq", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "5FccwnVjJbLIF2azQjCwyP", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I need energetic vibes for an intense session", "track_id": "3bFcRPKFv3DjcEfQpgQLXs", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "intense"]}
+{"query": "any recommendations for a coffee break?", "track_id": "0bkW98npv8EsWQ2fXFzK56", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
+{"query": "I'm into metalcore lately, anything good?", "track_id": "5vJi1SLf3lKJo5TuiSMzMt", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metalcore"]}
+{"query": "I need happy vibes for the morning", "track_id": "788U1Sqej9M6c4iikuDGxO", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "morning"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "71AATBHZGo82EnjZnG53Zx", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "I'm into club lately, anything good?", "track_id": "6WrtyVY9CgbXi8TbAOr3KH", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["club"]}
 {"query": "I'm into british lately, anything good?", "track_id": "0xytfctyaudqnrQujHIz3s", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
-{"query": "I need energetic vibes for a workout", "track_id": "4yDCTzaFfr7YOuYKpwgidL", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
-{"query": "I'm into edm lately, anything good?", "track_id": "1rP4gzPMHrM7NyI1LPCRmv", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["edm"]}
-{"query": "I'm into anime lately, anything good?", "track_id": "67iQzzqoGU4yE7AJpd6y4J", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["anime"]}
-{"query": "I'm into grunge lately, anything good?", "track_id": "4rrG6blL1GvK0FeTPYf3e1", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
-{"query": "I'm into ska lately, anything good?", "track_id": "2k0ai3sQaXx1xNtx1Avikd", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["ska"]}
-{"query": "any recommendations for the morning?", "track_id": "6OtCIsQZ64Vs1EbzztvAv4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "I'm into progressive house lately, anything good?", "track_id": "24LS4lQShWyixJ0ZrJXfJ5", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["progressive-house"]}
-{"query": "looking for grunge that works for a cathartic release", "track_id": "01z3wyn02forxUQHEDAa0R", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["grunge", "cathartic"]}
-{"query": "I'm into german lately, anything good?", "track_id": "5bu9A6uphPWg39RC3ZKeku", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["german"]}
-{"query": "play me some sertanejo that feels energetic", "track_id": "0HmA2L3Ohh8FIdYn01On7Y", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["sertanejo", "energetic"]}
-{"query": "play me some rockabilly that feels energetic", "track_id": "2pnPe4pJtq7689i5ydzvJJ", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["rockabilly", "energetic"]}
-{"query": "any recommendations for a coffee break?", "track_id": "1fOkmYW3ZFkkjIdOZSf596", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["coffee"]}
-{"query": "need a happy soundtrack for feeling good", "track_id": "19yLCmQefMuNmdD7Fv3znn", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
-{"query": "I'm into rockabilly lately, anything good?", "track_id": "5oV0Z1w1yZePvSY2Q6gtnD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rockabilly"]}
-{"query": "any recommendations for running?", "track_id": "5muVpPu8Fj9fXfDbbqDdrZ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "5HNCy40Ni5BZJFw1TKzRsC", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "give me tracks with a happy feel", "track_id": "4joiWvli4qJVEW6qZV2i2J", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into synth pop lately, anything good?", "track_id": "3A6Ty55vQ1NC06EiB1fi9z", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["synth-pop"]}
-{"query": "any recommendations for feeling good?", "track_id": "7wlDCYTcXbNYF9RsKN5lpp", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "need a energetic soundtrack for a party", "track_id": "4bz7uB4edifWKJXSDxwHcs", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "party"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "3pajXCqOSkwgTIBXZEauQD", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "need a happy soundtrack for a workout", "track_id": "38JE3O2HocFNvtljgtlNKv", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "68iMdxXn1timrxURm9dR8C", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "any recommendations for feeling good?", "track_id": "5gcj73NwRyRWXCKBov0ndc", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
-{"query": "any recommendations for a party?", "track_id": "2gAEgo5pCqgEEiaV1wwy9i", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "2BndJYJQ17UcEeUFJP5JmY", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "I need energetic vibes for feeling good", "track_id": "1CG2ZcVYKQdYJ6jbQ0VePq", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "feel-good"]}
+{"query": "I'm into trip hop lately, anything good?", "track_id": "5Z34NH1AsA3xPL5OsDTfOa", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
+{"query": "looking for electro that works for dancing", "track_id": "6HZ9VeI5IRFCNQLXhpF4bq", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["electro", "dance"]}
+{"query": "need a happy soundtrack for a workout", "track_id": "24eZ6CbQsJBDsBqmig5CRx", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "workout"]}
+{"query": "play me some hard rock that feels melancholic", "track_id": "43GS3mtezoIFiuIZCLLiDY", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["hard-rock", "melancholic"]}
+{"query": "need a happy soundtrack for dancing", "track_id": "4sCvka8sF2BOw6cViFanCW", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "dance"]}
+{"query": "I need happy vibes for feeling good", "track_id": "6OtCIsQZ64Vs1EbzztvAv4", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I'm into folk lately, anything good?", "track_id": "2F79HavLHwJlfvvJOkkIQD", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["folk"]}
+{"query": "any recommendations for late nights?", "track_id": "0fxjsll9jmmRgMFbwdp4Xg", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["study"]}
+{"query": "play me some swedish that feels melancholic", "track_id": "3M1GUuhtJLatUZWJ2j2mcC", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["swedish", "melancholic"]}
+{"query": "I'm into k-pop lately, anything good?", "track_id": "4BZXVFYCb76Q0Klojq4piV", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["k-pop"]}
+{"query": "I need energetic vibes for a workout", "track_id": "6v5VsfCYKdrkQBTMhAlkDr", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "I'm into indie lately, anything good?", "track_id": "01Q3OyB05mLgH01fpdAMPP", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["indie"]}
+{"query": "I'm into grunge lately, anything good?", "track_id": "3cbTV3IZZvSBYVcl0xuZbY", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["grunge"]}
+{"query": "any recommendations for running?", "track_id": "3BNy8c9gYaL63nL5DKHFMU", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
+{"query": "I need happy vibes for feeling good", "track_id": "4RGxUjaCmVtD30pIhtEi7w", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I'm into rock lately, anything good?", "track_id": "5HNCy40Ni5BZJFw1TKzRsC", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rock"]}
+{"query": "play me some british that feels happy", "track_id": "4joiWvli4qJVEW6qZV2i2J", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["british", "happy"]}
+{"query": "play me some rock n roll that feels calm", "track_id": "25IiJu0DjOqsnQXgNHWp5i", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["rock-n-roll", "calm"]}
+{"query": "I need energetic vibes for a workout", "track_id": "4O7VS8Um5xxQ8PNv7ZJKHs", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "need a energetic soundtrack for feeling good", "track_id": "2qOm7ukLyHUXWyR4ZWLwxA", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "feel-good"]}
+{"query": "looking for k-pop that works for a workout", "track_id": "0Bph99neebTJZ6rsIhd0sN", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["k-pop", "workout"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "6i81qFkru6Kj1IEsB7KNp2", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "any recommendations for an intense session?", "track_id": "5Y6gse6fdyxs0lFFqyHYgz", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["intense"]}
+{"query": "looking for swedish that works for the morning", "track_id": "2kAmTY5ki74A9oJsrWCafU", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["swedish", "morning"]}
+{"query": "any recommendations for feeling good?", "track_id": "17M1JFSr2eEvo5dQnCIQim", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["feel-good"]}
+{"query": "I need happy vibes for feeling good", "track_id": "2K2M0TcglCRLLpFOzKeFZA", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "feel-good"]}
+{"query": "I'm into mpb lately, anything good?", "track_id": "0Fmpl9QK68OOeXQAcy4mAw", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["mpb"]}
 {"query": "any recommendations for the morning?", "track_id": "23l1kVpqMVREiwU1YAlcr4", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["morning"]}
-{"query": "give me tracks with a energetic feel", "track_id": "3s03nrUInN3NAVjQtmnS0O", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "give me tracks with a happy feel", "track_id": "4JlKk8J0Q7IdNchS0iJRSj", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["happy"]}
-{"query": "I'm into rockabilly lately, anything good?", "track_id": "6rIO7NYAGzLavmQViqelcG", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["rockabilly"]}
-{"query": "give me tracks with a energetic feel", "track_id": "014SIjoLDG1Ku19c5FlDYh", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
-{"query": "I'm into industrial lately, anything good?", "track_id": "3o1nX61oecxnqXieA2ma0U", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["industrial"]}
-{"query": "any recommendations for relaxing?", "track_id": "4b7EP2BqMTcT0gVUOGXP54", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
-{"query": "I need happy vibes for dancing", "track_id": "2GYHyAoLWpkxLVa4oYTVko", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["happy", "dance"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "5xS9R5yNeVsB9shSR60eX3", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
-{"query": "need a melancholic soundtrack for relaxing", "track_id": "0MY5mMChzuvL9qWKTVOfGV", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["melancholic", "relaxing"]}
-{"query": "I need melancholic vibes for a cathartic release", "track_id": "3jmelhU4kuytaLPLeiAerH", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["melancholic", "cathartic"]}
-{"query": "need a happy soundtrack for a party", "track_id": "11VKZIFqVjUnmizg4FTbUv", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["happy", "party"]}
-{"query": "looking for tango that works for winding down", "track_id": "4o3Gr0PFPBb8XCEXU4tDNc", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["tango", "sleep"]}
-{"query": "I'm into hard rock lately, anything good?", "track_id": "1wlKw9NAWVWpx7OIAyg9EA", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["hard-rock"]}
+{"query": "I'm into metal lately, anything good?", "track_id": "3s03nrUInN3NAVjQtmnS0O", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["metal"]}
+{"query": "any recommendations for a cathartic release?", "track_id": "0y5Rpnq7cT4FA4sbPLMkWo", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["cathartic"]}
+{"query": "give me tracks with a energetic feel", "track_id": "4Tdc5l6RUT5HqGJiKC70bj", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}
+{"query": "looking for garage that works for the gym", "track_id": "4UF1eupXP9Zz5GpYepyOxI", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["garage", "gym"]}
+{"query": "any recommendations for relaxing?", "track_id": "2bdh8ALxBeuvpnuoh37BDn", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["relaxing"]}
+{"query": "play me some j-rock that feels happy", "track_id": "3fBCATJKsQ7L8SDX6cE3M8", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["j-rock", "happy"]}
+{"query": "I'm into british lately, anything good?", "track_id": "5fpEDGQX0Ah3utGnFYulQZ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["british"]}
+{"query": "I'm into piano lately, anything good?", "track_id": "5xS9R5yNeVsB9shSR60eX3", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["piano"]}
+{"query": "need a energetic soundtrack for a workout", "track_id": "7ycK2uijskzxp4cGpGNoCi", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "workout"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "1TJPT6k9H4JnkZbEjGegxF", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "any recommendations for the gym?", "track_id": "1yo3kUDbRC60FCroxINeJQ", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["gym"]}
+{"query": "any recommendations for running?", "track_id": "6SNYpGHWqeB6IJ2Fm7KmvY", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["running"]}
+{"query": "give me tracks with a energetic feel", "track_id": "1wlKw9NAWVWpx7OIAyg9EA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["energetic"]}

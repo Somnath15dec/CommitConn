@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 
 from src import prep
-from src.muse_match import normalize_artist, normalize_title
+from src.muse_match import normalize_artist, normalize_title, song_key, song_title
 from src.paths import CATALOG, CONTEXT_LABELS, REAL_USERS
 
 
@@ -90,8 +90,39 @@ def test_tags_and_context_rules():
 
 
 def test_no_duplicate_songs(cat):
-    keys = list(zip(cat.track_name.map(normalize_title), cat.artists.map(normalize_artist)))
+    keys = [song_key(n, a) for n, a in zip(cat.track_name, cat.artists)]
     assert len(keys) == len(set(keys))
+
+
+def test_song_title_versions():
+    same = ["Come On Eileen", "Come On Eileen - Single Edit", "Come On Eileen - Radio Edit",
+            "Come On Eileen - Remastered 2011", "Come On Eileen - 2011 Remaster", "Come On Eileen - Edit",
+            "Come On Eileen - 12\" Version", "Come On Eileen (feat. X)", "Come On Eileen (7\" Edit)",
+            "Come On Eileen [Digitally Remastered]", "Come On Eileen - Live"]
+    assert {song_title(t) for t in same} == {"come on eileen"}
+    assert song_title("El Día Que Me Quieras") == song_title("El dia que me quieras")
+    # remixes / mixes stay distinct
+    for t in ["Song - Club Mix", "Song (Extended Mix)", "Song - Remix", "Song - Radio Edit Remix"]:
+        assert song_title(t) != "song", t
+    assert song_title("Credit Card") == "credit card" and song_title("Mix Tape") == "mix tape"
+    assert song_key("A", "Beyoncé;Jay-Z") == song_key("A", "Beyonce")
+
+
+def test_frozen_split_preserved():
+    from src.paths import CONTEXT_LABELS, LABEL_SPLIT_FROZEN
+    frozen = pd.read_csv(LABEL_SPLIT_FROZEN).set_index("track_id").label_split
+    now = pd.read_parquet(CONTEXT_LABELS).drop_duplicates("track_id").set_index("track_id").label_split
+    common = frozen.index.intersection(now.index)
+    assert (frozen[common] == now[common]).all()
+
+
+def test_split_labels_keeps_frozen_and_splits_new():
+    labels = pd.DataFrame({"track_id": [f"t{i}" for i in range(20)], "context_word": "party",
+                           "playlist_count": 1})
+    frozen = pd.Series({"t0": "eval", "t1": "tune"})
+    out = prep.split_labels(labels, frozen).set_index("track_id").label_split
+    assert out["t0"] == "eval" and out["t1"] == "tune"
+    assert (out.drop(["t0", "t1"]) == "tune").sum() == 9
 
 
 def test_category_conflicts_hidden_from_desc():

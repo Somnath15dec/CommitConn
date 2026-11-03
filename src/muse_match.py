@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 import sys
+import unicodedata
 
 import pandas as pd
 
@@ -46,6 +47,38 @@ def normalize_artist(s: str) -> str:
 def normalize_name(s: str) -> str:
     """Whole string normalized (no artist splitting); used for album-name detection."""
     return _clean(str(s).lower().strip())
+
+
+# Catalog song dedupe only (joins keep normalize_title): version suffixes that don't make a new song.
+# Remixes/mixes stay distinct: a " - ..." or "(...)" suffix containing "mix" is never stripped.
+#   ANYWHERE: the keyword may appear anywhere in the suffix (" - Robin Schulz Radio Edit", " - 12" Version").
+#   LEADING: the legacy normalize_title keywords, only right after the dash/bracket (optional year).
+_V_ANYWHERE = r"version|remaster\w*|edit"
+_V_LEADING = r"live|acoustic|mono|stereo|feat\.?|ft\.|with\s|featuring"
+_VERSION_DASH = re.compile(rf"\s+-\s+(?![^-]*mix)(?:[^-]*\b(?:{_V_ANYWHERE})\b|(?:\d{{4}}\s+)?(?:{_V_LEADING})).*$",
+                           re.I)
+_VERSION_BRACKET = re.compile(rf"\s*[\(\[](?![^\)\]]*mix)(?:[^\)\]]*\b(?:{_V_ANYWHERE})\b|\s*(?:\d{{4}}\s+)?"
+                              rf"(?:{_V_LEADING}))[^\)\]]*[\)\]]", re.I)
+_FEAT_ANY = re.compile(r"\s+(?:feat\.?|ft\.|featuring)\s+.*$", re.I)
+
+
+def strip_accents(s: str) -> str:
+    return "".join(ch for ch in unicodedata.normalize("NFKD", str(s)) if not unicodedata.combining(ch))
+
+
+def song_title(s: str) -> str:
+    """Title key for song/version dedupe: lowercased, accents stripped (NFKD), version suffixes removed
+    (" - remastered...", " - single edit", " - radio edit", " - ... version", " - edit", "(feat. ...)", the
+    bracketed equivalents, and the legacy live/acoustic/mono/stereo/with suffixes). Remixes/mixes are kept."""
+    s = strip_accents(s).lower().strip()
+    s = _VERSION_BRACKET.sub("", s)
+    s = _VERSION_DASH.sub("", s)
+    s = _FEAT_ANY.sub("", s)
+    return _clean(s)
+
+
+def song_key(title: str, artists: str) -> tuple[str, str]:
+    return song_title(title), normalize_artist(strip_accents(artists))
 
 
 def load_muse() -> pd.DataFrame:

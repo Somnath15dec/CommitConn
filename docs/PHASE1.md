@@ -193,6 +193,8 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - 10,284 malformed playlist lines skipped
   - Eval A: only 6 sound-type pairs and thin per-context-word coverage (see Step 5 decisions)
   - Gold query 19 ("lo-fi hip hop for studying") maps "lo-fi" to hip-hop (+ calm): the catalog has no lo-fi genre
+  - Version dedupe (Step 4.7): 4 merged groups are arguably distinct recordings (Bailando EN/ES, La Valse
+    d'Amélie piano/orchestra, the Habits and Prayer in C radio edits)
 - Rule precision note: precisions are **relative**, computed over context-playlist tracks only (tune
   half), and rules are compared by **lift**.
 - Context cap note: at most 4 context words per track, round-robin in lift order.
@@ -216,6 +218,23 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - p50 latency
 - Commit `docs: pre-registered eval plan` **before any model code exists**.
 
+## Step 4.7: version dedupe (done, `fix: version dedupe; defer query balancing to training sampling`)
+- `song_key` (`src/muse_match.py`) is used for catalog dedupe only. The MuSe and playlist joins keep `normalize_title`.
+  - Accents are stripped (NFKD).
+  - Version suffixes are removed: " - remastered...", " - remaster...", " - single edit", " - radio edit",
+    " - ... version", " - edit", "(feat. ...)", their bracketed forms, and the legacy live/acoustic/mono/stereo/with
+    suffixes.
+  - A suffix containing "mix" is never stripped, so remixes stay distinct.
+- 26 groups removed (context_playlist 18, playlist 7, genre_fill 1). Refilled by the genre fill (25) plus 1 MuSe track
+  that is no longer merged with a "Stereo Mix" version.
+- **Frozen label split:** `data/proc/label_split_frozen.csv`. Existing tracks keep their tune/eval half. New labeled
+  tracks are split 50/50 (random_state 5). Result: 0 retained tracks changed half or context.
+- **Stable genre fill:** the shuffle is drawn over the legacy-key pool, so only the slots that had to change did.
+- **Train pairs are incremental:** tracks with valid existing pairs keep them. New tracks get pairs from a
+  per-track rng (TRAIN_RANDOM_STATE, crc32(track_id)). `--fresh` regenerates everything.
+- Eval A was regenerated once because 1 of its tracks was removed.
+- No query cap on the data. Balancing is deferred to Step 15.
+
 ## Step 11: `src/sids.py`, Semantic IDs
 - Item vector (option B): content_desc embedded with `all-MiniLM-L6-v2` (normalized) + min-max scaled audio
   features × `AUDIO_WEIGHT = 1.0`.
@@ -238,6 +257,11 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - tag-match@10 on gold queries
   - p50 latency
 - Save `eval/results_baseline.json`.
+
+
+## Step 15: training (spec TBD)
+- **Per-epoch sampling:** at most `MAX_PER_STRING = 150` pairs per query string per epoch, resampled each epoch
+  (the seed varies by epoch). No data is dropped from `train_pairs.jsonl`.
 
 ---
 

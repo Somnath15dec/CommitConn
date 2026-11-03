@@ -12,9 +12,9 @@ import numpy as np
 import pandas as pd
 
 from src.config import canonical, desc_categories
-from src.muse_match import load_muse, match_muse, normalize_artist, normalize_title, validate
+from src.muse_match import load_muse, match_muse, normalize_artist, normalize_title, song_key, validate
 from src.paths import (CATALOG, CONTEXT_LABELS, MUSE_VALIDATION, PLAYLIST_CONTEXT, PLAYLIST_MATCHED,
-                       PLAYLIST_STATS, PROC, REAL_USERS, RULE_PRECISION)
+                       PLAYLIST_STATS, PROC, REAL_USERS, RULE_PRECISION, LABEL_SPLIT_FROZEN)
 from src.playlists import clean_context_playlists, context_track_labels
 from src.spotify import build_tracks, load_raw
 
@@ -119,11 +119,24 @@ def lift_priority(prec: pd.DataFrame) -> list[str]:
     return p.sort_values(["_nan", "lift", "_o"], ascending=[True, False, True]).rule.tolist()
 
 
-def split_labels(labels: pd.DataFrame) -> pd.DataFrame:
-    """50/50 by track_id into label_split = tune | eval."""
+def split_labels(labels: pd.DataFrame, frozen: pd.Series | None = None) -> pd.DataFrame:
+    """By track_id into label_split = tune | eval. Tracks in `frozen` (track_id -> split) keep their split,
+    so tracks already used for rule tuning never move to eval. New tracks are split 50/50
+    (random_state LABEL_SPLIT_RANDOM_STATE)."""
+    frozen = frozen if frozen is not None else pd.Series(dtype=str)
     ids = pd.Series(sorted(labels.track_id.unique()))
-    tune = set(ids.sample(frac=LABEL_SPLIT_FRAC, random_state=LABEL_SPLIT_RANDOM_STATE))
+    new = ids[~ids.isin(frozen.index)].reset_index(drop=True)
+    tune = set(frozen.index[frozen == "tune"]) | set(new.sample(frac=LABEL_SPLIT_FRAC,
+                                                                   random_state=LABEL_SPLIT_RANDOM_STATE))
     return labels.assign(label_split=labels.track_id.map(lambda t: "tune" if t in tune else "eval"))
+
+
+def load_frozen_split() -> pd.Series | None:
+    """Split frozen at Step 5 (data/proc/label_split_frozen.csv); None if absent."""
+    if not LABEL_SPLIT_FROZEN.exists():
+        return None
+    f = pd.read_csv(LABEL_SPLIT_FROZEN)
+    return f.set_index("track_id").label_split
 
 
 def rule_precision(cat: pd.DataFrame, labels: pd.DataFrame) -> pd.DataFrame:
@@ -174,12 +187,14 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     """Priority: (a) MuSe, (b) cleaned context playlists, (c) other playlist-matched (most users first),
     together limited to stage_limit slots; then (d) genre fill that always tops up the currently
     smallest primary_genre (underrepresented first). Every stage respects the per-genre cap.
-    Songs are deduped by normalized (title, first artist): after (a)-(c), duplicates are dropped keeping
+    Songs are deduped by song_key (accent-stripped title without version suffixes, first artist): after (a)-(c), duplicates are dropped keeping
     stage priority then popularity; freed slots go to the genre fill, which also skips known songs.
     Returns (catalog, cap_log, n_dupes_dropped)."""
     cap = int(size * max_frac)
     t = tracks.set_index("track_id").copy()
-    t["song_key"] = list(zip(t.track_name.map(normalize_title), t.artists.map(normalize_artist)))
+    t["song_key"] = [song_key(n, a) for n, a in zip(t.track_name, t.artists)]
+    # legacy key (Step 4.6) only fixes the genre-fill shuffle order, so a stricter song_key does not reshuffle it
+    t["order_key"] = list(zip(t.track_name.map(normalize_title), t.artists.map(normalize_artist)))
     nu = n_users.reindex(t.index).fillna(0)
     a = muse.track_id.tolist()                      # already id-first, popularity-desc
     taken = set(a)
@@ -209,7 +224,10 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     pick["rank"] = pick.source.map(stage_rank)
     pick["pop"] = t.popularity.loc[pick.track_id].to_numpy()
     pick["song_key"] = t.song_key.loc[pick.track_id].to_numpy()
-    keep = pick.sort_values(["rank", "pop", "track_id"], ascending=[True, False, True]).drop_duplicates("song_key")
+    pick["order_key"] = t.order_key.loc[pick.track_id].to_numpy()
+    ordered = pick.sort_values(["rank", "pop", "track_id"], ascending=[True, False, True])
+    keep = ordered.drop_duplicates("song_key")
+    legacy_keep = ordered.drop_duplicates("order_key")
     n_dupes = len(pick) - len(keep)
     for g in genre.loc[pick.track_id[~pick.track_id.isin(keep.track_id)]]:
         per_genre[g] -= 1
@@ -217,9 +235,13 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     chosen, source = pick.track_id.tolist(), pick.source.tolist()
     songs = set(t.song_key.loc[chosen])
 
-    # (d) genre fill: always add to the currently smallest genre; random order within genre; new songs only
-    pool = t.loc[~t.index.isin(chosen) & ~t.song_key.isin(songs)].sample(frac=1, random_state=random_state)
+    # (d) genre fill: always add to the currently smallest genre; random order within genre; new songs only.
+    # The shuffle is drawn over the legacy-key pool (unchanged since Step 4.6); song_key duplicates are skipped below.
+    legacy_songs = set(legacy_keep.order_key)
+    pool = (t.loc[~t.index.isin(legacy_keep.track_id) & ~t.order_key.isin(legacy_songs)]
+            .sample(frac=1, random_state=random_state))
     queues = {g: list(ix) for g, ix in pool.groupby("primary_genre", sort=True).groups.items()}
+    chosen_set = set(chosen)
     for g in genre.unique():
         per_genre.setdefault(g, 0)
     while len(chosen) < size:
@@ -228,11 +250,11 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
             break
         g = min(open_g, key=lambda x: per_genre[x])
         i = queues[g].pop(0)
-        if t.song_key[i] in songs:
+        if t.song_key[i] in songs or i in chosen_set:
             continue
         songs.add(t.song_key[i])
         chosen.append(i); source.append("genre_fill"); per_genre[g] += 1
-    cat = t.loc[chosen].drop(columns="song_key").reset_index()
+    cat = t.loc[chosen].drop(columns=["song_key", "order_key"]).reset_index()
     cat["source"] = source
     cat = cat.merge(muse[["track_id", "muse_valence", "muse_arousal", "muse_n_tags", "muse_match"]],
                     on="track_id", how="left")
@@ -267,7 +289,8 @@ def build() -> dict:
     cat, cap_log, n_dupes = select_catalog(tracks, muse, set(labels_all.track_id), n_users)
     cat["tags"] = cat.apply(make_tags, axis=1)
     cat_ids = set(cat.track_id)
-    labels = split_labels(labels_all[labels_all.track_id.isin(cat_ids)].reset_index(drop=True))
+    labels = split_labels(labels_all[labels_all.track_id.isin(cat_ids)].reset_index(drop=True),
+                          load_frozen_split())
     prec = rule_precision(cat, labels)          # TUNE half only
     priority = lift_priority(prec)
     cat["context"] = [make_context(t, e, priority) for t, e in zip(cat.tags, cat.energy)]
@@ -301,7 +324,7 @@ def report(r: dict) -> None:
     print(f"MuSe matches (all): {r['muse_all'].muse_match.value_counts().to_dict()} | "
           f"after one-track-per-entry dedupe: {len(r['muse']):,}")
     print("\n-- composition by source"); print(cat.source.value_counts().to_string())
-    keys = list(zip(cat.track_name.map(normalize_title), cat.artists.map(normalize_artist)))
+    keys = [song_key(n, a) for n, a in zip(cat.track_name, cat.artists)]
     print(f"song duplicates dropped from stages a-c: {r['n_dupes']:,} | duplicate songs left: "
           f"{len(keys) - len(set(keys)):,}")
     n_cat = (cat.category.str.len() > 0).sum()
