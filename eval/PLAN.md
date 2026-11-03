@@ -36,15 +36,28 @@ Rules for the data:
 For each Eval B query q with canonical `context_word` and `playlist_words` P(q):
 - `relevant(q)` = the set of track_ids t that have a row in `context_labels.parquet` with
   `label_split == "eval"` and `context_word ∈ P(q)`. Synonym queries use their canonical word's playlist words.
-- `precision@10(q)` = |top10(q) ∩ relevant(q)| / 10.
+- **Candidate pool (Amendment 1).** For Eval B, every system retrieves only from
+  `pool` = catalog tracks with **no** `label_split == "tune"` row. Tune-half tracks are removed before ranking: FAISS
+  searches only pool vectors, and the SID generator's trie holds only pool SIDs. The same pool is used for every system.
+- `precision@10(q)` = |top10(q) ∩ relevant(q)| / 10. Pool tracks without an eval-half label count as misses.
 
 Report:
 - The mean over all 132 queries. This is the headline number.
 - The mean per context word (12 queries each).
 - The FAISS baseline next to every other system, on the same queries.
+- **Chance row (Amendment 2):** the expected precision@10 of 10 tracks drawn uniformly at random, without
+  replacement, from the pool. Per word w it is |relevant(w) ∩ pool| / |pool|. The overall value is the mean over
+  the 132 queries. Reported per context word and overall.
 
-Tracks without an eval-half label count as not relevant. This includes tune-half tracks and tracks that are in
-no playlist. The absolute values are therefore lower bounds. The comparison between systems is what matters.
+The absolute values are lower bounds, because unlabeled pool tracks may well fit the context. The comparison
+between systems, and against chance, is what matters.
+
+### Condensed precision@10 on Eval B (Amendment 3, secondary)
+- Each system returns its top 50 from the pool for each Eval B query.
+- Unjudged tracks are dropped: those with no `label_split == "eval"` row for any context word.
+- The remaining judged tracks keep their order. condensed precision@10(q) = hits among the first
+  m = min(10, judged in top 50) judged tracks, divided by m. A query with m = 0 scores 0.
+- Report the mean, the per-context-word means, and the mean number of judged tracks in each system's top 50.
 
 ## Secondary metrics
 ### Hit@10 and NDCG@10 on Eval A
@@ -53,12 +66,16 @@ Each query has exactly one target track (its `track_id`). Let r be the target's 
 - `NDCG@10(q)` = 1 / log2(r + 1) if the target is in the top 10, else 0. With a single relevant item the ideal DCG is 1.
 - Report the means over the 500 queries.
 
-**Oracle ceiling.** Tracks with identical content_desc can't be told apart, so even a perfect system has a
-ceiling. Per track it is min(1, 10 / size of its identical-content_desc group).
-- **0.893**: the reference value from the readiness v2 sample (500 random tracks, random_state=7).
-- **0.889**: the same formula over Eval A's own 500 tracks. This is a property of the data, not a model number.
+**Ceilings (Amendment 4).** These are properties of the data, computed from the final catalog and Eval A before
+any system is run.
+- **Primary: query-aware ceiling.** Per Eval A query, N(q) = the number of catalog tracks t whose
+  `tags ∪ genres ∪ context` contains every item in `wanted_tags`. The ceiling is the mean over queries of
+  min(1, 10 / N(q)). A perfect system can't separate tracks the query doesn't distinguish.
+- **Also reported: identical-description ceiling.** Per Eval A track, min(1, 10 / size of its identical-content_desc
+  group), averaged. It was 0.889 on the Step 5 Eval A and is recomputed if Eval A changes. The readiness v2 sample
+  value, 0.893, is kept for reference only.
 
-Hit@10 is reported next to both values.
+Hit@10 and NDCG@10 are reported next to both ceilings.
 
 ### Tag-match@10 on gold accuracy queries (30)
 For a query with wanted set W = `wanted_tags ∪ wanted_context` (canonical words and genre ids), and a
@@ -98,7 +115,10 @@ Over every query in Eval A, Eval B and the gold accuracy set:
 - The same machine for every system: RTX 4060 Laptop GPU, Windows 11.
 - 10 warm-up queries are discarded first. Then the time is measured over all Eval A + Eval B + gold accuracy queries.
 - Report the p50 (and the p90 for context).
-- Explanation generation is excluded from this time and reported separately if it exists.
+- Explanation generation is excluded from this time.
+- **End-to-end latency (Amendment 5, secondary):** the same protocol, measured from the query string to the
+  ranked top 10 **plus its explanation text**. Report the p50 and p90. Systems with no explanation step report
+  n/a.
 
 ## Reporting
 - Results go in `eval/results_<system>.json`, with one entry per metric above plus per-query values for Eval B
@@ -107,4 +127,12 @@ Over every query in Eval A, Eval B and the gold accuracy set:
 - No metric, label filter, eval set or tie rule is changed after numbers exist without a dated amendment below.
 
 ## Amendments
-(none)
+All amendments below were made **before any results existed**: no system had been run on Eval A, Eval B or gold.
+
+| # | Date | Change | Reason |
+|---|---|---|---|
+| 1 | 2026-11-04 | Eval B candidate pool excludes tune-half-labeled tracks, for every system. Unlabeled pool tracks count as misses. | The rules were tuned on tune-half tracks, so systems would favor them, and they could never count as hits. That penalized every system for an artifact. |
+| 2 | 2026-11-04 | Chance row for playlist precision@10 (per word and overall). | Absolute precision is a lower bound, so chance is needed to interpret it. |
+| 3 | 2026-11-04 | Secondary condensed precision@10 (judged-only within the top 50) and judged-in-top-50 counts. | This separates "wrong" from "unjudged". |
+| 4 | 2026-11-04 | Primary Hit@10 ceiling is query-aware (min(1, 10 / tracks matching all wanted_tags)). The identical-description ceiling is also reported. | Eval A queries are less specific than content_desc, so the description ceiling overstates what is achievable. |
+| 5 | 2026-11-04 | Secondary end-to-end latency, including the explanation. | The user-facing latency includes the explanation. |
