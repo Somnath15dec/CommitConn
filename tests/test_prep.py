@@ -235,3 +235,14 @@ def test_tempo_missing_handling(cat):
     assert (miss.tempo == cat.tempo[~cat.tempo_missing].median()).all()
     assert not any({"slow", "fast"} & set(t) for t in miss.tags)
     assert not miss.desc.str.contains(r"\b(?:slow|fast)\b").any()
+
+
+def test_acoustic_rule_excludes_energetic(cat):
+    assert not {"coffee", "relaxing"} & set(prep.make_context(["energetic", "neutral mood", "acoustic"], 0.75))
+    assert {"coffee", "relaxing"} <= set(prep.make_context(["moderate energy", "neutral mood", "acoustic"], 0.5))
+    energetic = cat[cat.tags.map(lambda t: "energetic" in t)]
+    assert not any({"coffee", "relaxing"} & set(c) for c in energetic.context)
+
+
+def test_frozen_rule_priority_covers_all_rules():
+    assert sorted(prep.FROZEN_RULE_PRIORITY) == sorted(r[0] for r in prep.CONTEXT_RULES)

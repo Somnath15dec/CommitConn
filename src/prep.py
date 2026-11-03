@@ -58,12 +58,18 @@ CONTEXT_RULES = [
     ("melancholic+slow", {"melancholic", "slow"}, set(), None, ["rainy day", "reflective"]),
     ("happy+danceable", {"happy", "danceable"}, set(), None, ["dance", "feel-good"]),
     ("happy+moderate", {"happy", "moderate energy"}, set(), None, ["morning", "feel-good"]),
-    ("acoustic", {"acoustic"}, set(), None, ["coffee", "relaxing"]),
+    ("acoustic(!energetic)", {"acoustic"}, {"energetic"}, None, ["coffee", "relaxing"]),
     ("workout(energetic,!danceable,!melancholic,energy>0.8)", {"energetic"}, {"danceable", "melancholic"},
      WORKOUT_MIN_ENERGY, ["workout"]),
     ("energetic+melancholic", {"energetic", "melancholic"}, set(), None, ["intense", "cathartic"]),
 ]
 DEFAULT_RULE_PRIORITY = [r[0] for r in CONTEXT_RULES]
+# Data freeze: the round-robin order is fixed at the tune-half lift order as of Step A (ce52b7f); the acoustic rule
+# keeps its slot after gaining "!energetic". lift_priority() is still reported but no longer reorders context.
+FROZEN_RULE_PRIORITY = ["calm+instrumental", "melancholic+slow",
+                        "workout(energetic,!danceable,!melancholic,energy>0.8)", "energetic+danceable",
+                        "energetic+fast", "happy+danceable", "calm+acoustic", "happy+moderate",
+                        "acoustic(!energetic)", "calm+slow", "energetic+melancholic"]
 # context tag -> playlist words that count as a hit (evaluation only; None = no playlist equivalent)
 CONTEXT_TO_PLAYLIST_WORDS = {
     "study": ["study"], "focus": ["focus", "study"], "late night": ["late night", "night drive"],
@@ -78,11 +84,13 @@ NOISE_PATTERNS = ["white noise", "pink noise", "brown noise", "vacuum", "air con
                   "rain sounds", "nature sounds", "ocean waves", "thunderstorm", "loopable", "sleep rain",
                   "healing rain"]                          # case-insensitive substring of title or artists
 NOISE_ARTISTS = ["Nature Sounds", "Rain Sounds", "White Noise", "Loopable", "Granular", "Baby Sleep",
-                 "Sleep Sounds", "Rain Sounds Lab", "Rain Sounds XLE Library", "Meditation Spa"]  # exact artist
+                 "Sleep Sounds", "Rain Sounds Lab", "Rain Sounds XLE Library", "Meditation Spa",
+                 "Weißes Rauschen HD", "Silent Knights"]  # exact artist
 NOISE_MAX_ENERGY = 0.01                                   # with speechiness == 0
 # genre fill stops adding to these genres after N fill tracks (Step A, approved): the category-only "sleep"
-# pool is mostly noise the filter can't catch, so sleep keeps only the 11 non-noise fill tracks it already had
-FILL_MAX_ADDED = {"sleep": 11}
+# pool is mostly noise the filter can't catch, so sleep keeps only the fill tracks it already had
+# (11 at Step A; 9 after the last 2 noise tracks were removed)
+FILL_MAX_ADDED = {"sleep": 9}
 NOISE_SPARE_IDS = frozenset({"5xw2cHVLw1rlDPp3cL9Zuv"})   # "She's Thunderstorms" - Arctic Monkeys
 _NOISE_RE = re.compile("|".join(re.escape(p) for p in NOISE_PATTERNS), re.IGNORECASE)
 _NOISE_ARTISTS = {a.casefold() for a in NOISE_ARTISTS}
@@ -343,7 +351,8 @@ def build() -> dict:
     labels = split_labels(labels_all[labels_all.track_id.isin(cat_ids)].reset_index(drop=True),
                           load_frozen_split())
     prec = rule_precision(cat, labels)          # TUNE half only
-    priority = lift_priority(prec)
+    priority = FROZEN_RULE_PRIORITY
+    lift_order = lift_priority(prec)
     cat["context"] = [make_context(t, e, priority) for t, e in zip(cat.tags, cat.energy)]
     cat["desc"] = cat.apply(make_desc, axis=1)
     cols = ["track_id", "track_name", "artists", "primary_genre", "genres", "category", "tags", "context", "desc",
@@ -365,7 +374,7 @@ def build() -> dict:
     prec.to_csv(RULE_PRECISION, index=False)
     val.to_csv(MUSE_VALIDATION, index=False)
     return {"tracks": tracks, "cat": cat, "labels": labels, "users": users, "val": val,
-            "cap_log": cap_log, "prec": prec, "priority": priority, "n_dupes": n_dupes, "noise_dropped": noise_dropped, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
+            "cap_log": cap_log, "prec": prec, "priority": priority, "lift_order": lift_order, "n_dupes": n_dupes, "noise_dropped": noise_dropped, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
 
 
 def report(r: dict) -> None:
@@ -399,7 +408,8 @@ def report(r: dict) -> None:
     print(f"context words per track: max {n_ctx.max()} / mean {n_ctx.mean():.2f}")
     print(f"tracks with a Spotify category: {(cat.category.str.len() > 0).sum():,} | "
           f"category-only (primary_genre = category): {(cat.genres.str.len() == 0).sum():,}")
-    print("rule priority (tune-half lift):", " > ".join(r["priority"]))
+    print("rule priority (frozen):", " > ".join(r["priority"]))
+    print("tune-half lift order (report only):", " > ".join(r["lift_order"]))
     pr = r["prec"]
     print(f"\n-- rule precision on TUNE half ({pr.attrs['n_tune_tracks']:,} labeled tracks)")
     print(pr.to_string(index=False))

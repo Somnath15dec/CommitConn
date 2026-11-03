@@ -99,7 +99,7 @@
 {"query": "I'm into sertanejo lately, anything good?", "track_id": "7pyF5eghFou5RDlFPOAuJk", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["sertanejo"]}
 {"query": "any recommendations for reflective moments?", "track_id": "2cP9K6CPMznBZlMJiVQIHk", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["rainy day"]}
 {"query": "play me some rockabilly that feels happy", "track_id": "5DwcKHWuKpR3BIDTqe9hkn", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["rockabilly", "happy"]}
-{"query": "looking for pop film that works for a coffee break", "track_id": "3gCljMiGFfcum5sOHTMfwZ", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["pop-film", "coffee"]}
+{"query": "I'm into new age lately, anything good?", "track_id": "3jysxLxKvJ968N4yQc9r6r", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["new-age"]}
 {"query": "play me some classical that feels calm", "track_id": "1dAPazw4JMxZXTZoWGPg0T", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["classical", "calm"]}
 {"query": "I'm into trip hop lately, anything good?", "track_id": "2AFttonwFsCFpC6Cos9pcZ", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["trip-hop"]}
 {"query": "any recommendations for a party?", "track_id": "6ubXleMWwmzwmKTBer20PX", "template_id": "ev_context_1", "type": "context", "wanted_tags": ["party"]}

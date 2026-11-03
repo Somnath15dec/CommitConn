@@ -246,8 +246,16 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   vectors. Flag column `tempo_missing`. 2 tracks: Hello, Dolly! and Ionian.
 - Eval A is repaired pair by pair (`repair_eval_a`): 498 kept, 2 replaced (their tracks were removed).
   Eval B and gold unchanged. No retained track changed label split, rule priority or context, apart from the 2 tempo tracks.
-- Known leftovers that weren't approved for removal: "Baby Schlafhilfe mit Meeresrauschen" (Weißes Rauschen HD),
-  "Shhhh With Big Fan" (Silent Knights).
+- Follow-up (`fix: last noise tracks, acoustic rule excludes energetic`):
+  - "Baby Schlafhilfe mit Meeresrauschen" (Weißes Rauschen HD) and "Shhhh With Big Fan" (Silent Knights) removed,
+    both artists blocklisted. `FILL_MAX_ADDED["sleep"]` lowered to 9 so sleep gets no replacements; the refill went
+    to detroit-techno and disney.
+  - The plain acoustic rule became `acoustic(!energetic)`: 131 energetic+acoustic tracks lost coffee/relaxing.
+  - **Rule priority frozen** (`FROZEN_RULE_PRIORITY`, the lift order as of ce52b7f). Without the freeze, the rule's
+    higher lift would have reordered context words (and desc) for 245 other tracks. Lift order is still reported.
+  - Pairs regenerated for 96 tracks (94 affected, 2 new); 37 affected tracks kept still-valid pairs.
+    Eval A: 1 pair replaced (it asked for "coffee"). Eval B and gold unchanged.
+- **Data frozen after this commit.**
 
 ## Step 11: `src/sids.py`, Semantic IDs
 - Item vector (option B): content_desc embedded with `all-MiniLM-L6-v2` (normalized) + min-max scaled audio
