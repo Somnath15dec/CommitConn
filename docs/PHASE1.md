@@ -77,8 +77,15 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - Hit@10 oracle ceiling
 - Tracks with no title or artist are excluded from the candidate pool (1 in Spotify).
 
-## Step 4b: TBD
-Referenced but not yet defined. Waiting on the user.
+### Decision: AUDIO_WEIGHT for Semantic IDs
+- **Default: `AUDIO_WEIGHT = 1.0`** (option B: content_desc embedding + 1.0 x min-max audio features).
+  Chosen for genre coherence: 5-NN same genre 83.8%, same context 95.7%, collision rate 11.5%,
+  max 9 tracks per code.
+- **Fallback: 1.5** (same genre 73.1%, same context 94.8%, collisions 6.7%, max 4 per code), if
+  collisions at 1.0 prove a problem.
+- 2.0 was rejected: it had the fewest collisions, but same genre fell to 61.9%.
+
+## Step 4b: skipped for now
 
 ## Step 5: `src/gen_queries.py`, templated queries (no LLM)
 - Two DISJOINT template sets:
@@ -191,4 +198,4 @@ Referenced but not yet defined. Waiting on the user.
    catalog tracks. Should synthetic users' `fav_genres` exclude categories?
 3. **Thin context words.** Resolved by merging synonyms into canonical words in Step 4.6. Recheck the
    under-300-pairs flag in Step 5.
-4. **AUDIO_WEIGHT for option B.** The readiness v2 sweep recommends a value; the final choice belongs to the SID phase.
+4. ~~AUDIO_WEIGHT for option B~~: decided. 1.0 is the default and 1.5 the fallback (see Step 4.6).
