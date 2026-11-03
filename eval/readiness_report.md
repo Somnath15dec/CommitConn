@@ -1,11 +1,11 @@
-# Data readiness report (Step 4.5)
+# Data readiness report (Step 4.5, v2 after Step 4.6 catalog changes)
 
 Catalog: 10,000 tracks. Read-only analysis; catalog unchanged.
 
 ## 1. content_desc uniqueness
 
-- Unique content_desc: **4,226 / 10,000**
-- Tracks sharing their content_desc with at least one other track: 7,382 (73.8%)
+- Unique content_desc: **4,235 / 10,000**
+- Tracks sharing their content_desc with at least one other track: 7,364 (73.6%)
 
 10 largest identical groups:
 
@@ -14,39 +14,22 @@ Catalog: 10,000 tracks. Read-only analysis; catalog unchanged.
 | Genre: grunge. Sound: fast, energetic, neutral mood. Good for: workout, running, gym. | 61 |
 | Genre: grunge. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic. | 58 |
 | Genre: grunge. Sound: energetic, neutral mood. Good for: workout. | 54 |
-| Genre: new-age. Sound: calm, melancholic, instrumental, acoustic. Good for: study, relaxing, coffee, focus. | 41 |
+| Genre: new-age. Sound: calm, melancholic, instrumental, acoustic. Good for: study, relaxing, coffee, morning. | 41 |
 | Genre: disco. Sound: energetic, happy, danceable. Good for: party, dance, feel-good. | 40 |
 | Genre: grunge. Sound: energetic, melancholic. Good for: intense, cathartic. | 38 |
 | Genre: psych-rock. Sound: moderate energy, happy. Good for: morning, feel-good. | 37 |
-| Genre: ambient. Sound: calm, melancholic, instrumental, acoustic. Good for: study, relaxing, coffee, focus. | 37 |
+| Genre: ambient. Sound: calm, melancholic, instrumental, acoustic. Good for: study, relaxing, coffee, morning. | 37 |
 | Genre: industrial. Sound: energetic, neutral mood. Good for: workout. | 36 |
 | Genre: synth-pop. Sound: energetic, happy. Good for: workout. | 36 |
 
 ## 2. Duplicate songs (same normalized title + first artist)
 
-- Groups: **35**, tracks involved: 77, largest group: 6
+- Groups: **0**, tracks involved: 0, largest group: 0
 
 Examples (5 groups):
 
 | track_id | track_name | artists | primary_genre | source |
 |---|---|---|---|---|
-| 7aOy14i2bhauyZl4r3TcP2 | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 4VnsZmAkvBEX5BWxMAWBBG | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 4BsasVXlffiJ69bRrJXWZO | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 2scEOSUnDnquAY1qWCpTL6 | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 5FImqqYMK6ZwLwClPDds8c | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 70TpTZFReW52csA4Az7alJ | 21 Reasons | Nathan Dawe;Ella Henderson | house | genre_fill |
-| 6ORqU0bHbVCRjXm9AjyHyZ | Good Riddance (Time of Your Life) | Green Day | punk | muse |
-| 7CmA9WWvO4CyeQb8sHQ0wB | Good Riddance (Time of Your Life) | Green Day | punk | muse |
-| 5fVZC9GiM4e8vu99W0Xf6J | How to Save a Life | The Fray | piano | muse |
-| 3OPVsn0Dk3s8vWhXxnK35p | How to Save a Life - Live in NYC - 2009 | The Fray | piano | muse |
-| 2QbGkMyeZuALMT6UuM8aED | I Just Called | NEIKED;Anne-Marie;Latto | house | genre_fill |
-| 1kmqlqDBu1fHGsrpzbBxif | I Just Called | NEIKED;Anne-Marie;Latto | house | genre_fill |
-| 0H8Tclo4x4kbZruQtZFNSX | I Just Called | NEIKED;Anne-Marie;Latto | house | genre_fill |
-| 3C1hNCIzLbYri8YoCPt6HV | I Just Called | NEIKED;Anne-Marie;Latto | house | genre_fill |
-| 704LUEih663hiE3CnyUrFW | SEJODIOTO | KAROL G | reggaeton | genre_fill |
-| 7guW1bVC4aTIjxCeZpjbsR | SEJODIOTO | KAROL G | reggae | genre_fill |
-| 34bTBINpWPa360R72PDJj1 | SEJODIOTO | KAROL G | reggae | genre_fill |
 
 ## 3. Tracks per context word
 
@@ -54,192 +37,189 @@ Flag: under 150 tracks.
 
 | context | tracks | flag |
 |---|---|---|
-| workout | 2313 |  |
-| running | 2139 |  |
-| gym | 2006 |  |
-| coffee | 1975 |  |
-| relaxing | 1885 |  |
-| morning | 1845 |  |
-| feel-good | 1812 |  |
-| dance | 1329 |  |
-| intense | 1072 |  |
-| cathartic | 1066 |  |
-| party | 808 |  |
-| study | 418 |  |
-| rainy day | 377 |  |
-| focus | 291 |  |
-| sleep | 288 |  |
-| reflective | 127 | THIN |
-| late night | 67 | THIN |
-| wind down | 45 | THIN |
+| workout | 2311 |  |
+| running | 2141 |  |
+| gym | 2128 |  |
+| morning | 2044 |  |
+| coffee | 1973 |  |
+| relaxing | 1874 |  |
+| feel-good | 1711 |  |
+| dance | 1343 |  |
+| intense | 1067 |  |
+| cathartic | 1063 |  |
+| party | 830 |  |
+| study | 431 |  |
+| rainy day | 373 |  |
+| sleep | 297 |  |
 
 ## 4. Query ambiguity (matching tracks per query intent)
 
-- Single context word: min 45 / median 1,069 / max 2,313 (over 18 words)
-- Mood + context combos (non-empty, 43 of 54): min 3 / median 337 / max 1,812
-- Empty combos: 11
+- Single context word: min 297 / median 1,527 / max 2,311 (over 14 words)
+- Mood + context combos (non-empty, 33 of 42): min 16 / median 502 / max 1,711
+- Empty combos: 9
 
 | context | happy | melancholic | neutral mood |
 |---|---|---|---|
-| workout | 1077 | 0 | 1236 |
-| running | 854 | 501 | 784 |
-| gym | 727 | 495 | 784 |
-| coffee | 433 | 878 | 664 |
-| relaxing | 343 | 878 | 664 |
-| morning | 1277 | 282 | 286 |
-| feel-good | 1812 | 0 | 0 |
-| dance | 1109 | 33 | 187 |
-| intense | 0 | 1072 | 0 |
-| cathartic | 0 | 1066 | 0 |
-| party | 588 | 33 | 187 |
-| study | 12 | 337 | 69 |
-| rainy day | 0 | 377 | 0 |
-| focus | 8 | 230 | 53 |
-| sleep | 21 | 170 | 97 |
-| reflective | 0 | 127 | 0 |
-| late night | 3 | 49 | 15 |
-| wind down | 3 | 27 | 15 |
+| workout | 1076 | 0 | 1235 |
+| running | 850 | 502 | 789 |
+| gym | 841 | 499 | 788 |
+| morning | 1281 | 441 | 322 |
+| coffee | 452 | 858 | 663 |
+| relaxing | 356 | 857 | 661 |
+| feel-good | 1711 | 0 | 0 |
+| dance | 1121 | 36 | 186 |
+| intense | 0 | 1067 | 0 |
+| cathartic | 0 | 1063 | 0 |
+| party | 608 | 36 | 186 |
+| study | 16 | 348 | 67 |
+| rainy day | 0 | 373 | 0 |
+| sleep | 22 | 169 | 106 |
 
 ## 5. Embedding options
 
-Model `sentence-transformers/all-MiniLM-L6-v2` on NVIDIA GeForce RTX 4060 Laptop GPU. Neighbours by Euclidean distance (A: normalized text vector; B: normalized content_desc vector + 0.5 x min-max audio features ['energy', 'valence', 'tempo', 'acousticness', 'instrumentalness', 'danceability', 'speechiness']). SID preview: 3 x 256 residual k-means (30 Lloyd iterations, torch).
+Model `sentence-transformers/all-MiniLM-L6-v2` on NVIDIA GeForce RTX 4060 Laptop GPU. Neighbours by Euclidean distance (A: normalized full-desc vector; B: normalized content_desc vector + w x min-max audio features ['energy', 'valence', 'tempo', 'acousticness', 'instrumentalness', 'danceability', 'speechiness']). SID preview: 3 x 256 residual k-means (30 Lloyd iterations, torch).
+
+### AUDIO_WEIGHT sweep (option B) vs option A
+
+| option | collision_rate | max_tracks_per_code | l1_used | l1_largest | nn5_same_context | nn5_same_genre | nn5_identical_content_desc |
+|---|---|---|---|---|---|---|---|
+| A: full desc | 0.103 | 6 | 256 | 152 | 0.678 | 0.600 | 0.105 |
+| B: w=0.5 | 0.278 | 15 | 256 | 116 | 0.969 | 0.914 | 0.513 |
+| B: w=1.0 | 0.115 | 9 | 256 | 139 | 0.957 | 0.838 | 0.441 |
+| B: w=1.5 | 0.067 | 4 | 256 | 139 | 0.948 | 0.731 | 0.370 |
+| B: w=2.0 | 0.043 | 4 | 256 | 112 | 0.946 | 0.619 | 0.311 |
+
+**Recommended AUDIO_WEIGHT = 2.0 (highest weight with 5-NN same context >= 90%)**
 
 ### A: full desc: 10 random tracks and their 5 nearest neighbours
 
-- **Anything You Synthesize - Ambient** (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - Says (ambient): Genre: ambient. Sound: calm, melancholic, instrumental, acoustic. Good for: study, relaxing, coffee, focus.
-    - The Choice (ambient): Genre: ambient. Sound: slow, calm, neutral mood, instrumental, acoustic. Good for: study, relaxing, coffee, sleep.
-    - The Living Daylights (synth-pop): Genre: synth-pop. Sound: energetic, happy. Good for: general listening.
-    - Quiet (ambient): Genre: ambient. Sound: moderate energy, melancholic, instrumental. Good for: general listening.
-    - Light (ambient): Genre: ambient. Sound: moderate energy, melancholic. Good for: general listening.
-- **Angerfist - Dance With the Wolves - The Sickest Squad-Remix** (happy): Spotify category: happy. Sound: fast, energetic, melancholic, spoken word or rap. Good for: running, intense, gym, cathartic.
-    - Emotional Crank (chill): Spotify category: chill. Sound: calm, neutral mood, acoustic, danceable. Good for: relaxing, coffee, morning.
-    - Guerrilla Radio (metal): Genre: metal. Sound: energetic, neutral mood. Good for: workout.
-    - Pretty Rave Girl (happy): Spotify category: happy. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-    - Gunfight (grunge): Genre: grunge. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-    - Alone (sad): Spotify category: sad. Sound: moderate energy, neutral mood, danceable, spoken word or rap. Good for: general listening.
-- **10th Floor Ghost Girl** (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Ghost (dance): Genre: dance. Sound: moderate energy, neutral mood. Good for: general listening.
-    - Ghostbusters (disco): Genre: disco. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Giving Up The Ghost (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood, instrumental. Good for: general listening.
-    - Ghost On The Dance Floor (punk): Genre: punk, punk-rock, rock. Sound: energetic, neutral mood. Good for: workout.
-    - Ghost of Days Gone By (grunge): Genre: grunge. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-- **Untrue** (groove): Genre: groove. Sound: energetic, neutral mood, instrumental. Good for: workout.
-    - Unreal (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood, instrumental. Good for: workout.
-    - History (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood. Good for: workout.
-    - One (grunge): Genre: grunge. Sound: energetic, neutral mood. Good for: workout.
-    - R. Mullen (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood, instrumental. Good for: workout.
-    - Breaking the Habit (alternative): Genre: alternative, grunge, metal. Sound: energetic, neutral mood. Good for: workout.
-- **Vele** (pop-film): Genre: pop-film. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Otha Sollaala (pop-film): Genre: pop-film. Sound: energetic, happy, acoustic, danceable. Good for: party, dance, coffee, feel-good.
-    - Tere Bina (pop): Genre: pop, pop-film. Sound: fast, moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Raanjhanaa (pop): Genre: pop, pop-film. Sound: energetic, happy. Good for: general listening.
-    - Hua Hain Aaj Pehli Baar (From "Sanam Re") (pop-film): Genre: pop-film. Sound: fast, energetic, happy. Good for: running, gym.
-    - Arere Vaanaa (k-pop): Genre: k-pop. Sound: fast, moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-- **Little Criminals** (disney): Genre: disney. Sound: fast, energetic, neutral mood. Good for: running, gym.
-    - Smooth Criminal (grunge): Genre: grunge, metal. Sound: energetic, happy. Good for: workout.
-    - Little Monster (garage): Genre: garage. Sound: energetic, neutral mood. Good for: workout.
-    - The Scare Floor (disney): Genre: disney. Sound: moderate energy, neutral mood. Good for: general listening.
-    - Little Room (garage): Genre: garage. Sound: fast, energetic, happy. Good for: running, gym.
-    - Animals (pop): Genre: pop. Sound: fast, energetic, neutral mood. Good for: running, gym.
-- **I Remember / Stranger Than You Dreamt It** (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - Wishing You Were Somehow Here Again (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - The Mirror (Angel Of Music) (show-tunes): Genre: show-tunes. Sound: slow, calm, melancholic, acoustic. Good for: relaxing, rainy day, coffee, sleep.
-    - I Remember You (hard-rock): Genre: hard-rock, metal. Sound: moderate energy, neutral mood. Good for: general listening.
-    - I Dreamed a Dream (opera): Genre: opera. Sound: slow, moderate energy, melancholic, acoustic. Good for: rainy day, coffee, reflective, relaxing.
-    - Angel Of Music (show-tunes): Genre: show-tunes. Sound: slow, calm, melancholic, acoustic. Good for: relaxing, rainy day, coffee, sleep.
-- **Just Jammin'** (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Hit That Jive (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Muy Tranquilo (trip-hop): Genre: trip-hop. Sound: moderate energy, happy. Good for: morning, feel-good.
-    - Superstylin' (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - History (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood. Good for: workout.
-    - Let Me Show Ya (trip-hop): Genre: trip-hop. Sound: moderate energy, happy. Good for: morning, feel-good.
-- **Finally** (deep-house): Genre: deep-house, disco, garage. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Mission (j-dance): Genre: j-dance. Sound: energetic, happy. Good for: general listening.
-    - Lady - Hear Me Tonight (disco): Genre: disco, house. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Just Fine (soul): Genre: soul. Sound: energetic, neutral mood, danceable. Good for: party, dance.
-    - Paradise (british): Genre: british. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - King In A Catholic Style (Wake Up) (synth-pop): Genre: synth-pop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-- **Hounds Of Love** (piano): Genre: piano. Sound: fast, energetic, happy. Good for: running, gym.
-    - Heartbeat (piano): Genre: piano. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-    - You Found Me (piano): Genre: piano. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-    - Gravity Of Love (new-age): Genre: new-age. Sound: fast, energetic, neutral mood. Good for: running, gym.
-    - Wuthering Heights (piano): Genre: piano. Sound: moderate energy, neutral mood. Good for: general listening.
-    - Cecilia And The Satellite (piano): Genre: piano. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+- **Dissolved Girl** (trip-hop): Genre: trip-hop. Sound: fast, moderate energy, happy, instrumental. Good for: morning, feel-good.
+    - Girl I Love You (trip-hop): Genre: trip-hop. Sound: energetic, neutral mood, instrumental. Good for: workout.
+    - These Early Days (trip-hop): Genre: trip-hop. Sound: fast, moderate energy, happy. Good for: morning, feel-good.
+    - Cherry Blossom Girl (ambient): Genre: ambient, trip-hop. Sound: energetic, neutral mood, instrumental. Good for: general listening.
+    - Goodbye Girl (power-pop): Genre: power-pop, synth-pop. Sound: fast, moderate energy, happy, danceable. Good for: dance, morning, feel-good.
+    - Wrong (trip-hop): Genre: trip-hop. Sound: moderate energy, neutral mood, danceable. Good for: general listening.
+- **Kaattu** (malay): Genre: malay. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - Kabira (k-pop): Genre: k-pop. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+    - Ummaal Koodaatha (malay): Genre: malay. Sound: fast, energetic, neutral mood. Good for: running, gym.
+    - Angekkal Vere Onnineyum (malay): Genre: malay. Sound: moderate energy, neutral mood. Good for: general listening.
+    - Thedinen (malay): Genre: malay. Sound: moderate energy, neutral mood, danceable. Good for: general listening.
+    - Innalekalil (malay): Genre: malay. Sound: moderate energy, neutral mood. Good for: general listening.
+- **Happy Holiday** (jazz): Genre: jazz, soul. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - The Christmas Waltz (jazz): Genre: jazz, soul. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - It's Christmas Time Again (jazz): Genre: jazz, soul. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - My Funny Valentine (jazz): Genre: jazz. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - What A Wonderful World (jazz): Genre: jazz. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Blue Moon (blues): Genre: blues, jazz. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+- **Frosty The Snowman** (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Winter Wonderland (blues): Genre: blues, jazz. Sound: calm, happy, acoustic. Good for: relaxing, coffee, morning.
+    - Let It Snow! Let It Snow! Let It Snow! (blues): Genre: blues, jazz. Sound: slow, moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Winter Wonderland (jazz): Genre: jazz. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - Let It Snow! Let It Snow! Let It Snow! (jazz): Genre: jazz. Sound: calm, happy, acoustic. Good for: relaxing, coffee, morning.
+    - Winter Wonderland (jazz): Genre: jazz. Sound: moderate energy, neutral mood. Good for: general listening.
+- **Ainda Estás Aqui** (gospel): Genre: gospel. Sound: fast, moderate energy, neutral mood. Good for: general listening.
+    - Tua Unção - Ao Vivo (gospel): Genre: gospel. Sound: moderate energy, melancholic. Good for: general listening.
+    - Ao Teu Encontro / Manso e Suave - Ao Vivo (gospel): Genre: gospel. Sound: moderate energy, melancholic. Good for: general listening.
+    - As Portas Vão se Abrir (gospel): Genre: gospel. Sound: moderate energy, melancholic. Good for: general listening.
+    - Se Até os Anjos se Prostram (brazil): Genre: brazil, gospel. Sound: fast, moderate energy, neutral mood, instrumental. Good for: general listening.
+    - No Céu Não Entra Pecado (gospel): Genre: gospel. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+- **Why Should The Fire Die?** (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Best Of Luck (bluegrass): Genre: bluegrass. Sound: energetic, happy. Good for: general listening.
+    - Hanging By A Thread (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Beauty And The Mess (bluegrass): Genre: bluegrass. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+    - Sweet Afton (bluegrass): Genre: bluegrass. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - The Lighthouse’s Tale (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+- **Du e för fin för mig** (psych-rock): Genre: psych-rock. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Ge mig en öl (swedish): Genre: swedish. Sound: energetic, happy. Good for: workout.
+    - En famn för mig (swedish): Genre: swedish. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Kriget med mig själv (punk): Genre: punk, swedish. Sound: fast, energetic, neutral mood. Good for: running, gym.
+    - Baile De Los Pobres (afrobeat): Genre: afrobeat. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Ping Pong (trance): Genre: trance. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+- **Honky Tonk Badonkadonk** (country): Genre: country. Sound: energetic, happy. Good for: workout.
+    - Honky Tonkin' (honky-tonk): Genre: honky-tonk. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Back up Buddy (honky-tonk): Genre: honky-tonk. Sound: calm, happy, acoustic, danceable. Good for: dance, relaxing, coffee, feel-good.
+    - Lost Highway (honky-tonk): Genre: honky-tonk. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Wretches and Kings (grunge): Genre: grunge. Sound: energetic, neutral mood. Good for: workout.
+    - Country Girl (Shake It For Me) (country): Genre: country. Sound: energetic, happy. Good for: workout.
+- **(You Don't Know) How Glad I Am** (jazz): Genre: jazz, soul. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - What A Wonderful World (jazz): Genre: jazz. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Happy Holiday (jazz): Genre: jazz, soul. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - I'm In The Mood For Love (jazz): Genre: jazz. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Perhaps, Perhaps, Perhaps (j-pop): Genre: j-pop, jazz. Sound: calm, happy, acoustic. Good for: relaxing, coffee, morning.
+    - Feeling Good (j-pop): Genre: j-pop, jazz. Sound: moderate energy, neutral mood. Good for: general listening.
+- **Hero (feat. Josey Scott)** (metal): Genre: metal. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Hero (alt-rock): Genre: alt-rock, alternative, metal. Sound: fast, energetic, happy. Good for: workout, running, gym.
+    - Hero (hardstyle): Genre: hardstyle. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Heroes (breakbeat): Genre: breakbeat. Sound: fast, energetic, happy. Good for: workout, running, gym.
+    - My Hero (grunge): Genre: grunge, metal. Sound: energetic, neutral mood. Good for: workout.
+    - Heroes (grunge): Genre: grunge. Sound: fast, energetic, happy. Good for: workout, running, gym.
 
-### B: content_desc + audio: 10 random tracks and their 5 nearest neighbours
+### B: w=2.0: 10 random tracks and their 5 nearest neighbours
 
-- **Anything You Synthesize - Ambient** (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - Remembrance (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - They Move on Tracks of Never-Ending Light (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - The Mighty Rio Grande (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - The Big Ship - 2004 Digital Remaster (ambient): Genre: ambient. Sound: calm, melancholic, instrumental. Good for: study, focus, late night.
-    - The Wings (ambient): Genre: ambient. Sound: slow, calm, neutral mood, instrumental. Good for: study, sleep, focus, late night.
-- **Angerfist - Dance With the Wolves - The Sickest Squad-Remix** (happy): Spotify category: happy. Sound: fast, energetic, melancholic, spoken word or rap. Good for: running, intense, gym, cathartic.
-    - Eardrumz - Partyraiser & Repix Remix (happy): Spotify category: happy. Sound: fast, energetic, melancholic, spoken word or rap. Good for: running, intense, gym, cathartic.
-    - Sanctity of Space : Cassini’s Journey (happy): Spotify category: happy. Sound: fast, energetic, melancholic, spoken word or rap. Good for: running, intense, gym, cathartic.
-    - Sanctity Of Space - Edit Version (happy): Spotify category: happy. Sound: fast, energetic, melancholic, spoken word or rap. Good for: running, intense, gym, cathartic.
-    - One (Always Hardcore) - Live in Hamburg (happy): Spotify category: happy. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
-    - Endless Summer (happy): Spotify category: happy. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
-- **10th Floor Ghost Girl** (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Don't Stop (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Hide U (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Listen (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Sing It Back (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Superstylin' (trip-hop): Genre: trip-hop. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-- **Untrue** (groove): Genre: groove. Sound: energetic, neutral mood, instrumental. Good for: workout.
-    - 5 Minutes Alone (groove): Genre: groove. Sound: energetic, neutral mood. Good for: workout.
-    - Blood and Thunder (groove): Genre: groove, hard-rock, metal. Sound: energetic, neutral mood, instrumental. Good for: workout.
-    - Born in Winter (groove): Genre: groove. Sound: moderate energy, melancholic, instrumental. Good for: general listening.
-    - Black Tongue (groove): Genre: groove. Sound: fast, energetic, melancholic, instrumental. Good for: running, intense, gym, cathartic.
-    - Black Label (groove): Genre: groove, metalcore. Sound: energetic, neutral mood, instrumental. Good for: workout.
-- **Vele** (pop-film): Genre: pop-film. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - O O Jaane Jaana (pop-film): Genre: pop-film. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Sheila Ki Jawani (pop-film): Genre: pop-film. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Dil Kya Kare (pop-film): Genre: pop-film. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Tere Bina (pop): Genre: pop, pop-film. Sound: fast, moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Aaj Se Teri (pop-film): Genre: pop-film. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-- **Little Criminals** (disney): Genre: disney. Sound: fast, energetic, neutral mood. Good for: running, gym.
-    - Calling All the Monsters (disney): Genre: disney. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
-    - Zero To Hero (disney): Genre: disney. Sound: fast, energetic, happy. Good for: workout, running, gym.
-    - Człowiekiem gdybym był (disney): Genre: disney. Sound: energetic, neutral mood. Good for: workout.
-    - Dig a Little Deeper (disney): Genre: disney. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Voy A Ser el Rey León (disney): Genre: disney. Sound: energetic, happy. Good for: general listening.
-- **I Remember / Stranger Than You Dreamt It** (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - All I Ask Of You (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - Wishing You Were Somehow Here Again (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - All to Me (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - A Whole New World (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-    - Falling Slowly (show-tunes): Genre: show-tunes. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
-- **Just Jammin'** (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Black Is the Night (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Hit That Jive (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Aqualung (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - You're Always the Sun (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Don't Call It Love - 12" Version (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-- **Finally** (deep-house): Genre: deep-house, disco, garage. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Lola's Theme - Radio Edit (deep-house): Genre: deep-house. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - Palmtree (deep-house): Genre: deep-house. Sound: energetic, happy, danceable. Good for: party, dance, feel-good.
-    - WTF (feat. Amber Van Day) - Tujamo Remix (deep-house): Genre: deep-house. Sound: energetic, neutral mood, danceable. Good for: party, dance.
-    - Fade Out Lines (deep-house): Genre: deep-house. Sound: moderate energy, happy, danceable. Good for: dance, morning, feel-good.
-    - Promesses - Radio Edit (deep-house): Genre: deep-house, groove. Sound: energetic, neutral mood, danceable. Good for: party, dance.
-- **Hounds Of Love** (piano): Genre: piano. Sound: fast, energetic, happy. Good for: running, gym.
-    - Movin' Out (Anthony's Song) (piano): Genre: piano. Sound: fast, energetic, happy. Good for: workout, running, gym.
-    - I'm Still Standing (piano): Genre: piano. Sound: fast, energetic, happy. Good for: workout, running, gym.
-    - You May Be Right (piano): Genre: piano. Sound: fast, energetic, happy. Good for: workout, running, gym.
-    - All The Right Moves (piano): Genre: piano. Sound: fast, energetic, happy. Good for: workout, running, gym.
-    - Crocodile Rock (piano): Genre: piano. Sound: fast, energetic, happy. Good for: running, gym.
+- **Dissolved Girl** (trip-hop): Genre: trip-hop. Sound: fast, moderate energy, happy, instrumental. Good for: morning, feel-good.
+    - Tricky Two (trip-hop): Genre: trip-hop. Sound: fast, moderate energy, happy, instrumental. Good for: morning, feel-good.
+    - Organ Donor - Extended Overhaul (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, instrumental. Good for: morning, feel-good.
+    - So Long (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, instrumental. Good for: morning, feel-good.
+    - All In Forms (trip-hop): Genre: trip-hop. Sound: moderate energy, neutral mood, instrumental, danceable. Good for: general listening.
+    - Rush Minute (trip-hop): Genre: trip-hop. Sound: moderate energy, happy, instrumental. Good for: morning, feel-good.
+- **Kaattu** (malay): Genre: malay. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - Tham Kirubai and He Is Lord (malay): Genre: malay. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - Ente Maathram (malay): Genre: malay. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+    - Big Black Car (folk): Genre: folk. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - You And I (acoustic): Genre: acoustic. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+    - Någon gång måste du bli själv (swedish): Genre: swedish. Sound: calm, neutral mood, acoustic. Good for: relaxing, coffee, morning.
+- **Happy Holiday** (jazz): Genre: jazz, soul. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Almost Like Being In Love - Remastered (jazz): Genre: jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Blue Skies (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Don't Let Me Be Misunderstood (blues): Genre: blues, jazz. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+    - Sinnerman (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - The Times They Are A-Changin' (folk): Genre: folk. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+- **Frosty The Snowman** (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Buona Sera - Remastered 2002 (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Let It Snow! Let It Snow! Let It Snow! (blues): Genre: blues, jazz. Sound: slow, moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - I've Got My Love To Keep Me Warm (blues): Genre: blues, jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - I'd Rather Go Blind (blues): Genre: blues, jazz. Sound: slow, moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Deck The Halls (jazz): Genre: jazz. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+- **Ainda Estás Aqui** (gospel): Genre: gospel. Sound: fast, moderate energy, neutral mood. Good for: general listening.
+    - O Poder do Teu Amor (The Power Of Your Love) - Ao Vivo (gospel): Genre: gospel. Sound: moderate energy, neutral mood. Good for: general listening.
+    - Tu És a Fonte (gospel): Genre: gospel. Sound: moderate energy, melancholic. Good for: general listening.
+    - Como Ninguém Me Vê - Ao Vivo (gospel): Genre: gospel. Sound: fast, energetic, neutral mood. Good for: running, gym.
+    - Deus de Promessas - Acústico (gospel): Genre: gospel. Sound: moderate energy, neutral mood. Good for: general listening.
+    - Minha Luta (gospel): Genre: gospel. Sound: moderate energy, melancholic. Good for: general listening.
+- **Why Should The Fire Die?** (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Hanging By A Thread (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - April the 14th Part 1 (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Brand New Sidewalk (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Missy (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+    - Find My Love (bluegrass): Genre: bluegrass. Sound: calm, melancholic, acoustic. Good for: relaxing, coffee, morning.
+- **Du e för fin för mig** (psych-rock): Genre: psych-rock. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Man It Feels Like Space Again (psych-rock): Genre: psych-rock. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Live And Let Die (hard-rock): Genre: hard-rock, metal. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Ich tu dir weh (industrial): Genre: industrial. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+    - Can You Feel My Heart (metal): Genre: metal, metalcore, rock. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Who Was In My Room Last Night? (grunge): Genre: grunge, hardcore, psych-rock, punk-rock. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
+- **Honky Tonk Badonkadonk** (country): Genre: country. Sound: energetic, happy. Good for: workout.
+    - Boot Scootin' Boogie (country): Genre: country. Sound: fast, energetic, happy. Good for: workout, running, gym.
+    - Mere Dholna (Arijit Version) (indian): Genre: indian. Sound: energetic, happy. Good for: workout.
+    - Hardum Humdum (indian): Genre: indian. Sound: energetic, happy. Good for: workout.
+    - Crazy (british): Genre: british. Sound: energetic, happy. Good for: workout.
+    - 9 to 5 (country): Genre: country. Sound: energetic, happy. Good for: general listening.
+- **(You Don't Know) How Glad I Am** (jazz): Genre: jazz, soul. Sound: moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Joy To The World - Remastered 1999 (jazz): Genre: jazz. Sound: calm, happy, acoustic. Good for: relaxing, coffee, morning.
+    - I'd Rather Go Blind (blues): Genre: blues, jazz. Sound: slow, moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - L-O-V-E (jazz): Genre: jazz. Sound: slow, moderate energy, happy, acoustic. Good for: morning, coffee, feel-good, relaxing.
+    - Something's Gotta Give - Single Version (jazz): Genre: jazz. Sound: calm, happy, acoustic. Good for: relaxing, coffee, morning.
+    - Quando, Quando, Quando (j-pop): Genre: j-pop, jazz. Sound: moderate energy, neutral mood, acoustic. Good for: coffee, relaxing.
+- **Hero (feat. Josey Scott)** (metal): Genre: metal. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Seize the Day (alternative): Genre: alternative, metal. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Mother (hard-rock): Genre: hard-rock, metal. Sound: fast, energetic, neutral mood. Good for: running, gym.
+    - Almost Easy (metal): Genre: metal. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Mi Digna Lealtad (heavy-metal): Genre: heavy-metal. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.
+    - Never Say Goodbye (metal): Genre: metal. Sound: fast, energetic, melancholic. Good for: running, intense, gym, cathartic.
 
-### SID preview
+## 6. Hit@10 oracle ceiling
 
-| option | collision_rate | colliding_groups | max_tracks_per_sid | l1_used | l1_largest | l1_median |
-|---|---|---|---|---|---|---|
-| A: full desc | 0.065 | 298 | 6 | 256 | 172 | 32 |
-| B: content_desc + audio | 0.287 | 1119 | 14 | 256 | 140 | 34 |
+500 tracks (random_state=7); per track min(1, 10 / size of its identical-content_desc group).
 
-### Neighbour agreement over all tracks (5-NN)
-
-| option | same_primary_genre | share_context_word | identical_content_desc |
-|---|---|---|---|
-| A: full desc | 0.603 | 0.679 | 0.104 |
-| B: content_desc + audio | 0.916 | 0.968 | 0.512 |
+- **Mean ceiling: 0.893**
+- Tracks with ceiling 1.0: 77.8%; median group size 4, max 61

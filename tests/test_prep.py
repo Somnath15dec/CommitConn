@@ -65,7 +65,9 @@ def test_categories_not_in_genres(cat):
     assert cat.primary_genre.notna().all() and (cat.primary_genre != "").all()
     only = cat[cat.genres.str.len() == 0]
     assert not only.desc.str.contains("Genre:").any()
-    assert only.desc.str.contains("Spotify category:").all()
+    from src.config import desc_categories
+    shown = [bool(desc_categories(c, t)) for c, t in zip(only.category, only.tags)]
+    assert (only.desc.str.contains("Spotify category:") == shown).all()   # hidden only when contradicted
 
 
 def test_workout_share(cat):
@@ -83,8 +85,26 @@ def test_tags_and_context_rules():
     assert tags[:3] == ["slow", "calm", "melancholic"] and "instrumental" in tags and "acoustic" in tags
     # fired (default order): calm+instrumental, calm+acoustic, calm+slow, melancholic+slow, acoustic
     ctx = prep.make_context(tags)          # round-robin: lead word of each rule first, then cap
-    assert ctx == ["study", "relaxing", "sleep", "rainy day"]
+    assert ctx == ["study", "relaxing", "sleep", "rainy day"]   # synonyms collapsed to canonical
     assert len(ctx) == len(set(ctx))
+
+
+def test_no_duplicate_songs(cat):
+    keys = list(zip(cat.track_name.map(normalize_title), cat.artists.map(normalize_artist)))
+    assert len(keys) == len(set(keys))
+
+
+def test_category_conflicts_hidden_from_desc():
+    from src.config import desc_categories
+    assert desc_categories(["happy"], ["energetic", "melancholic"]) == []
+    assert desc_categories(["sleep", "chill"], ["energetic", "neutral mood"]) == ["chill"]
+    assert desc_categories(["party"], ["calm"]) == []
+    assert desc_categories(["party"], ["energetic"]) == ["party"]
+
+
+def test_desc_has_canonical_context_only(cat):
+    from src.config import SYNONYM_TO_CANONICAL
+    assert not any(set(c) & set(SYNONYM_TO_CANONICAL) for c in cat.context)
 
 
 def test_instrumental_drops_speech():

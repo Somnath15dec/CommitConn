@@ -31,4 +31,6 @@ def build_tracks(raw: pd.DataFrame) -> pd.DataFrame:
     tracks["genres"] = labels.map(lambda g: [x for x in g if x not in CATEGORY_GENRES])
     tracks["category"] = labels.map(lambda g: [x for x in g if x in CATEGORY_GENRES])
     tracks["primary_genre"] = real.reindex(tracks.index).fillna(cat_only.reindex(tracks.index))
-    return tracks.reset_index()
+    missing = tracks.track_name.isna() | tracks.artists.isna()   # unusable: no title/artist for desc
+    tracks.attrs["n_missing_title_or_artist"] = int(missing.sum())
+    return tracks[~missing].reset_index()

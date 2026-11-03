@@ -17,7 +17,10 @@ from src.paths import CATALOG, ROOT
 REPORT = ROOT / "eval" / "readiness_report.md"
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 AUDIO_COLS = ["energy", "valence", "tempo", "acousticness", "instrumentalness", "danceability", "speechiness"]
-AUDIO_WEIGHT = 0.5
+AUDIO_WEIGHT = 0.5                      # default for option B neighbour listing
+AUDIO_WEIGHT_SWEEP = [0.5, 1.0, 1.5, 2.0]
+MIN_SAME_CONTEXT = 0.90                 # recommend highest weight keeping 5-NN same-context >= this
+ORACLE_N, ORACLE_RANDOM_STATE, HIT_K = 500, 7, 10
 MOOD_TAGS = ["happy", "melancholic", "neutral mood"]
 THIN_CONTEXT = 150
 NN_RANDOM_STATE = 6
@@ -130,6 +133,7 @@ def main() -> None:
            f"{int(dup_keys.max()) if len(dup_keys) else 0}", "", "Examples (5 groups):", "",
            md_table(ex[["track_id", "track_name", "artists", "primary_genre", "source"]]), ""]
     summary.append(f"2. duplicate songs: {len(dup_keys):,} groups / {int(dup_keys.sum()):,} tracks")
+    md[0] = "# Data readiness report (Step 4.5, v2 after Step 4.6 catalog changes)"
 
     # 3. tracks per context word
     cw = cat.context.explode().dropna().value_counts()
@@ -167,34 +171,55 @@ def main() -> None:
     enc = lambda texts: model.encode(list(texts), batch_size=256, convert_to_tensor=True,
                                      normalize_embeddings=True, show_progress_bar=False).float()
     xa = enc(cat.desc)
+    xt = enc(cat.content_desc)
     feats = cat[AUDIO_COLS].astype(float)
     feats = (feats - feats.min()) / (feats.max() - feats.min())
-    xb = torch.cat([enc(cat.content_desc),
-                    AUDIO_WEIGHT * torch.tensor(feats.to_numpy(), dtype=torch.float32, device=dev)], 1)
+    ft = torch.tensor(feats.to_numpy(), dtype=torch.float32, device=dev)
+    option_b = lambda w: torch.cat([xt, w * ft], 1)
 
-    sample = cat.sample(N_NN_SAMPLES, random_state=NN_RANDOM_STATE).index.tolist()
     md += ["## 5. Embedding options", "",
            f"Model `{EMBED_MODEL}` on {torch.cuda.get_device_name(0)}. Neighbours by Euclidean distance "
-           f"(A: normalized text vector; B: normalized content_desc vector + {AUDIO_WEIGHT} x min-max audio "
+           f"(A: normalized full-desc vector; B: normalized content_desc vector + w x min-max audio "
            f"features {AUDIO_COLS}). SID preview: {SID_LEVELS} x {SID_K} residual k-means "
            f"({KMEANS_ITERS} Lloyd iterations, torch).", ""]
-    stats_rows, agree_rows = [], []
-    for name, x in [("A: full desc", xa), ("B: content_desc + audio", xb)]:
+    rows = []
+    for name, x in [("A: full desc", xa)] + [(f"B: w={w}", option_b(w)) for w in AUDIO_WEIGHT_SWEEP]:
         s = sid_stats(residual_kmeans(x))
         a = neighbour_agreement(x, cat)
-        stats_rows.append({"option": name, **{k: (round(v, 4) if isinstance(v, float) else v) for k, v in s.items()}})
-        agree_rows.append({"option": name, **{k: round(v, 3) for k, v in a.items()}})
-        nn = nearest(x, sample)
+        rows.append({"option": name, "collision_rate": round(s["collision_rate"], 4),
+                     "max_tracks_per_code": s["max_tracks_per_sid"], "l1_used": s["l1_used"],
+                     "l1_largest": s["l1_largest"], "nn5_same_context": round(a["share_context_word"], 3),
+                     "nn5_same_genre": round(a["same_primary_genre"], 3),
+                     "nn5_identical_content_desc": round(a["identical_content_desc"], 3)})
+    sw = pd.DataFrame(rows)
+    ok = sw[sw.option.str.startswith("B") & (sw.nn5_same_context >= MIN_SAME_CONTEXT)]
+    best_w = AUDIO_WEIGHT_SWEEP[sw.option.tolist().index(ok.option.iloc[-1]) - 1] if len(ok) else None
+    rec = (f"Recommended AUDIO_WEIGHT = {best_w} (highest weight with 5-NN same context >= "
+           f"{MIN_SAME_CONTEXT:.0%})" if best_w is not None else
+           f"No weight keeps 5-NN same context >= {MIN_SAME_CONTEXT:.0%}")
+    md += ["### AUDIO_WEIGHT sweep (option B) vs option A", "", md_table(sw), "", f"**{rec}**", ""]
+    summary.append("5. AUDIO_WEIGHT sweep:\n" + sw.to_string(index=False) + "\n   " + rec)
+
+    sample = cat.sample(N_NN_SAMPLES, random_state=NN_RANDOM_STATE).index.tolist()
+    for name, x in [("A: full desc", xa), (f"B: w={best_w or AUDIO_WEIGHT}", option_b(best_w or AUDIO_WEIGHT))]:
         md += [f"### {name}: 10 random tracks and their 5 nearest neighbours", ""]
-        for i, row in zip(sample, nn):
+        for i, row in zip(sample, nearest(x, sample)):
             md.append(f"- **{cat.track_name[i]}** ({cat.primary_genre[i]}): {cat.content_desc[i]}")
             md += [f"    - {cat.track_name[j]} ({cat.primary_genre[j]}): {cat.content_desc[j]}" for j in row]
         md.append("")
-    st, ag = pd.DataFrame(stats_rows), pd.DataFrame(agree_rows)
-    md += ["### SID preview", "", md_table(st), "",
-           "### Neighbour agreement over all tracks (5-NN)", "", md_table(ag), ""]
-    summary.append("5. SID preview:\n" + st.to_string(index=False))
-    summary.append("   5-NN agreement:\n" + ag.to_string(index=False))
+
+    # 6. Hit@10 oracle ceiling: a perfect system cannot separate tracks with identical content_desc
+    grp = cat.content_desc.map(cat.content_desc.value_counts())
+    samp = grp.sample(ORACLE_N, random_state=ORACLE_RANDOM_STATE)
+    ceil = (HIT_K / samp).clip(upper=1.0)
+    md += ["## 6. Hit@10 oracle ceiling", "",
+           f"{ORACLE_N} tracks (random_state={ORACLE_RANDOM_STATE}); per track min(1, {HIT_K} / size of its "
+           f"identical-content_desc group).", "",
+           f"- **Mean ceiling: {ceil.mean():.3f}**",
+           f"- Tracks with ceiling 1.0: {(ceil == 1).mean():.1%}; median group size {int(samp.median())}, "
+           f"max {int(samp.max())}", ""]
+    summary.append(f"6. Hit@10 oracle ceiling (n={ORACLE_N}): mean {ceil.mean():.3f}; "
+                   f"{(ceil == 1).mean():.1%} of tracks at 1.0; max group {int(samp.max())}")
 
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(md), encoding="utf-8")

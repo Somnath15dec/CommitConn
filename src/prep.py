@@ -11,7 +11,8 @@ import sys
 import numpy as np
 import pandas as pd
 
-from src.muse_match import load_muse, match_muse, validate
+from src.config import canonical, desc_categories
+from src.muse_match import load_muse, match_muse, normalize_artist, normalize_title, validate
 from src.paths import (CATALOG, CONTEXT_LABELS, MUSE_VALIDATION, PLAYLIST_CONTEXT, PLAYLIST_MATCHED,
                        PLAYLIST_STATS, PROC, REAL_USERS, RULE_PRECISION)
 from src.playlists import clean_context_playlists, context_track_labels
@@ -98,9 +99,11 @@ def rule_fires(rule, tags, energy) -> bool:
 
 def make_context(tags: list[str], energy: float = 1.0, priority: list[str] | None = None) -> list[str]:
     """Round-robin cap: first the lead word of EACH fired rule (rules in priority order), then the
-    remaining words by priority order. Deduped, at most MAX_CONTEXT_WORDS."""
+    remaining words by priority order. Synonyms mapped to canonical words (src.config), deduped,
+    at most MAX_CONTEXT_WORDS."""
     rules = {r[0]: r for r in CONTEXT_RULES}
-    fired = [rules[n][4] for n in (priority or DEFAULT_RULE_PRIORITY) if rule_fires(rules[n], tags, energy)]
+    fired = [[canonical(w) for w in rules[n][4]]
+             for n in (priority or DEFAULT_RULE_PRIORITY) if rule_fires(rules[n], tags, energy)]
     out = []
     for words in fired:                      # pass 1: lead word per rule
         if words[0] not in out:
@@ -150,8 +153,9 @@ def make_desc(r) -> str:
     parts = [f"{r.track_name} by {r.artists.replace(';', ', ')}."]
     if len(r.genres):
         parts.append(f"Genre: {', '.join(r.genres)}.")
-    if len(r.category):
-        parts.append(f"Spotify category: {', '.join(r.category)}.")
+    shown = desc_categories(r.category, r.tags)      # contradicted categories left out of desc
+    if shown:
+        parts.append(f"Spotify category: {', '.join(shown)}.")
     parts.append(f"Sound: {', '.join(r.tags)}.")
     parts.append(f"Good for: {', '.join(r.context) or 'general listening'}.")
     return " ".join(parts)
@@ -170,9 +174,12 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     """Priority: (a) MuSe, (b) cleaned context playlists, (c) other playlist-matched (most users first),
     together limited to stage_limit slots; then (d) genre fill that always tops up the currently
     smallest primary_genre (underrepresented first). Every stage respects the per-genre cap.
-    Returns (catalog, cap_log) where cap_log lists tracks skipped per (stage, genre)."""
+    Songs are deduped by normalized (title, first artist): after (a)-(c), duplicates are dropped keeping
+    stage priority then popularity; freed slots go to the genre fill, which also skips known songs.
+    Returns (catalog, cap_log, n_dupes_dropped)."""
     cap = int(size * max_frac)
-    t = tracks.set_index("track_id")
+    t = tracks.set_index("track_id").copy()
+    t["song_key"] = list(zip(t.track_name.map(normalize_title), t.artists.map(normalize_artist)))
     nu = n_users.reindex(t.index).fillna(0)
     a = muse.track_id.tolist()                      # already id-first, popularity-desc
     taken = set(a)
@@ -196,8 +203,22 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
             per_genre[g] = per_genre.get(g, 0) + 1
             chosen.append(i); source.append(stage)
 
-    # (d) genre fill: always add to the currently smallest genre; random order within genre
-    pool = t.loc[~t.index.isin(chosen)].sample(frac=1, random_state=random_state)
+    # song dedupe among (a)-(c): stage priority, then popularity
+    stage_rank = {"muse": 0, "context_playlist": 1, "playlist": 2}
+    pick = pd.DataFrame({"track_id": chosen, "source": source})
+    pick["rank"] = pick.source.map(stage_rank)
+    pick["pop"] = t.popularity.loc[pick.track_id].to_numpy()
+    pick["song_key"] = t.song_key.loc[pick.track_id].to_numpy()
+    keep = pick.sort_values(["rank", "pop", "track_id"], ascending=[True, False, True]).drop_duplicates("song_key")
+    n_dupes = len(pick) - len(keep)
+    for g in genre.loc[pick.track_id[~pick.track_id.isin(keep.track_id)]]:
+        per_genre[g] -= 1
+    pick = pick[pick.track_id.isin(keep.track_id)]
+    chosen, source = pick.track_id.tolist(), pick.source.tolist()
+    songs = set(t.song_key.loc[chosen])
+
+    # (d) genre fill: always add to the currently smallest genre; random order within genre; new songs only
+    pool = t.loc[~t.index.isin(chosen) & ~t.song_key.isin(songs)].sample(frac=1, random_state=random_state)
     queues = {g: list(ix) for g, ix in pool.groupby("primary_genre", sort=True).groups.items()}
     for g in genre.unique():
         per_genre.setdefault(g, 0)
@@ -206,12 +227,16 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
         if not open_g:
             break
         g = min(open_g, key=lambda x: per_genre[x])
-        chosen.append(queues[g].pop(0)); source.append("genre_fill"); per_genre[g] += 1
-    cat = t.loc[chosen].reset_index()
+        i = queues[g].pop(0)
+        if t.song_key[i] in songs:
+            continue
+        songs.add(t.song_key[i])
+        chosen.append(i); source.append("genre_fill"); per_genre[g] += 1
+    cat = t.loc[chosen].drop(columns="song_key").reset_index()
     cat["source"] = source
     cat = cat.merge(muse[["track_id", "muse_valence", "muse_arousal", "muse_n_tags", "muse_match"]],
                     on="track_id", how="left")
-    return cat, cap_log
+    return cat, cap_log, n_dupes
 
 
 def split_real_users(matched: pd.DataFrame, catalog_ids: set) -> pd.DataFrame:
@@ -239,7 +264,7 @@ def build() -> dict:
     labels_all = context_track_labels(matched, clean_ctx)
     n_users = matched.groupby("track_id").user_id.nunique()
 
-    cat, cap_log = select_catalog(tracks, muse, set(labels_all.track_id), n_users)
+    cat, cap_log, n_dupes = select_catalog(tracks, muse, set(labels_all.track_id), n_users)
     cat["tags"] = cat.apply(make_tags, axis=1)
     cat_ids = set(cat.track_id)
     labels = split_labels(labels_all[labels_all.track_id.isin(cat_ids)].reset_index(drop=True))
@@ -266,7 +291,7 @@ def build() -> dict:
     prec.to_csv(RULE_PRECISION, index=False)
     val.to_csv(MUSE_VALIDATION, index=False)
     return {"tracks": tracks, "cat": cat, "labels": labels, "users": users, "val": val,
-            "cap_log": cap_log, "prec": prec, "priority": priority, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
+            "cap_log": cap_log, "prec": prec, "priority": priority, "n_dupes": n_dupes, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
 
 
 def report(r: dict) -> None:
@@ -276,6 +301,12 @@ def report(r: dict) -> None:
     print(f"MuSe matches (all): {r['muse_all'].muse_match.value_counts().to_dict()} | "
           f"after one-track-per-entry dedupe: {len(r['muse']):,}")
     print("\n-- composition by source"); print(cat.source.value_counts().to_string())
+    keys = list(zip(cat.track_name.map(normalize_title), cat.artists.map(normalize_artist)))
+    print(f"song duplicates dropped from stages a-c: {r['n_dupes']:,} | duplicate songs left: "
+          f"{len(keys) - len(set(keys)):,}")
+    n_cat = (cat.category.str.len() > 0).sum()
+    n_hidden = sum(len(desc_categories(c, t)) < len(c) for c, t in zip(cat.category, cat.tags))
+    print(f"tracks with category: {n_cat:,} | category value(s) left out of desc as contradictory: {n_hidden:,}")
     print("\n-- MuSe in catalog by match type"); print(cat.muse_match.value_counts(dropna=False).to_string())
     if r["cap_log"]:
         print("\n-- GENRE CAP TRIGGERED (tracks skipped per stage/genre):")

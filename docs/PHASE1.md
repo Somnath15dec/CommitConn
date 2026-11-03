@@ -52,7 +52,30 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
 - **Real users:** users with ≥20 catalog tracks, split 80/20 into history and heldout (random_state=4).
   History is capped at 200. Stored in long format.
 
----
+## Step 4.5: data readiness analysis (done, `chore: data readiness analysis`)
+`src/analyze_readiness.py` → `eval/readiness_report.md`. Analysis only. It covers:
+- content_desc uniqueness
+- duplicate songs
+- tracks per context word
+- query ambiguity
+- embedding options A/B with a 3x256 residual k-means preview
+
+## Step 4.6: catalog dedupe, category conflict filter, readiness v2
+- **Song dedupe:** the whole catalog is deduped by normalized (title, first artist). Priority is
+  muse > context_playlist > playlist > genre_fill, then popularity. Freed slots go to the genre fill,
+  which also dedupes by song.
+- **Category conflicts:** a category is left out of desc when it contradicts the audio tags:
+  happy vs melancholic, sad vs happy, sleep/study vs energetic, party vs calm. The `category` column keeps it.
+- **Synonyms:** `CONTEXT_SYNONYMS` in `src/config.py`:
+  - sleep ← wind down
+  - study ← focus, late night
+  - rainy day ← reflective
+
+  Desc carries canonical words only.
+- **Readiness v2:**
+  - `AUDIO_WEIGHT` sweep {0.5, 1.0, 1.5, 2.0} for option B
+  - Hit@10 oracle ceiling
+- Tracks with no title or artist are excluded from the candidate pool (1 in Spotify).
 
 ## Step 4b: TBD
 Referenced but not yet defined. Waiting on the user.
@@ -71,6 +94,8 @@ Referenced but not yet defined. Waiting on the user.
   - **Genre slots fill from `genres` only**, never from `primary_genre` or `category`.
   - **Category may fill TRAIN templates only**, never EVAL templates.
   - Playlist names and MuSe scores are never used.
+  - Context slots may use any synonym from `CONTEXT_SYNONYMS` (e.g. "music to wind down" for a track
+    tagged sleep). `wanted_tags` always stores the canonical word.
 - **Train:** up to 5 queries per track → `data/proc/train_pairs.jsonl`, with fields
   `{query, track_id, template_id, type, wanted_tags}`.
 - **Eval A (pair holdout):** sample 500 tracks, 1 EVAL_TEMPLATES query each → `data/proc/eval_pairs.jsonl`.
@@ -144,8 +169,15 @@ Referenced but not yet defined. Waiting on the user.
 - Commit: `docs: data card`.
 
 ## Step 10: `eval/PLAN.md`, pre-registered evaluation
-- **Headline metric:** Hit@10 on `eval_pairs.jsonl`, compared with a FAISS dense-retrieval baseline.
-- **Secondary metrics:** tag-match@10 on the gold queries, valid-item rate, and p50 latency.
+- **Headline metric:** playlist precision@10 on context queries, using ONLY `label_split == "eval"` rows of
+  `context_labels.parquet`, compared with a FAISS dense-retrieval baseline. A retrieved track counts as
+  correct if its eval-half playlist labels contain the queried context word (synonyms map to canonical).
+- **Secondary metrics:**
+  - Hit@10 on `eval_pairs.jsonl`, reported next to its oracle ceiling (readiness v2: mean
+    min(1, 10 / identical-content_desc group size) over 500 sampled tracks)
+  - tag-match@10 on the gold queries
+  - valid-item rate
+  - p50 latency
 - Commit `docs: pre-registered eval plan` **before any model code exists**.
 
 ---
@@ -157,5 +189,6 @@ Referenced but not yet defined. Waiting on the user.
    research dataset."
 2. **Category-only primary_genres in Step 7.** `primary_genre` can be a category (e.g. "study") for 295
    catalog tracks. Should synthetic users' `fav_genres` exclude categories?
-3. **Thin context words.** Some will likely fall under 300 train pairs in Step 5: wind down (45 tracks),
-   late night (67) and reflective (127).
+3. **Thin context words.** Resolved by merging synonyms into canonical words in Step 4.6. Recheck the
+   under-300-pairs flag in Step 5.
+4. **AUDIO_WEIGHT for option B.** The readiness v2 sweep recommends a value; the final choice belongs to the SID phase.
