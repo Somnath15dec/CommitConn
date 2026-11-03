@@ -86,7 +86,7 @@ def make_tags(r) -> list[str]:
     if r.instrumentalness > INSTRUMENTAL_MIN: t.append("instrumental")
     if r.acousticness > ACOUSTIC_MIN: t.append("acoustic")
     if r.danceability > DANCEABLE_MIN: t.append("danceable")
-    if r.speechiness > SPEECH_MIN: t.append("spoken word or rap")
+    if r.speechiness > SPEECH_MIN and "instrumental" not in t: t.append("spoken word or rap")
     return t
 
 
@@ -97,12 +97,16 @@ def rule_fires(rule, tags, energy) -> bool:
 
 
 def make_context(tags: list[str], energy: float = 1.0, priority: list[str] | None = None) -> list[str]:
-    """Dedup context words from fired rules, highest-priority rule first, capped at MAX_CONTEXT_WORDS."""
+    """Round-robin cap: first the lead word of EACH fired rule (rules in priority order), then the
+    remaining words by priority order. Deduped, at most MAX_CONTEXT_WORDS."""
     rules = {r[0]: r for r in CONTEXT_RULES}
+    fired = [rules[n][4] for n in (priority or DEFAULT_RULE_PRIORITY) if rule_fires(rules[n], tags, energy)]
     out = []
-    for name in priority or DEFAULT_RULE_PRIORITY:
-        if rule_fires(rules[name], tags, energy):
-            out += [c for c in rules[name][4] if c not in out]
+    for words in fired:                      # pass 1: lead word per rule
+        if words[0] not in out:
+            out.append(words[0])
+    for words in fired:                      # pass 2: fill by priority
+        out += [w for w in words[1:] if w not in out]
     return out[:MAX_CONTEXT_WORDS]
 
 

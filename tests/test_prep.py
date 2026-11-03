@@ -81,9 +81,18 @@ def test_tags_and_context_rules():
                         acousticness=0.9, danceability=0.1, speechiness=0.05)
     tags = prep.make_tags(r)
     assert tags[:3] == ["slow", "calm", "melancholic"] and "instrumental" in tags and "acoustic" in tags
-    ctx = prep.make_context(tags)          # default priority = rule order, capped
-    assert ctx == ["study", "focus", "late night", "relaxing"]
+    # fired (default order): calm+instrumental, calm+acoustic, calm+slow, melancholic+slow, acoustic
+    ctx = prep.make_context(tags)          # round-robin: lead word of each rule first, then cap
+    assert ctx == ["study", "relaxing", "sleep", "rainy day"]
     assert len(ctx) == len(set(ctx))
+
+
+def test_instrumental_drops_speech():
+    r = SimpleNamespace(tempo=110, energy=0.5, valence=0.5, instrumentalness=0.9,
+                        acousticness=0, danceability=0, speechiness=0.5)
+    assert "spoken word or rap" not in prep.make_tags(r)
+    r.instrumentalness = 0.1
+    assert "spoken word or rap" in prep.make_tags(r)
 
 
 def test_normalizers():
