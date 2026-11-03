@@ -147,6 +147,22 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
 - Known gap (goes in DATA.md): Eval A has only 6 sound-type pairs (needs both a tempo and a sound tag) and thin
   per-context-word coverage (e.g. rainy day 1). Context performance is measured on Eval B instead.
 
+## Step 5b: `src/human_pairs.py`, human-signal training pairs (tune half only)
+- **Tune-half context labels are build-side data used for training.** The eval half of `context_labels.parquet` and
+  the Eval B candidate pool (tracks with no tune-half label) remain untouched. See `eval/PLAN.md` note 2.
+- A playlist word maps to canonical context words by inverting the canonical entries of `CONTEXT_TO_PLAYLIST_WORDS`
+  (Eval B's relevance mapping), with two approved overrides: party → party only (not dance), focus → study.
+  late night, sad, drive and night drive stay unmapped.
+- 2 pairs per (track, context word) unit: one TRAIN context template, plus one TRAIN combo template with the track's
+  own genre (`genres` only, humanized: "{genre} for {context}") or mood tag (calm / energetic / happy / melancholic:
+  "{mood} songs for {context}"), chosen with seed 18 + crc32 per unit. The 6 units with neither get a second
+  context template. The context surface is the canonical word or a synonym. `source = "tune_context"`.
+- Result: 15,390 pairs, 7,695 units, 2,844 tracks, 812 distinct query strings. 10,827 pairs survive one epoch of
+  the 150-per-string cap on their own (about 9,500 when pooled with `train_pairs.jsonl`).
+- **Playlist names are never used** (CLAUDE.md rule kept; option (b) was dropped).
+- Output: `data/proc/human_pairs.jsonl`. Tests: no eval-half target, all targets in the catalog, no query matches
+  any Eval A / Eval B / gold query.
+
 ## Step 6: `src/paraphrase.py`, LLM paraphrases via local Ollama
 - Run `ollama list`, show the models and ask which one to use. Don't pick yourself.
 - Subset of 2,000 tracks (random_state=2), in batches of 10 descs per request. Ask for 3 natural,

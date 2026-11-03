@@ -143,3 +143,4 @@ Notes clarify wording only. They change no metric, scoring rule, label filter or
 | # | Date | Note |
 |---|---|---|
 | 1 | 2026-11-04 | The Amendment 4 "query-aware ceiling" is the **expected Hit@10 of a random choice among the tracks matching the query's `wanted_tags`**, not an upper bound. A ranker that is not random among those tracks can exceed it: the FAISS baseline scored Hit@10 0.096 against 0.092. Reports call it the **"random-within-match expectation"**. Its formula, mean min(1, 10 / N(q)), is unchanged. |
+| 2 | 2026-11-04 | From Step 5b, tune-half context labels are also used as training signal (canonical context words via TRAIN templates only; playlist names never used). The eval half and the Eval B candidate pool are untouched. Because labels are split by track, Eval B measures generalization to held-out tracks of real playlists whose other tracks may appear in training. The FAISS baseline (9dcece8) does not use these labels and stays frozen. |
