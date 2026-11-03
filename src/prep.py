@@ -6,6 +6,7 @@ Playlist names are evaluation ground truth only: they never reach desc, tags or 
 from __future__ import annotations
 
 import json
+import re
 import sys
 
 import numpy as np
@@ -72,13 +73,45 @@ CONTEXT_TO_PLAYLIST_WORDS = {
     "reflective": ["sad", "rain"], "dance": ["party"], "feel-good": None, "morning": ["morning"],
     "coffee": ["coffee"], "intense": None, "cathartic": None,
 }
+# ---- non-music noise filter (Step A, approved): applied to the selected catalog AND every fill candidate
+NOISE_PATTERNS = ["white noise", "pink noise", "brown noise", "vacuum", "air conditioner", "fan noise",
+                  "rain sounds", "nature sounds", "ocean waves", "thunderstorm", "loopable", "sleep rain",
+                  "healing rain"]                          # case-insensitive substring of title or artists
+NOISE_ARTISTS = ["Nature Sounds", "Rain Sounds", "White Noise", "Loopable", "Granular", "Baby Sleep",
+                 "Sleep Sounds", "Rain Sounds Lab", "Rain Sounds XLE Library", "Meditation Spa"]  # exact artist
+NOISE_MAX_ENERGY = 0.01                                   # with speechiness == 0
+# genre fill stops adding to these genres after N fill tracks (Step A, approved): the category-only "sleep"
+# pool is mostly noise the filter can't catch, so sleep keeps only the 11 non-noise fill tracks it already had
+FILL_MAX_ADDED = {"sleep": 11}
+NOISE_SPARE_IDS = frozenset({"5xw2cHVLw1rlDPp3cL9Zuv"})   # "She's Thunderstorms" - Arctic Monkeys
+_NOISE_RE = re.compile("|".join(re.escape(p) for p in NOISE_PATTERNS), re.IGNORECASE)
+_NOISE_ARTISTS = {a.casefold() for a in NOISE_ARTISTS}
+
 AUDIO_FEATURES = ["danceability", "energy", "key", "loudness", "mode", "speechiness", "acousticness",
                   "instrumentalness", "liveness", "valence", "tempo", "time_signature", "duration_ms", "explicit"]
 
 
+def is_noise(df: pd.DataFrame) -> pd.Series:
+    """Non-music noise: title/artists match NOISE_PATTERNS, any artist is on NOISE_ARTISTS, or
+    energy < NOISE_MAX_ENERGY with speechiness == 0. NOISE_SPARE_IDS are never noise."""
+    text = df.track_name.fillna("") + " " + df.artists.fillna("")
+    kw = text.str.contains(_NOISE_RE)
+    blocked = df.artists.fillna("").map(lambda a: any(x.strip().casefold() in _NOISE_ARTISTS for x in a.split(";")))
+    audio = (df.energy < NOISE_MAX_ENERGY) & (df.speechiness == 0)
+    ids = df.track_id if "track_id" in df.columns else pd.Series(df.index, index=df.index)
+    return (kw | blocked | audio) & ~ids.isin(NOISE_SPARE_IDS)
+
+
+def tempo_missing(tempo) -> bool:
+    """Spotify reports tempo 0 when it could not be estimated."""
+    return not tempo > 0
+
+
 def make_tags(r) -> list[str]:
     t = []
-    if r.tempo < TEMPO_SLOW and r.energy < SLOW_MAX_ENERGY:
+    if tempo_missing(r.tempo):
+        pass                                     # no tempo word
+    elif r.tempo < TEMPO_SLOW and r.energy < SLOW_MAX_ENERGY:
         t.append("slow")
     elif r.tempo > TEMPO_FAST and r.energy > FAST_MIN_ENERGY:
         t.append("fast")
@@ -183,13 +216,14 @@ def dedupe_muse(tracks: pd.DataFrame, muse: pd.DataFrame) -> pd.DataFrame:
 
 
 def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_frac=MAX_GENRE_FRAC,
-                   stage_limit=PLAYLIST_STAGE_LIMIT, random_state=FILL_RANDOM_STATE):
+                   stage_limit=PLAYLIST_STAGE_LIMIT, random_state=FILL_RANDOM_STATE, fill_max_added=None):
     """Priority: (a) MuSe, (b) cleaned context playlists, (c) other playlist-matched (most users first),
     together limited to stage_limit slots; then (d) genre fill that always tops up the currently
     smallest primary_genre (underrepresented first). Every stage respects the per-genre cap.
     Songs are deduped by song_key (accent-stripped title without version suffixes, first artist): after (a)-(c), duplicates are dropped keeping
     stage priority then popularity; freed slots go to the genre fill, which also skips known songs.
-    Returns (catalog, cap_log, n_dupes_dropped)."""
+    Non-music noise (is_noise) is dropped from (a)-(c) and skipped by the fill; the fill adds at most
+    fill_max_added[g] tracks to genre g (default FILL_MAX_ADDED). Returns (catalog, cap_log, n_dupes_dropped)."""
     cap = int(size * max_frac)
     t = tracks.set_index("track_id").copy()
     t["song_key"] = [song_key(n, a) for n, a in zip(t.track_name, t.artists)]
@@ -232,6 +266,13 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     for g in genre.loc[pick.track_id[~pick.track_id.isin(keep.track_id)]]:
         per_genre[g] -= 1
     pick = pick[pick.track_id.isin(keep.track_id)]
+    # non-music noise out of (a)-(c); freed slots go to the genre fill (which also skips noise)
+    noise = is_noise(t)
+    noisy = noise.loc[pick.track_id].to_numpy()
+    noise_dropped = pick.source[noisy].value_counts().to_dict()
+    for g in genre.loc[pick.track_id[noisy]]:
+        per_genre[g] -= 1
+    pick = pick[~noisy]
     chosen, source = pick.track_id.tolist(), pick.source.tolist()
     songs = set(t.song_key.loc[chosen])
 
@@ -244,20 +285,27 @@ def select_catalog(tracks, muse, ctx_track_ids, n_users, size=CATALOG_SIZE, max_
     chosen_set = set(chosen)
     for g in genre.unique():
         per_genre.setdefault(g, 0)
+    max_added = FILL_MAX_ADDED if fill_max_added is None else fill_max_added
+    added = dict.fromkeys(per_genre, 0)
     while len(chosen) < size:
-        open_g = [g for g in sorted(per_genre) if queues.get(g) and per_genre[g] < cap]
+        open_g = [g for g in sorted(per_genre) if queues.get(g) and per_genre[g] < cap
+                  and added[g] < max_added.get(g, size)]
         if not open_g:
             break
         g = min(open_g, key=lambda x: per_genre[x])
         i = queues[g].pop(0)
         if t.song_key[i] in songs or i in chosen_set:
             continue
+        if noise[i]:
+            noise_dropped["genre_fill_skipped"] = noise_dropped.get("genre_fill_skipped", 0) + 1
+            continue
         songs.add(t.song_key[i])
-        chosen.append(i); source.append("genre_fill"); per_genre[g] += 1
+        chosen.append(i); source.append("genre_fill"); per_genre[g] += 1; added[g] += 1
     cat = t.loc[chosen].drop(columns=["song_key", "order_key"]).reset_index()
     cat["source"] = source
     cat = cat.merge(muse[["track_id", "muse_valence", "muse_arousal", "muse_n_tags", "muse_match"]],
                     on="track_id", how="left")
+    cat.attrs["noise_dropped"] = noise_dropped
     return cat, cap_log, n_dupes
 
 
@@ -287,7 +335,10 @@ def build() -> dict:
     n_users = matched.groupby("track_id").user_id.nunique()
 
     cat, cap_log, n_dupes = select_catalog(tracks, muse, set(labels_all.track_id), n_users)
-    cat["tags"] = cat.apply(make_tags, axis=1)
+    noise_dropped = cat.attrs.get("noise_dropped", {})
+    cat["tags"] = cat.apply(make_tags, axis=1)     # tempo 0 = missing -> no tempo word
+    cat["tempo_missing"] = cat.tempo.map(tempo_missing)
+    cat.loc[cat.tempo_missing, "tempo"] = cat.tempo[~cat.tempo_missing].median()   # audio-vector input
     cat_ids = set(cat.track_id)
     labels = split_labels(labels_all[labels_all.track_id.isin(cat_ids)].reset_index(drop=True),
                           load_frozen_split())
@@ -296,7 +347,7 @@ def build() -> dict:
     cat["context"] = [make_context(t, e, priority) for t, e in zip(cat.tags, cat.energy)]
     cat["desc"] = cat.apply(make_desc, axis=1)
     cols = ["track_id", "track_name", "artists", "primary_genre", "genres", "category", "tags", "context", "desc",
-            "source", "muse_match", "muse_valence", "muse_arousal", "muse_n_tags", *AUDIO_FEATURES, "popularity"]
+            "source", "muse_match", "muse_valence", "muse_arousal", "muse_n_tags", *AUDIO_FEATURES, "tempo_missing", "popularity"]
     cat = cat[cols]
     users = split_real_users(matched, cat_ids)
 
@@ -314,7 +365,7 @@ def build() -> dict:
     prec.to_csv(RULE_PRECISION, index=False)
     val.to_csv(MUSE_VALIDATION, index=False)
     return {"tracks": tracks, "cat": cat, "labels": labels, "users": users, "val": val,
-            "cap_log": cap_log, "prec": prec, "priority": priority, "n_dupes": n_dupes, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
+            "cap_log": cap_log, "prec": prec, "priority": priority, "n_dupes": n_dupes, "noise_dropped": noise_dropped, "clean_ctx": clean_ctx, "muse_all": muse_all, "muse": muse}
 
 
 def report(r: dict) -> None:
@@ -327,6 +378,8 @@ def report(r: dict) -> None:
     keys = [song_key(n, a) for n, a in zip(cat.track_name, cat.artists)]
     print(f"song duplicates dropped from stages a-c: {r['n_dupes']:,} | duplicate songs left: "
           f"{len(keys) - len(set(keys)):,}")
+    print(f"non-music noise dropped/skipped by stage: {r['noise_dropped']} | "
+          f"tempo missing (0 -> catalog median): {int(cat.tempo_missing.sum())}")
     n_cat = (cat.category.str.len() > 0).sum()
     n_hidden = sum(len(desc_categories(c, t)) < len(c) for c, t in zip(cat.category, cat.tags))
     print(f"tracks with category: {n_cat:,} | category value(s) left out of desc as contradictory: {n_hidden:,}")

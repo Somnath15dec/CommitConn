@@ -235,6 +235,20 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
 - Eval A was regenerated once because 1 of its tracks was removed.
 - No query cap on the data. Balancing is deferred to Step 15.
 
+## Step A (Phase 2 start): non-music noise, tempo missing values (done, `fix: remove non-music noise tracks, tempo missing values`)
+- `prep.is_noise`: title/artists contain a `NOISE_PATTERNS` phrase, OR any artist is exactly on `NOISE_ARTISTS`,
+  OR energy < 0.01 with speechiness == 0. "She's Thunderstorms" (Arctic Monkeys) is spared by track_id.
+  Applied to stages (a)-(c) (freed slots go to the fill) and to every genre-fill candidate.
+- 30 tracks removed (context_playlist 15, genre_fill 13, MuSe 2). 30 genre-fill tracks added, 1 each in 30 genres.
+- `FILL_MAX_ADDED = {"sleep": 11}`: the category-only "sleep" fill pool is mostly noise that the patterns miss
+  (hair dryers, German "Rauschen"), so sleep keeps its 11 existing fill tracks and gets no new ones.
+- Tempo 0 = missing: no tempo word in tags/desc, and catalog `tempo` is set to the catalog median for audio
+  vectors. Flag column `tempo_missing`. 2 tracks: Hello, Dolly! and Ionian.
+- Eval A is repaired pair by pair (`repair_eval_a`): 498 kept, 2 replaced (their tracks were removed).
+  Eval B and gold unchanged. No retained track changed label split, rule priority or context, apart from the 2 tempo tracks.
+- Known leftovers that weren't approved for removal: "Baby Schlafhilfe mit Meeresrauschen" (Weißes Rauschen HD),
+  "Shhhh With Big Fan" (Silent Knights).
+
 ## Step 11: `src/sids.py`, Semantic IDs
 - Item vector (option B): content_desc embedded with `all-MiniLM-L6-v2` (normalized) + min-max scaled audio
   features × `AUDIO_WEIGHT = 1.0`.

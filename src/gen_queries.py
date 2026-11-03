@@ -257,22 +257,57 @@ def generate_eval_a(cat: pd.DataFrame, train: list[dict]) -> tuple[list[dict], i
     return evals, len(eligible)
 
 
+def eval_a_pair_problem(rows: pd.DataFrame, p: dict, train_keys: set) -> str | None:
+    """None if an Eval A pair is still valid against the catalog (indexed by track_id); else the reason."""
+    if p["track_id"] not in rows.index:
+        return "track no longer in the catalog"
+    row = rows.loc[p["track_id"]]
+    own = set(row.tags) | set(row.context) | set(row.genres)
+    if not set(p["wanted_tags"]) <= own:
+        return f"track no longer carries {set(p['wanted_tags']) - own}"
+    if (p["query"], p["track_id"]) in train_keys or any(contains_word(p["query"], b)
+                                                         for b in eval_banned_words(row)):
+        return "pair now leaks"
+    return None
+
+
 def eval_a_still_valid(cat: pd.DataFrame, evals: list[dict], train: list[dict]) -> str | None:
-    """None if an existing Eval A can be kept as is; otherwise the reason it can't."""
+    """None if an existing Eval A can be kept as is; otherwise the first reason it can't."""
     rows = cat.set_index("track_id", drop=False)
-    missing = [p["track_id"] for p in evals if p["track_id"] not in rows.index]
-    if missing:
-        return f"{len(missing)} Eval A tracks no longer in the catalog"
     train_keys = {(p["query"], p["track_id"]) for p in train}
     for p in evals:
-        row = rows.loc[p["track_id"]]
-        own = set(row.tags) | set(row.context) | set(row.genres)
-        if not set(p["wanted_tags"]) <= own:
-            return f"track {p['track_id']} no longer carries {set(p['wanted_tags']) - own}"
-        if (p["query"], p["track_id"]) in train_keys or any(contains_word(p["query"], b)
-                                                             for b in eval_banned_words(row)):
-            return f"pair {p['query']!r} / {p['track_id']} now leaks"
+        why = eval_a_pair_problem(rows, p, train_keys)
+        if why:
+            return f"{p['track_id']}: {why}"
     return None
+
+
+def repair_eval_a(cat: pd.DataFrame, evals: list[dict], train: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Keep every still-valid Eval A pair in place; replace only invalid ones. Replacement tracks come from
+    the EVAL_RANDOM_STATE permutation of eligible tracks, skipping tracks already in Eval A.
+    Returns (evals, [{"old": pair, "new": pair, "reason": str}])."""
+    rows = cat.set_index("track_id", drop=False)
+    train_keys = {(p["query"], p["track_id"]) for p in train}
+    bad = {i: why for i, p in enumerate(evals) if (why := eval_a_pair_problem(rows, p, train_keys))}
+    if not bad:
+        return evals, []
+    used = {p["track_id"] for i, p in enumerate(evals) if i not in bad}
+    erng = np.random.default_rng(EVAL_RANDOM_STATE)
+    eligible = [row for row in cat.itertuples(index=False) if row.track_id not in used
+                and any(fillable(t, slot_options(row, "eval")) for _, t in EVAL_TEMPLATES.values())]
+    cands = iter(erng.permutation(len(eligible)))
+    out, changes = list(evals), []
+    for i, why in sorted(bad.items()):
+        rec = None
+        for j in cands:
+            rec = eval_query_for(eligible[j], erng, train_keys)
+            if rec:
+                break
+        if rec is None:
+            raise RuntimeError("no eligible replacement track left for Eval A")
+        changes.append({"old": evals[i], "new": rec, "reason": why})
+        out[i] = rec
+    return out, changes
 
 
 def eval_b_words() -> list[str]:
@@ -329,15 +364,17 @@ def main():
     train, n_new = generate_train(cat, None if fresh else read_jsonl(TRAIN_PAIRS))
     print(f"train pairs: {'fresh' if fresh else 'incremental'} generation, {n_new} tracks newly generated")
     write_jsonl(TRAIN_PAIRS, train)
-    reason = eval_a_still_valid(cat, read_jsonl(EVAL_PAIRS), train) if EVAL_PAIRS.exists() else "no Eval A yet"
-    if reason is None:
-        evals = read_jsonl(EVAL_PAIRS)
-        n_eligible = None
-        print("Eval A kept unchanged (all tracks present and still consistent)")
+    n_eligible = None
+    if EVAL_PAIRS.exists() and "--fresh" not in sys.argv:
+        evals, changes = repair_eval_a(cat, read_jsonl(EVAL_PAIRS), train)
+        print(f"Eval A: {len(evals) - len(changes)} pairs kept, {len(changes)} replaced")
+        for c in changes:
+            print(f"  replaced ({c['reason']}): {c['old']['query']!r} / {c['old']['track_id']} -> "
+                  f"{c['new']['query']!r} / {c['new']['track_id']}")
     else:
         evals, n_eligible = generate_eval_a(cat, train)
-        write_jsonl(EVAL_PAIRS, evals)
-        print(f"Eval A regenerated: {reason}")
+        print("Eval A generated fresh")
+    write_jsonl(EVAL_PAIRS, evals)
     eval_b = generate_eval_b({p["query"] for p in train})
     write_jsonl(EVAL_CONTEXT_QUERIES, eval_b)
 

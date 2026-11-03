@@ -176,3 +176,12 @@ def test_retained_tracks_have_valid_pairs(cat, train):
         by_track.setdefault(p["track_id"], []).append(p)
     assert set(by_track) == set(cat.track_id)
     assert all(gq.train_pairs_valid(cat.loc[t], ps) for t, ps in by_track.items())
+
+
+def test_repair_eval_a_replaces_only_invalid_pairs(cat, train, evals):
+    kept, changes = gq.repair_eval_a(cat, evals, train)
+    assert kept == evals and changes == []                      # current Eval A is fully valid
+    broken = [dict(evals[0], track_id="not-a-track"), *evals[1:]]
+    fixed, changes = gq.repair_eval_a(cat, broken, train)
+    assert len(changes) == 1 and fixed[1:] == evals[1:]
+    assert fixed[0]["track_id"] in cat.index and fixed[0]["track_id"] not in {p["track_id"] for p in evals[1:]}

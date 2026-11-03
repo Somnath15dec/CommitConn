@@ -370,7 +370,7 @@
 {"query": "looking for rock that works for feeling good", "track_id": "3QO2QeKbBQgx1ZTezCThPX", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["rock", "feel-good"]}
 {"query": "can you find fast instrumental stuff", "track_id": "4WRSAREjHbW6vc5WCfOiVL", "template_id": "ev_sound_1", "type": "sound", "wanted_tags": ["fast", "instrumental"]}
 {"query": "need a energetic soundtrack for dancing", "track_id": "4cluDES4hQEUhmXj6TXkSo", "template_id": "ev_combo_4", "type": "combo", "wanted_tags": ["energetic", "dance"]}
-{"query": "give me tracks with a melancholic feel", "track_id": "2zqfPLM5cv0x7wWoRv3WTX", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
+{"query": "give me tracks with a melancholic feel", "track_id": "1fBUmT2qNGdTgaS4XXwGnA", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
 {"query": "give me tracks with a melancholic feel", "track_id": "2q04AFjRX4GKTnFj2eUb5W", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["melancholic"]}
 {"query": "I'm into reggae lately, anything good?", "track_id": "6t1ahr2f1t9iSjjNFwFb4C", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
 {"query": "I'm into reggae lately, anything good?", "track_id": "0sQLhT32E9ZG2zn5iYR6nN", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["reggae"]}
@@ -417,7 +417,7 @@
 {"query": "play me some disco that feels happy", "track_id": "0F2BxpbxH8Yc3pLub48hrb", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["disco", "happy"]}
 {"query": "play me some alt rock that feels happy", "track_id": "41Q87dXXetURXvHWQb3Yuo", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["alt-rock", "happy"]}
 {"query": "looking for iranian that works for relaxing", "track_id": "5Sl4pcL8zbTl1I9j4GQJEO", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["iranian", "relaxing"]}
-{"query": "give me tracks with a calm feel", "track_id": "0IkUTWDCxVIadHAl997Ueq", "template_id": "ev_mood_1", "type": "mood", "wanted_tags": ["calm"]}
+{"query": "play me some breakbeat that feels happy", "track_id": "1hW3ryc70LqbGs6USpIW4K", "template_id": "ev_combo_2", "type": "combo", "wanted_tags": ["breakbeat", "happy"]}
 {"query": "I need energetic vibes for the gym", "track_id": "4h6M2oyJNWmAmG4vTa5fDd", "template_id": "ev_combo_1", "type": "combo", "wanted_tags": ["energetic", "gym"]}
 {"query": "I'm into pop film lately, anything good?", "track_id": "4HDzsx1dJKbuL0YkffBuBm", "template_id": "ev_genre_1", "type": "genre", "wanted_tags": ["pop-film"]}
 {"query": "looking for electro that works for a party", "track_id": "6wNeKPXF0RDKyvfKfri5hf", "template_id": "ev_combo_3", "type": "combo", "wanted_tags": ["electro", "party"]}

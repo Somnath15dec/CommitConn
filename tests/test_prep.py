@@ -170,3 +170,68 @@ def test_real_users(cat):
     assert u.track_id.isin(cat.track_id).all()
     assert not u.duplicated(["user_id", "track_id"]).any()          # history/heldout disjoint
     assert u[u.split == "history"].groupby("user_id").size().max() <= prep.REAL_USER_MAX_HISTORY
+
+
+# ---- Step A: non-music noise filter, tempo missing values
+
+def _rows(**cols):
+    n = len(next(iter(cols.values())))
+    base = {"track_id": [f"t{i}" for i in range(n)], "energy": [0.5] * n, "speechiness": [0.05] * n}
+    return pd.DataFrame({**base, **cols})
+
+
+def test_is_noise_patterns_blocklist_audio_and_spare():
+    df = _rows(track_name=["Pure WHITE noise", "Song", "Song", "Song", "November Rain", "She's Thunderstorms",
+                           "Silent", "Piano Baby Lullabies"],
+               artists=["X", "Rain Sounds Lab", "A;Meditation Spa", "Loopable Labs", "Guns N' Roses",
+                        "Arctic Monkeys", "Y", "Baby Sleep Music"],
+               energy=[0.5, 0.5, 0.5, 0.5, 0.6, 0.9, 0.005, 0.01],
+               speechiness=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.0, 0.0])
+    df.loc[5, "track_id"] = next(iter(prep.NOISE_SPARE_IDS))
+    # "Loopable Labs" hits the "loopable" pattern; "Baby Sleep Music" is not an exact blocklisted artist
+    assert prep.is_noise(df).tolist() == [True, True, True, True, False, False, True, False]
+
+
+def test_no_noise_in_catalog(cat):
+    assert not prep.is_noise(cat).any()
+    text = (cat.track_name + " " + cat.artists).str.lower()
+    spared = cat.track_id.isin(prep.NOISE_SPARE_IDS)
+    for p in prep.NOISE_PATTERNS:
+        assert not text[~spared].str.contains(p, regex=False).any(), p
+    artists = {a.strip().casefold() for s in cat.artists for a in s.split(";")}
+    assert not artists & {a.casefold() for a in prep.NOISE_ARTISTS}
+
+
+def test_refill_pool_skips_noise_and_respects_fill_limit():
+    names = ["Rain Sounds 1", "Song A", "Song B", "Fan Noise", "Song C", "Song D", "Song E", "Song F"]
+    artists = ["P", "Q", "R", "S", "Nature Sounds", "T", "U", "V"]
+    tracks = _rows(track_name=names, artists=artists,
+                   primary_genre=["sleep", "sleep", "sleep", "rock", "rock", "rock", "rock", "rock"],
+                   popularity=[50] * 8)
+    tracks.loc[1, "track_id"], tracks.loc[0, "track_id"] = "t0", "t1"   # MuSe track t1 is "Rain Sounds 1"
+    tracks = tracks.sort_values("track_id").reset_index(drop=True)
+    muse = pd.DataFrame({"track_id": ["t1"], "muse_valence": [0.5], "muse_arousal": [0.5],
+                         "muse_n_tags": [1], "muse_match": ["id"]})
+    cat, _, _ = prep.select_catalog(tracks, muse, set(), pd.Series(dtype=float), size=5, max_frac=1.0,
+                                    stage_limit=5, fill_max_added={"sleep": 1})
+    assert not prep.is_noise(cat).any()
+    assert "t1" not in set(cat.track_id)                       # noisy MuSe track dropped from stage (a)
+    assert (cat[cat.source == "genre_fill"].primary_genre == "sleep").sum() == 1
+    assert cat.attrs["noise_dropped"]["muse"] == 1
+
+
+def test_genre_fill_tracks_not_noise_and_sleep_frozen(cat):
+    fill = cat[cat.source == "genre_fill"]
+    assert not prep.is_noise(fill).any()
+    assert (fill.primary_genre == "sleep").sum() <= prep.FILL_MAX_ADDED["sleep"]
+
+
+def test_tempo_missing_handling(cat):
+    base = dict(energy=0.2, valence=0.5, instrumentalness=0, acousticness=0, danceability=0, speechiness=0)
+    assert not {"slow", "fast"} & set(prep.make_tags(SimpleNamespace(tempo=0.0, **base)))
+    assert "slow" in prep.make_tags(SimpleNamespace(tempo=70, **base))
+    assert (cat.tempo > 0).all()                                  # audio-vector input: no tempo == 0 left
+    miss = cat[cat.tempo_missing]
+    assert (miss.tempo == cat.tempo[~cat.tempo_missing].median()).all()
+    assert not any({"slow", "fast"} & set(t) for t in miss.tags)
+    assert not miss.desc.str.contains(r"\b(?:slow|fast)\b").any()
