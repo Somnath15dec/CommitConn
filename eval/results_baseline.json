@@ -1,0 +1,1581 @@
+{
+ "system": "faiss_baseline",
+ "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+ "device": "cpu",
+ "index": "IndexFlatIP (exact cosine)",
+ "k": 10,
+ "eval_b": {
+  "pool_size": 7058,
+  "n_queries": 132,
+  "precision@10": {
+   "mean": 0.1568181818181818,
+   "ci95": [
+    0.12422348484848485,
+    0.19547348484848484
+   ],
+   "n": 132
+  },
+  "chance": 0.11843427187717356,
+  "condensed_precision@10": {
+   "mean": 0.38061868686868683,
+   "ci95": [
+    0.32853535353535357,
+    0.43574179292929294
+   ],
+   "n": 132
+  },
+  "judged_in_top50_mean": 20.348484848484848,
+  "per_context_word": {
+   "coffee": {
+    "precision@10": {
+     "mean": 0.016666666666666666,
+     "ci95": [
+      0.0,
+      0.041666666666666664
+     ],
+     "n": 12
+    },
+    "chance": 0.03570416548597336,
+    "condensed_precision@10": 0.09791666666666667,
+    "judged_in_top50": 13.416666666666666,
+    "n": 12
+   },
+   "dance": {
+    "precision@10": {
+     "mean": 0.48333333333333334,
+     "ci95": [
+      0.3333333333333333,
+      0.6666666666666666
+     ],
+     "n": 12
+    },
+    "chance": 0.22230093510909607,
+    "condensed_precision@10": 0.9166666666666666,
+    "judged_in_top50": 23.416666666666668,
+    "n": 12
+   },
+   "gym": {
+    "precision@10": {
+     "mean": 0.15833333333333335,
+     "ci95": [
+      0.10000000000000002,
+      0.22499999999999998
+     ],
+     "n": 12
+    },
+    "chance": 0.13389062057240012,
+    "condensed_precision@10": 0.46666666666666673,
+    "judged_in_top50": 26.416666666666668,
+    "n": 12
+   },
+   "morning": {
+    "precision@10": {
+     "mean": 0.075,
+     "ci95": [
+      0.03333333333333333,
+      0.12500000000000003
+     ],
+     "n": 12
+    },
+    "chance": 0.06914139982998016,
+    "condensed_precision@10": 0.2166666666666667,
+    "judged_in_top50": 20.25,
+    "n": 12
+   },
+   "party": {
+    "precision@10": {
+     "mean": 0.17500000000000002,
+     "ci95": [
+      0.12500000000000003,
+      0.2166666666666667
+     ],
+     "n": 12
+    },
+    "chance": 0.22230093510909607,
+    "condensed_precision@10": 0.6083333333333333,
+    "judged_in_top50": 16.916666666666668,
+    "n": 12
+   },
+   "rainy day": {
+    "precision@10": {
+     "mean": 0.008333333333333333,
+     "ci95": [
+      0.0,
+      0.025000000000000005
+     ],
+     "n": 12
+    },
+    "chance": 0.03301218475488807,
+    "condensed_precision@10": 0.025000000000000005,
+    "judged_in_top50": 17.75,
+    "n": 12
+   },
+   "relaxing": {
+    "precision@10": {
+     "mean": 0.3166666666666667,
+     "ci95": [
+      0.16666666666666666,
+      0.4666666666666666
+     ],
+     "n": 12
+    },
+    "chance": 0.23618588835364127,
+    "condensed_precision@10": 0.7138888888888889,
+    "judged_in_top50": 19.166666666666668,
+    "n": 12
+   },
+   "running": {
+    "precision@10": {
+     "mean": 0.049999999999999996,
+     "ci95": [
+      0.008333333333333333,
+      0.09187499999999983
+     ],
+     "n": 12
+    },
+    "chance": 0.10116180221025786,
+    "condensed_precision@10": 0.31666666666666665,
+    "judged_in_top50": 21.083333333333332,
+    "n": 12
+   },
+   "sleep": {
+    "precision@10": {
+     "mean": 0.05833333333333333,
+     "ci95": [
+      0.016666666666666666,
+      0.10000000000000002
+     ],
+     "n": 12
+    },
+    "chance": 0.05029753471238311,
+    "condensed_precision@10": 0.19999999999999998,
+    "judged_in_top50": 17.416666666666668,
+    "n": 12
+   },
+   "study": {
+    "precision@10": {
+     "mean": 0.049999999999999996,
+     "ci95": [
+      0.025000000000000005,
+      0.08333333333333333
+     ],
+     "n": 12
+    },
+    "chance": 0.03527911589685463,
+    "condensed_precision@10": 0.06666666666666667,
+    "judged_in_top50": 20.166666666666668,
+    "n": 12
+   },
+   "workout": {
+    "precision@10": {
+     "mean": 0.3333333333333333,
+     "ci95": [
+      0.20833333333333334,
+      0.46666666666666673
+     ],
+     "n": 12
+    },
+    "chance": 0.16350240861433835,
+    "condensed_precision@10": 0.5583333333333332,
+    "judged_in_top50": 27.833333333333332,
+    "n": 12
+   }
+  },
+  "per_query": [
+   {
+    "query": "what would you play for studying?",
+    "context_word": "study",
+    "surface": "study",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 33,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "what's good to listen to for focusing?",
+    "context_word": "study",
+    "surface": "focus",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 15,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "put something on for late nights",
+    "context_word": "study",
+    "surface": "late night",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 13,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "I want tunes for studying",
+    "context_word": "study",
+    "surface": "study",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 29,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "pick the perfect tracks for focusing",
+    "context_word": "study",
+    "surface": "focus",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 14,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "recommend me something for late nights",
+    "context_word": "study",
+    "surface": "late night",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 23,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "pick the perfect tracks for studying",
+    "context_word": "study",
+    "surface": "study",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 27,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "queue up some tracks for focusing",
+    "context_word": "study",
+    "surface": "focus",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 2,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "help me pick songs for late nights",
+    "context_word": "study",
+    "surface": "late night",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 19,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "any recommendations for studying?",
+    "context_word": "study",
+    "surface": "study",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 25,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "help me pick songs for focusing",
+    "context_word": "study",
+    "surface": "focus",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 22,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "got anything good for late nights?",
+    "context_word": "study",
+    "surface": "late night",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 20,
+    "chance": 0.03527911589685463
+   },
+   {
+    "query": "I want tunes for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 8,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "any recommendations for relaxing?",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.6,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 19,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "got anything good for relaxing?",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.6,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 22,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "recommend me something for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.4,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 21,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "need a soundtrack for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 14,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "background audio for relaxing, please",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.6,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 28,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "pick the perfect tracks for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.7,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 31,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "queue up some tracks for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 20,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "put something on for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.6666666666666666,
+    "judged_in_top50": 3,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "help me pick songs for relaxing",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 14,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "what would you play for relaxing?",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.6,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 34,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "what's good to listen to for relaxing?",
+    "context_word": "relaxing",
+    "surface": "relaxing",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 16,
+    "chance": 0.23618588835364127
+   },
+   {
+    "query": "pick the perfect tracks for sleep",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 16,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "queue up some tracks for winding down",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 30,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "any recommendations for sleep?",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 17,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "background audio for winding down, please",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 17,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "what's good to listen to for sleep?",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 16,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "need a soundtrack for winding down",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 12,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "help me pick songs for sleep",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 17,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "got anything good for winding down?",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 19,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "need a soundtrack for sleep",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 14,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "any recommendations for winding down?",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 20,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "I want tunes for sleep",
+    "context_word": "sleep",
+    "surface": "sleep",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 16,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "put something on for winding down",
+    "context_word": "sleep",
+    "surface": "wind down",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 15,
+    "chance": 0.05029753471238311
+   },
+   {
+    "query": "help me pick songs for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 24,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "recommend me something for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 17,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "need a soundtrack for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 15,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "background audio for a party, please",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 15,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "got anything good for a party?",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 14,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "queue up some tracks for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 19,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "I want tunes for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 14,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "any recommendations for a party?",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 13,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "pick the perfect tracks for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 25,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "what's good to listen to for a party?",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 18,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "put something on for a party",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 10,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "what would you play for a party?",
+    "context_word": "party",
+    "surface": "party",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 19,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "what's good to listen to for a workout?",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.4,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 28,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "what would you play for a workout?",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.4,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 24,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "recommend me something for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.7,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 32,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "need a soundtrack for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 28,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "queue up some tracks for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 33,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "put something on for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 16,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "help me pick songs for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.4,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 29,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "any recommendations for a workout?",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.7,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 30,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "got anything good for a workout?",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.5,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 27,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "I want tunes for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 30,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "background audio for a workout, please",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.4,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 28,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "pick the perfect tracks for a workout",
+    "context_word": "workout",
+    "surface": "workout",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 29,
+    "chance": 0.16350240861433835
+   },
+   {
+    "query": "what's good to listen to for running?",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 19,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "got anything good for running?",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 24,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "pick the perfect tracks for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 24,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "any recommendations for running?",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 19,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "queue up some tracks for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 22,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "need a soundtrack for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 20,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "I want tunes for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 24,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "put something on for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 17,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "recommend me something for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 24,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "help me pick songs for running",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 22,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "background audio for running, please",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 17,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "what would you play for running?",
+    "context_word": "running",
+    "surface": "running",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 21,
+    "chance": 0.10116180221025786
+   },
+   {
+    "query": "I want tunes for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 28,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "background audio for the gym, please",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 26,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "recommend me something for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 25,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "what's good to listen to for the gym?",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.6,
+    "judged_in_top50": 30,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "what would you play for the gym?",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 28,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "got anything good for the gym?",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 30,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "put something on for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 19,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "help me pick songs for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.5,
+    "judged_in_top50": 28,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "pick the perfect tracks for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.4,
+    "judged_in_top50": 29,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "need a soundtrack for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 25,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "any recommendations for the gym?",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 24,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "queue up some tracks for the gym",
+    "context_word": "gym",
+    "surface": "gym",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 25,
+    "chance": 0.13389062057240012
+   },
+   {
+    "query": "put something on for a rainy day",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 16,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "queue up some tracks for reflective moments",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 13,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "help me pick songs for a rainy day",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 14,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "put something on for reflective moments",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 26,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "what's good to listen to for a rainy day?",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 12,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "what's good to listen to for reflective moments?",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 13,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "got anything good for a rainy day?",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 18,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "background audio for reflective moments, please",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 36,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "need a soundtrack for a rainy day",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 13,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "need a soundtrack for reflective moments",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 17,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "background audio for a rainy day, please",
+    "context_word": "rainy day",
+    "surface": "rainy day",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 10,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "recommend me something for reflective moments",
+    "context_word": "rainy day",
+    "surface": "reflective",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 25,
+    "chance": 0.03301218475488807
+   },
+   {
+    "query": "any recommendations for dancing?",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 27,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "I want tunes for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.2,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 15,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "what's good to listen to for dancing?",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.8,
+    "judged_in_top50": 20,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "need a soundtrack for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.7,
+    "judged_in_top50": 23,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "help me pick songs for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 18,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "got anything good for dancing?",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.8,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 20,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "recommend me something for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.6,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 27,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "what would you play for dancing?",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.9,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 31,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "queue up some tracks for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.4,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 25,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "background audio for dancing, please",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.9,
+    "judged_in_top50": 21,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "put something on for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 1.0,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 26,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "pick the perfect tracks for dancing",
+    "context_word": "dance",
+    "surface": "dance",
+    "precision@10": 0.6,
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 28,
+    "chance": 0.22230093510909607
+   },
+   {
+    "query": "background audio for the morning, please",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 27,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "pick the perfect tracks for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 32,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "I want tunes for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 18,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "queue up some tracks for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 29,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "recommend me something for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 17,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "any recommendations for the morning?",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 16,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "help me pick songs for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 17,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "what's good to listen to for the morning?",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 20,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "need a soundtrack for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 14,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "what would you play for the morning?",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.3,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 19,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "got anything good for the morning?",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 21,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "put something on for the morning",
+    "context_word": "morning",
+    "surface": "morning",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 13,
+    "chance": 0.06914139982998016
+   },
+   {
+    "query": "put something on for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.375,
+    "judged_in_top50": 8,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "recommend me something for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 10,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "any recommendations for a coffee break?",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 15,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "got anything good for a coffee break?",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.2,
+    "judged_in_top50": 10,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "help me pick songs for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 14,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "queue up some tracks for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 17,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "pick the perfect tracks for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 16,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "background audio for a coffee break, please",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.1,
+    "condensed_precision@10": 0.3,
+    "judged_in_top50": 16,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "need a soundtrack for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 12,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "I want tunes for a coffee break",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 15,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "what's good to listen to for a coffee break?",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 17,
+    "chance": 0.03570416548597336
+   },
+   {
+    "query": "what would you play for a coffee break?",
+    "context_word": "coffee",
+    "surface": "coffee",
+    "precision@10": 0.0,
+    "condensed_precision@10": 0.1,
+    "judged_in_top50": 11,
+    "chance": 0.03570416548597336
+   }
+  ]
+ },
+ "eval_a": {
+  "n_queries": 500,
+  "hit@10": {
+   "mean": 0.096,
+   "ci95": [
+    0.072,
+    0.122
+   ],
+   "n": 500
+  },
+  "ndcg@10": {
+   "mean": 0.04742483481964466,
+   "ci95": [
+    0.03387184539239066,
+    0.062083973392439
+   ],
+   "n": 500
+  },
+  "ceiling_query_aware": 0.09204979255719137,
+  "ceiling_identical_desc": 0.9022264597040183
+ },
+ "gold": {
+  "n_accuracy": 30,
+  "tag_match@10": {
+   "mean": 0.6338888888888888,
+   "ci95": [
+    0.5013611111111111,
+    0.7500277777777777
+   ],
+   "n": 30
+  },
+  "avoid_violation@10": {
+   "per_query": {
+    "26": 0.0,
+    "27": 0.3,
+    "28": 0.0
+   },
+   "mean": 0.09999999999999999
+  },
+  "per_query": [
+   {
+    "num": 1,
+    "query": "something calm for a 3 a.m. study session",
+    "tag_match@10": 0.95
+   },
+   {
+    "num": 2,
+    "query": "need to focus on my thesis, nothing distracting",
+    "tag_match@10": 0.3
+   },
+   {
+    "num": 3,
+    "query": "background stuff while i code",
+    "tag_match@10": 0.0
+   },
+   {
+    "num": 4,
+    "query": "help me fall asleep",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 5,
+    "query": "quiet songs for bedtime",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 6,
+    "query": "pump me up for leg day",
+    "tag_match@10": 0.6666666666666667
+   },
+   {
+    "num": 7,
+    "query": "hardest gym bangers you've got",
+    "tag_match@10": 0.7999999999999999
+   },
+   {
+    "num": 8,
+    "query": "5k run, keep my pace up",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 9,
+    "query": "songs for jogging in the park",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 10,
+    "query": "pregame playlist for saturday night",
+    "tag_match@10": 0.0
+   },
+   {
+    "num": 11,
+    "query": "stuff that makes me want to dance",
+    "tag_match@10": 0.55
+   },
+   {
+    "num": 12,
+    "query": "lazy sunday afternoon with a coffee",
+    "tag_match@10": 0.75
+   },
+   {
+    "num": 13,
+    "query": "just want to unwind after work",
+    "tag_match@10": 0.95
+   },
+   {
+    "num": 14,
+    "query": "wake up music that isn't annoying",
+    "tag_match@10": 0.35
+   },
+   {
+    "num": 15,
+    "query": "good morning vibes while i make breakfast",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 16,
+    "query": "rainy afternoon staring out the window",
+    "tag_match@10": 0.8
+   },
+   {
+    "num": 17,
+    "query": "songs for when i'm in my feelings",
+    "tag_match@10": 0.0
+   },
+   {
+    "num": 18,
+    "query": "angry music to let it all out",
+    "tag_match@10": 0.25
+   },
+   {
+    "num": 19,
+    "query": "lo-fi hip hop for studying",
+    "tag_match@10": 0.6666666666666667
+   },
+   {
+    "num": 20,
+    "query": "metal for lifting heavy",
+    "tag_match@10": 0.575
+   },
+   {
+    "num": 21,
+    "query": "jazz with my morning coffee",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 22,
+    "query": "reggaeton for the party tonight",
+    "tag_match@10": 1.0
+   },
+   {
+    "num": 23,
+    "query": "acoustic folk to wind down before bed",
+    "tag_match@10": 0.775
+   },
+   {
+    "num": 24,
+    "query": "edm to get me through my run",
+    "tag_match@10": 0.7333333333333335
+   },
+   {
+    "num": 25,
+    "query": "classical piano while i read",
+    "tag_match@10": 0.25
+   },
+   {
+    "num": 26,
+    "query": "study music with no vocals",
+    "tag_match@10": 1.0,
+    "avoid_violation@10": 0.0
+   },
+   {
+    "num": 27,
+    "query": "something upbeat, not sad",
+    "tag_match@10": 0.0,
+    "avoid_violation@10": 0.3
+   },
+   {
+    "num": 28,
+    "query": "workout songs but nothing too heavy",
+    "tag_match@10": 1.0,
+    "avoid_violation@10": 0.0
+   },
+   {
+    "num": 29,
+    "query": "happy but chill",
+    "tag_match@10": 0.5
+   },
+   {
+    "num": 30,
+    "query": "sad but kind of upbeat at the same time",
+    "tag_match@10": 0.15
+   }
+  ],
+  "robustness": "n/a (guards come later)"
+ },
+ "valid_item_rate": 1.0,
+ "latency_ms": {
+  "p50": 8.98330000018177,
+  "p90": 10.18923999836261,
+  "n": 662,
+  "batch_size": 1,
+  "warmup": 10,
+  "note": "encoder on CPU; Ollama paraphrase run was using the GPU concurrently",
+  "end_to_end_with_explanation": "n/a (no explanation step)"
+ }
+}
