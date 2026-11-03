@@ -85,6 +85,11 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   collisions at 1.0 prove a problem.
 - 2.0 was rejected: it had the fewest collisions, but same genre fell to 61.9%.
 
+## Execution order for the remaining steps
+**5 → 8 → 10 → 6 (background) → 11 → 12 → 7 → 13 → 9.**
+- Step 10 (`eval/PLAN.md`) must be committed before Step 13 produces any numbers.
+- Step 6's full paraphrase run goes in the background (log file, not polled) while later steps proceed.
+
 ## Step 4b: skipped for now
 
 ## Step 5: `src/gen_queries.py`, templated queries (no LLM)
@@ -118,7 +123,29 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - every track_id exists in the catalog
   - no eval (query, track_id) pair exists in train
   - eval queries never contain a category value or a primary_genre-only value
-- **[STOP]** Show samples. Commit: `feat: templated synthetic queries`.
+- **Eval B (headline set)** → `data/proc/eval_context_queries.jsonl`, fields
+  `{query, context_word, playlist_words, surface, template_id}`:
+  - One entry per canonical context word with a non-null `CONTEXT_TO_PLAYLIST_WORDS` entry (11 words; synonym keys
+    are not canonical). 12 distinct queries each, context slot only, from `EVAL_B_TEMPLATES` (12 EVAL-style
+    phrasings, disjoint from TRAIN_TEMPLATES). Surfaces (canonical + synonyms) are interleaved.
+  - `playlist_words` are the canonical word's (synonyms map to canonical). random_state=8.
+  - Tests: no Eval B query string appears in train_pairs; no template string or skeleton is shared with TRAIN_TEMPLATES.
+- **[STOP]** Show samples. Commit: `feat: templated synthetic queries + eval B`.
+
+### Step 5 decisions (approved)
+- Context slots take the track's context words **rarest-first** (catalog-wide), so thin words get a query from
+  every track carrying them. Result: every context word ≥300 train pairs (sleep 338, lowest).
+- Eval category check is **per track**: an eval query may not contain that track's own category values or its
+  category-only primary_genre. Category words that are also tags/context (happy, party, sleep, study) remain
+  allowed for other tracks.
+- Slot vocab: "neutral mood" and "moderate energy" never fill slots; "spoken word or rap" renders as "rap";
+  category "romance" renders as "romantic" (train only); context words render as noun phrases
+  (`CONTEXT_PHRASES`). `wanted_tags` holds canonical words and raw genre ids.
+- **Genre humanizing** (train and eval): "-" → space (hard-rock → hard rock), r-n-b → r&b; hip-hop, k-pop, j-pop,
+  j-rock, j-dance, j-idol keep the hyphen. `wanted_tags` keep the genre id.
+- Seeds: train 6, Eval A sampling 7, Eval B 8.
+- Known gap (goes in DATA.md): Eval A has only 6 sound-type pairs (needs both a tempo and a sound tag) and thin
+  per-context-word coverage (e.g. rainy day 1). Context performance is measured on Eval B instead.
 
 ## Step 6: `src/paraphrase.py`, LLM paraphrases via local Ollama
 - Run `ollama list`, show the models and ask which one to use. Don't pick yourself.
@@ -164,6 +191,7 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - genre-balanced catalog with playlist and rock/indie skew
   - data collected up to 2022
   - 10,284 malformed playlist lines skipped
+  - Eval A: only 6 sound-type pairs and thin per-context-word coverage (see Step 5 decisions)
 - Rule precision note: precisions are **relative**, computed over context-playlist tracks only (tune
   half), and rules are compared by **lift**.
 - Context cap note: at most 4 context words per track, round-robin in lift order.
@@ -176,16 +204,39 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
 - Commit: `docs: data card`.
 
 ## Step 10: `eval/PLAN.md`, pre-registered evaluation
-- **Headline metric:** playlist precision@10 on context queries, using ONLY `label_split == "eval"` rows of
+- **Headline metric:** playlist precision@10 on Eval B context queries (`eval_context_queries.jsonl`), using ONLY `label_split == "eval"` rows of
   `context_labels.parquet`, compared with a FAISS dense-retrieval baseline. A retrieved track counts as
   correct if its eval-half playlist labels contain the queried context word (synonyms map to canonical).
 - **Secondary metrics:**
-  - Hit@10 on `eval_pairs.jsonl`, reported next to its oracle ceiling (readiness v2: mean
-    min(1, 10 / identical-content_desc group size) over 500 sampled tracks)
+  - Hit@10 and NDCG@10 on `eval_pairs.jsonl` (Eval A), Hit@10 reported next to its oracle ceiling (readiness v2:
+    mean min(1, 10 / identical-content_desc group size) over 500 sampled tracks)
   - tag-match@10 on the gold queries
   - valid-item rate
   - p50 latency
 - Commit `docs: pre-registered eval plan` **before any model code exists**.
+
+## Step 11: `src/sids.py`, Semantic IDs
+- Item vector (option B): content_desc embedded with `all-MiniLM-L6-v2` (normalized) + min-max scaled audio
+  features × `AUDIO_WEIGHT = 1.0`.
+- Residual k-means, 3 levels × 256, seed 11. Dedupe digit `d` makes every full SID unique.
+- Save `data/proc/sids.parquet` (track_id, a, b, c, d) and the prefix trie.
+- Report: collision rate, max tracks per code, level-1 cluster size distribution.
+- Tests: every track has a unique full SID; the trie yields only catalog SIDs.
+
+## Step 12: `src/cluster_names.py`, level-1 cluster names
+- For each level-1 cluster, send 10 sample content_descs to Ollama and get a 2–4 word name.
+- Save `data/proc/cluster_names.json`.
+- **[STOP]** Show 20 names for review.
+
+## Step 13: `src/baseline.py`, FAISS dense-retrieval baseline
+- **Requires Step 10 (`eval/PLAN.md`) committed first.**
+- Item vectors: text embedding of content_desc only (queries carry no audio).
+- Report all pre-registered metrics:
+  - playlist precision@10 on Eval B (eval-half labels only)
+  - Hit@10 + oracle ceiling and NDCG@10 on Eval A
+  - tag-match@10 on gold queries
+  - p50 latency
+- Save `eval/results_baseline.json`.
 
 ---
 

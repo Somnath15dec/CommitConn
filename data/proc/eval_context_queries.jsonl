@@ -1,0 +1,132 @@
+{"query": "what would you play for studying?", "context_word": "study", "playlist_words": ["study"], "surface": "study", "template_id": "evb_8"}
+{"query": "what's good to listen to for focusing?", "context_word": "study", "playlist_words": ["study"], "surface": "focus", "template_id": "evb_12"}
+{"query": "put something on for late nights", "context_word": "study", "playlist_words": ["study"], "surface": "late night", "template_id": "evb_3"}
+{"query": "I want tunes for studying", "context_word": "study", "playlist_words": ["study"], "surface": "study", "template_id": "evb_4"}
+{"query": "pick the perfect tracks for focusing", "context_word": "study", "playlist_words": ["study"], "surface": "focus", "template_id": "evb_9"}
+{"query": "recommend me something for late nights", "context_word": "study", "playlist_words": ["study"], "surface": "late night", "template_id": "evb_11"}
+{"query": "pick the perfect tracks for studying", "context_word": "study", "playlist_words": ["study"], "surface": "study", "template_id": "evb_9"}
+{"query": "queue up some tracks for focusing", "context_word": "study", "playlist_words": ["study"], "surface": "focus", "template_id": "evb_7"}
+{"query": "help me pick songs for late nights", "context_word": "study", "playlist_words": ["study"], "surface": "late night", "template_id": "evb_6"}
+{"query": "any recommendations for studying?", "context_word": "study", "playlist_words": ["study"], "surface": "study", "template_id": "evb_1"}
+{"query": "help me pick songs for focusing", "context_word": "study", "playlist_words": ["study"], "surface": "focus", "template_id": "evb_6"}
+{"query": "got anything good for late nights?", "context_word": "study", "playlist_words": ["study"], "surface": "late night", "template_id": "evb_5"}
+{"query": "I want tunes for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_4"}
+{"query": "any recommendations for relaxing?", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_1"}
+{"query": "got anything good for relaxing?", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_5"}
+{"query": "recommend me something for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_11"}
+{"query": "need a soundtrack for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_2"}
+{"query": "background audio for relaxing, please", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_10"}
+{"query": "pick the perfect tracks for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_9"}
+{"query": "queue up some tracks for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_7"}
+{"query": "put something on for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_3"}
+{"query": "help me pick songs for relaxing", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_6"}
+{"query": "what would you play for relaxing?", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_8"}
+{"query": "what's good to listen to for relaxing?", "context_word": "relaxing", "playlist_words": ["relax", "chill"], "surface": "relaxing", "template_id": "evb_12"}
+{"query": "pick the perfect tracks for sleep", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_9"}
+{"query": "queue up some tracks for winding down", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_7"}
+{"query": "any recommendations for sleep?", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_1"}
+{"query": "background audio for winding down, please", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_10"}
+{"query": "what's good to listen to for sleep?", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_12"}
+{"query": "need a soundtrack for winding down", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_2"}
+{"query": "help me pick songs for sleep", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_6"}
+{"query": "got anything good for winding down?", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_5"}
+{"query": "need a soundtrack for sleep", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_2"}
+{"query": "any recommendations for winding down?", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_1"}
+{"query": "I want tunes for sleep", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "sleep", "template_id": "evb_4"}
+{"query": "put something on for winding down", "context_word": "sleep", "playlist_words": ["sleep"], "surface": "wind down", "template_id": "evb_3"}
+{"query": "help me pick songs for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_6"}
+{"query": "recommend me something for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_11"}
+{"query": "need a soundtrack for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_2"}
+{"query": "background audio for a party, please", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_10"}
+{"query": "got anything good for a party?", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_5"}
+{"query": "queue up some tracks for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_7"}
+{"query": "I want tunes for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_4"}
+{"query": "any recommendations for a party?", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_1"}
+{"query": "pick the perfect tracks for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_9"}
+{"query": "what's good to listen to for a party?", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_12"}
+{"query": "put something on for a party", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_3"}
+{"query": "what would you play for a party?", "context_word": "party", "playlist_words": ["party"], "surface": "party", "template_id": "evb_8"}
+{"query": "what's good to listen to for a workout?", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_12"}
+{"query": "what would you play for a workout?", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_8"}
+{"query": "recommend me something for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_11"}
+{"query": "need a soundtrack for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_2"}
+{"query": "queue up some tracks for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_7"}
+{"query": "put something on for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_3"}
+{"query": "help me pick songs for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_6"}
+{"query": "any recommendations for a workout?", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_1"}
+{"query": "got anything good for a workout?", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_5"}
+{"query": "I want tunes for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_4"}
+{"query": "background audio for a workout, please", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_10"}
+{"query": "pick the perfect tracks for a workout", "context_word": "workout", "playlist_words": ["workout", "gym", "running"], "surface": "workout", "template_id": "evb_9"}
+{"query": "what's good to listen to for running?", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_12"}
+{"query": "got anything good for running?", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_5"}
+{"query": "pick the perfect tracks for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_9"}
+{"query": "any recommendations for running?", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_1"}
+{"query": "queue up some tracks for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_7"}
+{"query": "need a soundtrack for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_2"}
+{"query": "I want tunes for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_4"}
+{"query": "put something on for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_3"}
+{"query": "recommend me something for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_11"}
+{"query": "help me pick songs for running", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_6"}
+{"query": "background audio for running, please", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_10"}
+{"query": "what would you play for running?", "context_word": "running", "playlist_words": ["running", "run playlist"], "surface": "running", "template_id": "evb_8"}
+{"query": "I want tunes for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_4"}
+{"query": "background audio for the gym, please", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_10"}
+{"query": "recommend me something for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_11"}
+{"query": "what's good to listen to for the gym?", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_12"}
+{"query": "what would you play for the gym?", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_8"}
+{"query": "got anything good for the gym?", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_5"}
+{"query": "put something on for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_3"}
+{"query": "help me pick songs for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_6"}
+{"query": "pick the perfect tracks for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_9"}
+{"query": "need a soundtrack for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_2"}
+{"query": "any recommendations for the gym?", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_1"}
+{"query": "queue up some tracks for the gym", "context_word": "gym", "playlist_words": ["gym", "workout"], "surface": "gym", "template_id": "evb_7"}
+{"query": "put something on for a rainy day", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_3"}
+{"query": "queue up some tracks for reflective moments", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_7"}
+{"query": "help me pick songs for a rainy day", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_6"}
+{"query": "put something on for reflective moments", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_3"}
+{"query": "what's good to listen to for a rainy day?", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_12"}
+{"query": "what's good to listen to for reflective moments?", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_12"}
+{"query": "got anything good for a rainy day?", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_5"}
+{"query": "background audio for reflective moments, please", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_10"}
+{"query": "need a soundtrack for a rainy day", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_2"}
+{"query": "need a soundtrack for reflective moments", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_2"}
+{"query": "background audio for a rainy day, please", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "rainy day", "template_id": "evb_10"}
+{"query": "recommend me something for reflective moments", "context_word": "rainy day", "playlist_words": ["rain"], "surface": "reflective", "template_id": "evb_11"}
+{"query": "any recommendations for dancing?", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_1"}
+{"query": "I want tunes for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_4"}
+{"query": "what's good to listen to for dancing?", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_12"}
+{"query": "need a soundtrack for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_2"}
+{"query": "help me pick songs for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_6"}
+{"query": "got anything good for dancing?", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_5"}
+{"query": "recommend me something for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_11"}
+{"query": "what would you play for dancing?", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_8"}
+{"query": "queue up some tracks for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_7"}
+{"query": "background audio for dancing, please", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_10"}
+{"query": "put something on for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_3"}
+{"query": "pick the perfect tracks for dancing", "context_word": "dance", "playlist_words": ["party"], "surface": "dance", "template_id": "evb_9"}
+{"query": "background audio for the morning, please", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_10"}
+{"query": "pick the perfect tracks for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_9"}
+{"query": "I want tunes for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_4"}
+{"query": "queue up some tracks for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_7"}
+{"query": "recommend me something for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_11"}
+{"query": "any recommendations for the morning?", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_1"}
+{"query": "help me pick songs for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_6"}
+{"query": "what's good to listen to for the morning?", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_12"}
+{"query": "need a soundtrack for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_2"}
+{"query": "what would you play for the morning?", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_8"}
+{"query": "got anything good for the morning?", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_5"}
+{"query": "put something on for the morning", "context_word": "morning", "playlist_words": ["morning"], "surface": "morning", "template_id": "evb_3"}
+{"query": "put something on for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_3"}
+{"query": "recommend me something for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_11"}
+{"query": "any recommendations for a coffee break?", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_1"}
+{"query": "got anything good for a coffee break?", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_5"}
+{"query": "help me pick songs for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_6"}
+{"query": "queue up some tracks for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_7"}
+{"query": "pick the perfect tracks for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_9"}
+{"query": "background audio for a coffee break, please", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_10"}
+{"query": "need a soundtrack for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_2"}
+{"query": "I want tunes for a coffee break", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_4"}
+{"query": "what's good to listen to for a coffee break?", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_12"}
+{"query": "what would you play for a coffee break?", "context_word": "coffee", "playlist_words": ["coffee"], "surface": "coffee", "template_id": "evb_8"}
