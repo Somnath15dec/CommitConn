@@ -1,8 +1,10 @@
 # Pre-registered evaluation plan
 
 **The metrics and scoring rules below are fixed before any model or baseline numbers exist.**
-When this file was committed there was no embedding, Semantic ID, model or baseline code in the repo, and no
-retrieval run had happened. Any later change to this file has its own commit and a written reason. Results from
+When this file was committed, the repo held no Semantic ID, model, FAISS-baseline or scoring code, and no system
+had been run on Eval A, Eval B or the gold set. The only embedding code was the Step 4.5 readiness analysis
+(`src/analyze_readiness.py`). It embeds catalog descs to check data quality (k-NN coherence, k-means preview,
+oracle ceiling) and never scores any eval query. Any later change to this file has its own commit and a written reason. Results from
 before a change are reported under the old rules too.
 
 ## Systems compared
