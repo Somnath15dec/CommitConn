@@ -195,6 +195,8 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - Gold query 19 ("lo-fi hip hop for studying") maps "lo-fi" to hip-hop (+ calm): the catalog has no lo-fi genre
   - Version dedupe (Step 4.7): 4 merged groups are arguably distinct recordings (Bailando EN/ES, La Valse
     d'Amélie piano/orchestra, the Habits and Prayer in C radio edits)
+  - Category-only tracks whose category was hidden from desc (it contradicted their audio tags) have no genre in desc
+    and cluster on audio alone: 12 such tracks form one level-1 cluster (Step 11, cluster 169).
 - Rule precision note: precisions are **relative**, computed over context-playlist tracks only (tune
   half), and rules are compared by **lift**.
 - Context cap note: at most 4 context words per track, round-robin in lift order.
@@ -257,7 +259,10 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
     Eval A: 1 pair replaced (it asked for "coffee"). Eval B and gold unchanged.
 - **Data frozen after this commit.**
 
-## Step 11: `src/sids.py`, Semantic IDs
+## Step 11: `src/sids.py`, Semantic IDs (done, `feat: semantic IDs and trie`)
+- Result: collision rate 11.0%, max 9 tracks per code, 256/256 level-1 clusters (size 3-107, median 36).
+  Level-1 purity: top-genre share 0.633 (random 0.093), top-context share 0.687 (random 0.292).
+  Mean cosine: share (a) 0.943, share (a,b) 0.984, random 0.770. Trie: `data/proc/sid_trie.json`.
 - Item vector (option B): content_desc embedded with `all-MiniLM-L6-v2` (normalized) + min-max scaled audio
   features × `AUDIO_WEIGHT = 1.0`.
 - Residual k-means, 3 levels × 256, seed 11. Dedupe digit `d` makes every full SID unique.
