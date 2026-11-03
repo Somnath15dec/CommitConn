@@ -3,3 +3,4 @@ data/raw/
 checkpoints/
 *.pt
 __pycache__/
+exports/

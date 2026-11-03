@@ -11,3 +11,4 @@ Rules:
 - Train and eval query templates must never overlap.
 - Use pathlib for all paths; never hardcode "/" or "\" separators.
 - Long-running jobs (e.g. paraphrasing) run in the background with output to a log file; don't poll it.
+- Spotify `category` (study/sleep/chill/party/happy/sad/romance) and playlist names never fill eval templates; playlist names never appear in desc, tags or training queries.
