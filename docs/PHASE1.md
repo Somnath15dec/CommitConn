@@ -192,6 +192,7 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - data collected up to 2022
   - 10,284 malformed playlist lines skipped
   - Eval A: only 6 sound-type pairs and thin per-context-word coverage (see Step 5 decisions)
+  - Gold query 19 ("lo-fi hip hop for studying") maps "lo-fi" to hip-hop (+ calm): the catalog has no lo-fi genre
 - Rule precision note: precisions are **relative**, computed over context-playlist tracks only (tune
   half), and rules are compared by **lift**.
 - Context cap note: at most 4 context words per track, round-robin in lift order.
