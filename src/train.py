@@ -12,8 +12,10 @@
   val exact-track Hit@10 (constrained beam 20), dev playlist precision@10 (src/dev_split.py, constrained beam 20
   over the dev pool). Train / val pairs come from the frozen files (python -m src.train_data --freeze).
 
-    python -m src.train            # full run (GPU)
-    python -m src.train --smoke    # 500 pairs, 50 steps
+    python -m src.train --run run1   # full run (GPU): checkpoints/run1/epoch{1..3}, train_log.jsonl, summary.json
+    python -m src.train --smoke      # 500 pairs, 50 steps
+
+summary.json: per-epoch table; best epoch = highest dev (b) precision@10, ties broken by lower val loss.
 """
 from __future__ import annotations
 
@@ -30,7 +32,7 @@ import torch
 
 from src.decode import LEVELS, PROMPT, SidDecoder, sid_token, sid_token_list
 from src.paths import ROOT
-from src.dev_split import dev_precision, training_tune_tracks
+from src.dev_split import K_CONDENSED, dev_metrics, dev_tracks, training_tune_tracks
 from src.train_data import SIDS, epoch_indices, frozen_split
 
 BASE_MODEL = "Qwen/Qwen3-0.6B"
@@ -42,6 +44,7 @@ MICRO_BATCH, GRAD_ACCUM = 16, 4          # effective batch 64
 LR, EPOCHS = 2e-4, 3
 WARMUP_STEPS = 30                        # linear warmup, then cosine decay
 VAL_BEAMS, VAL_K = 20, 10
+DECODE_BATCH_20, DECODE_BATCH_50 = 8, 2     # queries per generate() call; keeps beam-search logits inside 8 GB
 SMOKE_PAIRS, SMOKE_STEPS, SMOKE_VAL = 500, 50, 100
 SEED = 20
 N_SID = len(LEVELS)
@@ -147,7 +150,7 @@ def sid_valid_rate(model, tok, dec: SidDecoder, queries: list[str], batch: int =
 
 
 def hit_at_k(dec: SidDecoder, val: pd.DataFrame, k: int = VAL_K, beams: int = VAL_BEAMS) -> float:
-    res = dec.search(val["query"].tolist(), n=k, num_beams=beams)
+    res = dec.search(val["query"].tolist(), n=k, num_beams=beams, batch_size=DECODE_BATCH_20)
     return float(np.mean([t in {x for x, _ in r} for t, r in zip(val.track_id, res)]))
 
 
@@ -159,7 +162,12 @@ def cosine_lr(step: int, total: int) -> float:
     return 0.5 * (1 + math.cos(math.pi * min(1.0, p)))
 
 
-def train(smoke: bool = False) -> None:
+def best_epoch(table: list[dict]) -> dict:
+    """Highest dev (b) precision@10; ties: lower val loss."""
+    return max(table, key=lambda r: (r["dev_b_precision@10"], -r["val_loss"]))
+
+
+def train(smoke: bool = False, run_name: str = "run1") -> None:
     torch.manual_seed(SEED)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     sids = pd.read_parquet(SIDS)
@@ -174,15 +182,18 @@ def train(smoke: bool = False) -> None:
     print(f"train {tr.source.value_counts().to_dict()} | val {len(val):,} | new tokens {len(new_ids)} | "
           f"trainable {trainable:,} / {total:,}", flush=True)
     dec = SidDecoder(model, tok, sids)
-    dev_dec = SidDecoder(model, tok, sids, exclude=training_tune_tracks())
+    dev_dec_b = SidDecoder(model, tok, sids, exclude=set(sids.track_id) - dev_tracks())     # within dev tracks
+    dev_dec_a = SidDecoder(model, tok, sids, exclude=training_tune_tracks())                # dev pool
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LR, weight_decay=0.0)
     epochs = 1 if smoke else EPOCHS
     steps_per_epoch = [math.ceil(len(epoch_indices(tr, e)) / (MICRO_BATCH * GRAD_ACCUM)) for e in range(epochs)]
     total_steps = SMOKE_STEPS if smoke else sum(steps_per_epoch)
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: cosine_lr(s, total_steps))
     rows = tr[["query", *LEVELS]].to_numpy(dtype=object)
-    log_path = CHECKPOINTS / ("smoke_log.jsonl" if smoke else "train_log.jsonl")
-    CHECKPOINTS.mkdir(exist_ok=True)
+    run_dir = CHECKPOINTS / ("smoke" if smoke else run_name)
+    run_dir.mkdir(parents=True, exist_ok=True)
+    log_path = run_dir / "train_log.jsonl"
+    table, per_word = [], {}
     step = 0
 
     def opt_step():
@@ -198,6 +209,8 @@ def train(smoke: bool = False) -> None:
         model.train()
         opt.zero_grad(set_to_none=True)
         t0, run, n, group, t_step = time.time(), 0.0, 0, 0.0, time.time()
+        if device.type == "cuda":
+            torch.cuda.reset_peak_memory_stats()
         for s in range(0, len(idx), MICRO_BATCH):
             b = collate([encode(tok, r[0], r[1:]) for r in rows[idx[s:s + MICRO_BATCH]]], tok.pad_token_id)
             with torch.autocast(device.type, dtype=torch.bfloat16, enabled=device.type == "cuda"):
@@ -215,26 +228,44 @@ def train(smoke: bool = False) -> None:
                     break
         if n % GRAD_ACCUM and step < total_steps:     # flush the last partial accumulation group of the epoch
             opt_step()
-        rec = {"epoch": epoch, "step": step, "train_loss": run / max(1, n), "val_loss": val_loss(model, tok, val, device),
+        train_secs = time.time() - t0
+        peak_train = torch.cuda.max_memory_allocated() / 1e9 if device.type == "cuda" else None
+        rec = {"epoch": epoch + 1, "step": step, "train_loss": run / max(1, n),
+               "val_loss": val_loss(model, tok, val, device),
                "val_sid_valid_greedy": sid_valid_rate(model, tok, dec, val["query"].tolist()),
-               "val_hit@10_constrained": hit_at_k(dec, val),
-               "dev_precision@10": dev_precision(lambda qs: [[t for t, _ in r] for r in
-                                                             dev_dec.search(qs, n=VAL_K, num_beams=VAL_BEAMS)]
-                                                 )["dev_precision@10"],
-               "seconds": time.time() - t0}
+               "val_hit@10_constrained": hit_at_k(dec, val), "train_seconds": train_secs}
+        dm = dev_metrics(
+            lambda qs: [[t for t, _ in r] for r in dev_dec_b.search(qs, n=VAL_K, num_beams=VAL_BEAMS, batch_size=DECODE_BATCH_20)],
+            lambda qs: [[t for t, _ in r] for r in dev_dec_a.search(qs, n=K_CONDENSED, num_beams=K_CONDENSED, batch_size=DECODE_BATCH_50)])
+        rec.update({k: v for k, v in dm.items() if k not in ("a", "b")})
+        rec["epoch_seconds"] = time.time() - t0
         if device.type == "cuda":
-            rec["peak_vram_gb"] = torch.cuda.max_memory_allocated() / 1e9
+            rec["peak_vram_gb_train"] = peak_train
+            rec["peak_vram_gb_with_eval"] = torch.cuda.max_memory_allocated() / 1e9
+        table.append(rec)
+        per_word[epoch + 1] = {"b": dm["b"]["per_word"], "a": dm["a"]["per_word"]}
         print(json.dumps(rec), flush=True)
         with log_path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(rec) + "\n")
         if not smoke:
-            out = CHECKPOINTS / f"epoch_{epoch}"
+            out = run_dir / f"epoch{epoch + 1}"
             model.save_pretrained(out)
             tok.save_pretrained(out)
+    best = best_epoch(table)
+    summary = {"run": run_dir.name, "seed": SEED, "epochs": table, "best_epoch": best["epoch"],
+               "best_rule": "highest dev_b_precision@10; ties: lower val_loss", "dev_per_word": per_word,
+               "config": {"lr": LR, "warmup_steps": WARMUP_STEPS, "micro_batch": MICRO_BATCH, "grad_accum": GRAD_ACCUM,
+                          "lora_r": LORA_R, "lora_alpha": LORA_ALPHA, "lora_dropout": LORA_DROPOUT,
+                          "max_len": MAX_LEN, "total_steps": total_steps, "train_pairs": len(tr), "val_pairs": len(val)}}
+    (run_dir / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
+    print(f"best epoch: {best['epoch']} (dev b {best['dev_b_precision@10']:.3f}, val loss {best['val_loss']:.4f})",
+          flush=True)
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
-    train(ap.parse_args().smoke)
+    ap.add_argument("--run", default="run1")
+    a = ap.parse_args()
+    train(a.smoke, a.run)
     sys.exit(0)

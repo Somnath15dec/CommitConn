@@ -1,3 +1,4 @@
+import pytest
 import pandas as pd
 
 from src import dev_split as S
@@ -58,3 +59,30 @@ def test_frozen_pool_matches_rebuild():
     t2, v2 = D.split_val(D.load_pool()[0])
     key = lambda df: set(zip(df["query"], df.track_id))
     assert key(train) == key(t2) and key(val) == key(v2) and len(val) == D.VAL_N
+
+
+def test_dev_b_ranks_within_dev_tracks_and_chance():
+    dev, rel = S.dev_tracks(), S.relevant_by_word()
+    q = [d for d in S.dev_queries() if d["context_word"] == "sleep"][:1]
+    r = S.dev_precision(lambda qs: [sorted(dev)[:10] for _ in qs], q, pool=dev)
+    assert r["chance"] == pytest.approx(len(rel["sleep"]) / len(dev))
+
+
+def test_condensed_dev_precision_a():
+    dev, rel = sorted(S.dev_tracks()), S.relevant_by_word()
+    w = "party"
+    q = [d for d in S.dev_queries() if d["context_word"] == w][:1]
+    hit = sorted(rel[w])[0]
+    miss = next(t for t in dev if t not in rel[w])
+    top = ["not-a-dev-track"] * 5 + [hit, miss] + ["x"] * 43             # 2 judged in top 50 -> m = 2
+    r = S.condensed_precision(lambda qs: [top for _ in qs], q)
+    assert r["condensed_dev_precision@10"] == pytest.approx(0.5) and r["judged_in_top50_mean"] == 2
+    r0 = S.condensed_precision(lambda qs: [["x"] * 50 for _ in qs], q)
+    assert r0["condensed_dev_precision@10"] == 0.0
+
+
+def test_faiss_dev_file_has_both_metrics():
+    import json
+    r = json.loads(S.DEV_FAISS.read_text(encoding="utf-8"))
+    assert r["primary"] == "dev_b_precision@10" and 0 <= r["dev_a_condensed_precision@10"] <= 1
+    assert set(r["b"]["per_word"]) == set(S.eval_b_words())

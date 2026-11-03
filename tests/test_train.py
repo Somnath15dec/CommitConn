@@ -148,3 +148,10 @@ def test_warmup_cosine_schedule():
     assert T.cosine_lr(w, 130) == pytest.approx(1.0)
     assert T.cosine_lr(w + 50, 130) == pytest.approx(0.5)
     assert T.cosine_lr(130, 130) == pytest.approx(0.0, abs=1e-9)
+
+
+def test_best_epoch_rule():
+    t = [{"epoch": 1, "dev_b_precision@10": 0.3, "val_loss": 2.0}, {"epoch": 2, "dev_b_precision@10": 0.4, "val_loss": 1.5},
+         {"epoch": 3, "dev_b_precision@10": 0.4, "val_loss": 1.2}]
+    assert T.best_epoch(t)["epoch"] == 3
+    assert T.best_epoch(t[:2])["epoch"] == 2

@@ -1,65 +1,125 @@
 {
- "dev_precision@10": 0.0,
- "n_queries": 42,
- "chance": 0.013868515802106952,
- "per_word": {
-  "coffee": {
-   "precision@10": 0.0,
-   "chance": 0.0038671822909721295,
-   "relevant_dev_tracks": 29
-  },
-  "dance": {
-   "precision@10": 0.0,
-   "chance": 0.031204160554740634,
-   "relevant_dev_tracks": 234
-  },
-  "gym": {
-   "precision@10": 0.0,
-   "chance": 0.01706894252567009,
-   "relevant_dev_tracks": 128
-  },
-  "morning": {
-   "precision@10": 0.0,
-   "chance": 0.010401386851580211,
-   "relevant_dev_tracks": 78
-  },
-  "party": {
-   "precision@10": 0.0,
-   "chance": 0.031204160554740634,
-   "relevant_dev_tracks": 234
-  },
-  "rainy day": {
-   "precision@10": 0.0,
-   "chance": 0.0036004800640085347,
-   "relevant_dev_tracks": 27
-  },
-  "relaxing": {
-   "precision@10": 0.0,
-   "chance": 0.032671022803040406,
-   "relevant_dev_tracks": 245
-  },
-  "running": {
-   "precision@10": 0.0,
-   "chance": 0.013335111348179758,
-   "relevant_dev_tracks": 100
-  },
-  "sleep": {
-   "precision@10": 0.0,
-   "chance": 0.006934257901053474,
-   "relevant_dev_tracks": 52
-  },
-  "study": {
-   "precision@10": 0.0,
-   "chance": 0.005467395652753701,
-   "relevant_dev_tracks": 41
-  },
-  "workout": {
-   "precision@10": 0.0,
-   "chance": 0.022402987064941992,
-   "relevant_dev_tracks": 168
+ "dev_b_precision@10": 0.3238095238095238,
+ "dev_b_chance": 0.23582766439909295,
+ "dev_a_condensed_precision@10": 0.23098072562358277,
+ "dev_a_judged_in_top50": 3.119047619047619,
+ "dev_pool_precision@10": 0.0,
+ "b": {
+  "dev_precision@10": 0.3238095238095238,
+  "n_queries": 42,
+  "chance": 0.23582766439909295,
+  "per_word": {
+   "coffee": {
+    "precision@10": 0.03333333333333333,
+    "chance": 0.06575963718820861,
+    "relevant_dev_tracks": 29
+   },
+   "dance": {
+    "precision@10": 0.8333333333333334,
+    "chance": 0.5306122448979592,
+    "relevant_dev_tracks": 234
+   },
+   "gym": {
+    "precision@10": 0.10000000000000002,
+    "chance": 0.29024943310657597,
+    "relevant_dev_tracks": 128
+   },
+   "morning": {
+    "precision@10": 0.39999999999999997,
+    "chance": 0.17687074829931973,
+    "relevant_dev_tracks": 78
+   },
+   "party": {
+    "precision@10": 0.8000000000000002,
+    "chance": 0.5306122448979592,
+    "relevant_dev_tracks": 234
+   },
+   "rainy day": {
+    "precision@10": 0.25,
+    "chance": 0.061224489795918366,
+    "relevant_dev_tracks": 27
+   },
+   "relaxing": {
+    "precision@10": 0.7999999999999999,
+    "chance": 0.5555555555555556,
+    "relevant_dev_tracks": 245
+   },
+   "running": {
+    "precision@10": 0.4000000000000001,
+    "chance": 0.22675736961451248,
+    "relevant_dev_tracks": 100
+   },
+   "sleep": {
+    "precision@10": 0.0,
+    "chance": 0.11791383219954649,
+    "relevant_dev_tracks": 52
+   },
+   "study": {
+    "precision@10": 0.06666666666666667,
+    "chance": 0.09297052154195011,
+    "relevant_dev_tracks": 41
+   },
+   "workout": {
+    "precision@10": 0.5333333333333333,
+    "chance": 0.38095238095238093,
+    "relevant_dev_tracks": 168
+   }
+  }
+ },
+ "a": {
+  "condensed_dev_precision@10": 0.23098072562358277,
+  "judged_in_top50_mean": 3.119047619047619,
+  "pool_precision@10": 0.0,
+  "n_queries": 42,
+  "per_word": {
+   "coffee": {
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 1.3333333333333333
+   },
+   "dance": {
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 3.0
+   },
+   "gym": {
+    "condensed_precision@10": 0.28095238095238095,
+    "judged_in_top50": 4.666666666666667
+   },
+   "morning": {
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 1.6666666666666667
+   },
+   "party": {
+    "condensed_precision@10": 0.16666666666666666,
+    "judged_in_top50": 1.3333333333333333
+   },
+   "rainy day": {
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 1.8333333333333333
+   },
+   "relaxing": {
+    "condensed_precision@10": 1.0,
+    "judged_in_top50": 2.3333333333333335
+   },
+   "running": {
+    "condensed_precision@10": 0.27777777777777773,
+    "judged_in_top50": 3.0
+   },
+   "sleep": {
+    "condensed_precision@10": 0.0,
+    "judged_in_top50": 2.5
+   },
+   "study": {
+    "condensed_precision@10": 0.020833333333333332,
+    "judged_in_top50": 6.666666666666667
+   },
+   "workout": {
+    "condensed_precision@10": 0.4666666666666666,
+    "judged_in_top50": 4.333333333333333
+   }
   }
  },
  "system": "faiss_baseline (frozen, 9dcece8)",
  "n_dev_tracks": 441,
- "pool_size": 7499
+ "dev_pool_size": 7499,
+ "primary": "dev_b_precision@10"
 }
