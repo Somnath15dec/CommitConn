@@ -141,7 +141,10 @@ def test_val_split_and_epoch_sampler(pool):
     assert set(np.flatnonzero(small.to_numpy())) <= set(e0)              # strings under the cap are kept whole
 
 
-def test_cosine_schedule():
-    assert T.cosine_lr(0, 100) == pytest.approx(1.0)
-    assert T.cosine_lr(50, 100) == pytest.approx(0.5)
-    assert T.cosine_lr(100, 100) == pytest.approx(0.0, abs=1e-9)
+def test_warmup_cosine_schedule():
+    w = T.WARMUP_STEPS
+    assert w == 30
+    assert T.cosine_lr(0, 130) == pytest.approx(1 / w) and T.cosine_lr(w - 1, 130) == pytest.approx(1.0)
+    assert T.cosine_lr(w, 130) == pytest.approx(1.0)
+    assert T.cosine_lr(w + 50, 130) == pytest.approx(0.5)
+    assert T.cosine_lr(130, 130) == pytest.approx(0.0, abs=1e-9)

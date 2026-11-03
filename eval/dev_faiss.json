@@ -1,0 +1,65 @@
+{
+ "dev_precision@10": 0.0,
+ "n_queries": 42,
+ "chance": 0.013868515802106952,
+ "per_word": {
+  "coffee": {
+   "precision@10": 0.0,
+   "chance": 0.0038671822909721295,
+   "relevant_dev_tracks": 29
+  },
+  "dance": {
+   "precision@10": 0.0,
+   "chance": 0.031204160554740634,
+   "relevant_dev_tracks": 234
+  },
+  "gym": {
+   "precision@10": 0.0,
+   "chance": 0.01706894252567009,
+   "relevant_dev_tracks": 128
+  },
+  "morning": {
+   "precision@10": 0.0,
+   "chance": 0.010401386851580211,
+   "relevant_dev_tracks": 78
+  },
+  "party": {
+   "precision@10": 0.0,
+   "chance": 0.031204160554740634,
+   "relevant_dev_tracks": 234
+  },
+  "rainy day": {
+   "precision@10": 0.0,
+   "chance": 0.0036004800640085347,
+   "relevant_dev_tracks": 27
+  },
+  "relaxing": {
+   "precision@10": 0.0,
+   "chance": 0.032671022803040406,
+   "relevant_dev_tracks": 245
+  },
+  "running": {
+   "precision@10": 0.0,
+   "chance": 0.013335111348179758,
+   "relevant_dev_tracks": 100
+  },
+  "sleep": {
+   "precision@10": 0.0,
+   "chance": 0.006934257901053474,
+   "relevant_dev_tracks": 52
+  },
+  "study": {
+   "precision@10": 0.0,
+   "chance": 0.005467395652753701,
+   "relevant_dev_tracks": 41
+  },
+  "workout": {
+   "precision@10": 0.0,
+   "chance": 0.022402987064941992,
+   "relevant_dev_tracks": 168
+  }
+ },
+ "system": "faiss_baseline (frozen, 9dcece8)",
+ "n_dev_tracks": 441,
+ "pool_size": 7499
+}

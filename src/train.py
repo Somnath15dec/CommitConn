@@ -9,7 +9,8 @@
   for the last 6 positions only (logits_to_keep), so the 152k-way softmax runs on 4 positions, not 64.
 - bf16 autocast (adapters fp32), max_len 64, micro-batch 16 x accum 4 = 64, AdamW lr 2e-4, cosine, 3 epochs,
   checkpoint per epoch in checkpoints/. Per epoch: train loss, val loss, val SID-valid rate (greedy, unconstrained),
-  val exact-track Hit@10 (constrained beam 20).
+  val exact-track Hit@10 (constrained beam 20), dev playlist precision@10 (src/dev_split.py, constrained beam 20
+  over the dev pool). Train / val pairs come from the frozen files (python -m src.train_data --freeze).
 
     python -m src.train            # full run (GPU)
     python -m src.train --smoke    # 500 pairs, 50 steps
@@ -29,7 +30,8 @@ import torch
 
 from src.decode import LEVELS, PROMPT, SidDecoder, sid_token, sid_token_list
 from src.paths import ROOT
-from src.train_data import SIDS, epoch_indices, load_pool, split_val
+from src.dev_split import dev_precision, training_tune_tracks
+from src.train_data import SIDS, epoch_indices, frozen_split
 
 BASE_MODEL = "Qwen/Qwen3-0.6B"
 CHECKPOINTS = ROOT / "checkpoints"
@@ -38,7 +40,7 @@ LORA_TARGETS = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", 
 MAX_LEN = 64
 MICRO_BATCH, GRAD_ACCUM = 16, 4          # effective batch 64
 LR, EPOCHS = 2e-4, 3
-WARMUP_STEPS = 0                         # plain cosine decay, as specified
+WARMUP_STEPS = 30                        # linear warmup, then cosine decay
 VAL_BEAMS, VAL_K = 20, 10
 SMOKE_PAIRS, SMOKE_STEPS, SMOKE_VAL = 500, 50, 100
 SEED = 20
@@ -161,8 +163,7 @@ def train(smoke: bool = False) -> None:
     torch.manual_seed(SEED)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     sids = pd.read_parquet(SIDS)
-    pool, stats = load_pool()
-    tr, val = split_val(pool)
+    tr, val = frozen_split()
     if smoke:
         tr = tr.sample(SMOKE_PAIRS, random_state=SEED).reset_index(drop=True)
         val = val.head(SMOKE_VAL)
@@ -170,9 +171,10 @@ def train(smoke: bool = False) -> None:
     model, new_ids = build_model(tok, sids)
     model.to(device)
     trainable, total = count_params(model)
-    print(f"pool {stats['pool']} | train {len(tr):,} val {len(val):,} | new tokens {len(new_ids)} | "
+    print(f"train {tr.source.value_counts().to_dict()} | val {len(val):,} | new tokens {len(new_ids)} | "
           f"trainable {trainable:,} / {total:,}", flush=True)
     dec = SidDecoder(model, tok, sids)
+    dev_dec = SidDecoder(model, tok, sids, exclude=training_tune_tracks())
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LR, weight_decay=0.0)
     epochs = 1 if smoke else EPOCHS
     steps_per_epoch = [math.ceil(len(epoch_indices(tr, e)) / (MICRO_BATCH * GRAD_ACCUM)) for e in range(epochs)]
@@ -195,24 +197,31 @@ def train(smoke: bool = False) -> None:
             idx = np.resize(idx, SMOKE_STEPS * MICRO_BATCH * GRAD_ACCUM)
         model.train()
         opt.zero_grad(set_to_none=True)
-        t0, run, n = time.time(), 0.0, 0
+        t0, run, n, group, t_step = time.time(), 0.0, 0, 0.0, time.time()
         for s in range(0, len(idx), MICRO_BATCH):
             b = collate([encode(tok, r[0], r[1:]) for r in rows[idx[s:s + MICRO_BATCH]]], tok.pad_token_id)
             with torch.autocast(device.type, dtype=torch.bfloat16, enabled=device.type == "cuda"):
                 loss = sid_loss(model, {k: v.to(device) for k, v in b.items()})
             (loss / GRAD_ACCUM).backward()
-            run, n = run + loss.item(), n + 1
+            run, n, group = run + loss.item(), n + 1, group + loss.item()
             if n % GRAD_ACCUM == 0:
                 opt_step()
-                if step % 50 == 0:
-                    print(f"  step {step}/{total_steps} loss {run / n:.4f} lr {sched.get_last_lr()[0]:.2e}", flush=True)
+                if smoke or step % 50 == 0:
+                    rec_s = {"step": step, "loss": group / GRAD_ACCUM, "lr": sched.get_last_lr()[0],
+                             "sec_per_step": time.time() - t_step}
+                    print(json.dumps(rec_s), flush=True)
+                group, t_step = 0.0, time.time()
                 if step >= total_steps:
                     break
         if n % GRAD_ACCUM and step < total_steps:     # flush the last partial accumulation group of the epoch
             opt_step()
         rec = {"epoch": epoch, "step": step, "train_loss": run / max(1, n), "val_loss": val_loss(model, tok, val, device),
                "val_sid_valid_greedy": sid_valid_rate(model, tok, dec, val["query"].tolist()),
-               "val_hit@10_constrained": hit_at_k(dec, val), "seconds": time.time() - t0}
+               "val_hit@10_constrained": hit_at_k(dec, val),
+               "dev_precision@10": dev_precision(lambda qs: [[t for t, _ in r] for r in
+                                                             dev_dec.search(qs, n=VAL_K, num_beams=VAL_BEAMS)]
+                                                 )["dev_precision@10"],
+               "seconds": time.time() - t0}
         if device.type == "cuda":
             rec["peak_vram_gb"] = torch.cuda.max_memory_allocated() / 1e9
         print(json.dumps(rec), flush=True)
