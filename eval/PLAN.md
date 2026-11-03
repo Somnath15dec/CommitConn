@@ -136,3 +136,10 @@ All amendments below were made **before any results existed**: no system had bee
 | 3 | 2026-11-04 | Secondary condensed precision@10 (judged-only within the top 50) and judged-in-top-50 counts. | This separates "wrong" from "unjudged". |
 | 4 | 2026-11-04 | Primary Hit@10 ceiling is query-aware (min(1, 10 / tracks matching all wanted_tags)). The identical-description ceiling is also reported. | Eval A queries are less specific than content_desc, so the description ceiling overstates what is achievable. |
 | 5 | 2026-11-04 | Secondary end-to-end latency, including the explanation. | The user-facing latency includes the explanation. |
+
+## Notes after results
+Notes clarify wording only. They change no metric, scoring rule, label filter or eval set.
+
+| # | Date | Note |
+|---|---|---|
+| 1 | 2026-11-04 | The Amendment 4 "query-aware ceiling" is the **expected Hit@10 of a random choice among the tracks matching the query's `wanted_tags`**, not an upper bound. A ranker that is not random among those tracks can exceed it: the FAISS baseline scored Hit@10 0.096 against 0.092. Reports call it the **"random-within-match expectation"**. Its formula, mean min(1, 10 / N(q)), is unchanged. |

@@ -111,6 +111,8 @@ def avoid_violation(top: list[str], avoid: set[str], TG: dict[str, set], k: int 
 
 
 def query_aware_ceiling(evals: list[dict], cat: pd.DataFrame) -> float:
+    """PLAN.md's "query-aware ceiling", reported as the random-within-match expectation (PLAN.md note 1): expected
+    Hit@10 of a random choice among tracks matching the query's wanted_tags. Not an upper bound."""
     T = cat["T"].tolist()
     vals = []
     for p in evals:
@@ -171,7 +173,7 @@ def evaluate(cat: pd.DataFrame, sys_: FaissBaseline) -> tuple[dict, dict]:
     hn = [hit_ndcg(t, p["track_id"]) for t, p in zip(topA, eva)]
     res["eval_a"] = {"n_queries": len(eva), "hit@10": summary([h for h, _ in hn]),
                      "ndcg@10": summary([n for _, n in hn]),
-                     "ceiling_query_aware": query_aware_ceiling(eva, cat),
+                     "random_within_match_expectation": query_aware_ceiling(eva, cat),
                      "ceiling_identical_desc": identical_desc_ceiling(eva, cat)}
 
     # ---- gold accuracy (full catalog)
@@ -236,7 +238,7 @@ def markdown(res: dict, extra: dict) -> str:
          f"| Eval B judged tracks in top 50 (mean) | {b['judged_in_top50_mean']:.1f} |",
          f"| Eval A Hit@10 | {fmt(a['hit@10'])} |",
          f"| Eval A NDCG@10 | {fmt(a['ndcg@10'])} |",
-         f"| Eval A ceiling, query-aware (primary) | {a['ceiling_query_aware']:.3f} |",
+         f"| Eval A random-within-match expectation (primary reference) | {a['random_within_match_expectation']:.3f} |",
          f"| Eval A ceiling, identical description | {a['ceiling_identical_desc']:.3f} |",
          f"| Gold tag-match@10 | {fmt(g['tag_match@10'])} |",
          f"| Gold avoid-violation@10 (mean of 3) | {g['avoid_violation@10']['mean']:.3f} "

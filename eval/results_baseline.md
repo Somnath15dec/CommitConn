@@ -12,7 +12,7 @@ System: `sentence-transformers/all-MiniLM-L6-v2` (normalized) on content_desc on
 | Eval B judged tracks in top 50 (mean) | 20.3 |
 | Eval A Hit@10 | 0.096 [0.072, 0.122] |
 | Eval A NDCG@10 | 0.047 [0.034, 0.062] |
-| Eval A ceiling, query-aware (primary) | 0.092 |
+| Eval A random-within-match expectation (primary reference) | 0.092 |
 | Eval A ceiling, identical description | 0.902 |
 | Gold tag-match@10 | 0.634 [0.501, 0.750] |
 | Gold avoid-violation@10 (mean of 3) | 0.100 (#26: 0.0, #27: 0.3, #28: 0.0) |
