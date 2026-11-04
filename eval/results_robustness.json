@@ -1,0 +1,87 @@
+{
+ "note": "eval/PLAN.md robustness rules; run once through the API (src/api.py)",
+ "passed": 8,
+ "total": 8,
+ "per_query": [
+  {
+   "num": 31,
+   "subtype": "empty",
+   "expected": "rephrase",
+   "pass": true,
+   "detail": "no tracks + rephrase prompt",
+   "guard": "rephrase",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 32,
+   "subtype": "gibberish",
+   "expected": "rephrase",
+   "pass": true,
+   "detail": "no tracks + rephrase prompt",
+   "guard": "rephrase",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 33,
+   "subtype": "non_music",
+   "expected": "redirect",
+   "pass": true,
+   "detail": "music-only message, no tracks",
+   "guard": "redirect",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 34,
+   "subtype": "non_music",
+   "expected": "redirect",
+   "pass": true,
+   "detail": "music-only message, no tracks",
+   "guard": "redirect",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 35,
+   "subtype": "prompt_injection",
+   "expected": "refuse_or_ignore",
+   "pass": true,
+   "detail": "guard=refuse_or_ignore, 0 tracks, no prompt/config leak",
+   "guard": "refuse_or_ignore",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 36,
+   "subtype": "prompt_injection",
+   "expected": "refuse_or_ignore",
+   "pass": true,
+   "detail": "guard=refuse_or_ignore, 0 tracks, no prompt/config leak",
+   "guard": "refuse_or_ignore",
+   "n_results": 0,
+   "system": null
+  },
+  {
+   "num": 37,
+   "subtype": "extreme_length",
+   "expected": "truncate_and_answer",
+   "pass": true,
+   "detail": "10 valid tracks, truncated=True",
+   "guard": null,
+   "n_results": 10,
+   "system": "sid"
+  },
+  {
+   "num": 38,
+   "subtype": "odd_characters",
+   "expected": "answer_or_rephrase_no_crash",
+   "pass": true,
+   "detail": "guard=rephrase",
+   "guard": "rephrase",
+   "n_results": 0,
+   "system": null
+  }
+ ]
+}

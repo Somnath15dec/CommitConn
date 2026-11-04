@@ -1,0 +1,238 @@
+{
+ "latency_end_to_end": {
+  "n": 20,
+  "p50_ms": 3587.8030999992916,
+  "p90_ms": 3888.218999998208,
+  "max_ms": 4106.437700000242,
+  "systems": {
+   "sid": 20
+  },
+  "llm_explanation_share": 0.79,
+  "k": 10,
+  "note": "in-process HTTP (TestClient), RTX 4060; SID beam 50 + batch explanation of 10 results"
+ },
+ "examples": {
+  "normal": {
+   "query": "mellow acoustic songs for a slow sunday morning",
+   "message": null,
+   "results": [
+    {
+     "track_id": "05b6SX5DjBpvd5rYIxmwOz",
+     "track_name": "To Whom It May Concern",
+     "artists": "The Civil Wars",
+     "sid": "223-76-26-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "0sE9ZTxMxYneIUAEHN4Tg7",
+     "track_name": "The Power of Love",
+     "artists": "Gabrielle Aplin",
+     "sid": "223-76-133-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "3pRaLNL3b8x5uBOcsgvdqM",
+     "track_name": "Hallelujah",
+     "artists": "Jeff Buckley",
+     "sid": "223-138-50-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, morning — fits the request with a morning touch.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "273QnyCvJB65rScHJ1nPZb",
+     "track_name": "Make You Feel My Love",
+     "artists": "Adele",
+     "sid": "223-194-46-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "4eZP0Tyh1p06Nk1aHOzNrt",
+     "track_name": "Over You",
+     "artists": "Ingrid Michaelson, A Great Big World",
+     "sid": "223-199-115-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "2AILbz83cBnrAMAG06rZts",
+     "track_name": "Reflection",
+     "artists": "Lea Salonga, Disney",
+     "sid": "223-219-19-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "012NJSdURT6pzuzl1cSUG6",
+     "track_name": "Naive (Live Acoustic)",
+     "artists": "Sleeping At Last",
+     "sid": "223-68-147-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "1VVyW3Dl9LaCAcPIhygo9A",
+     "track_name": "On My Own",
+     "artists": "Samantha Barks",
+     "sid": "223-219-12-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "5Uc8Z0SolIfJAgxl51XOiW",
+     "track_name": "Lilac Wine",
+     "artists": "Nina Simone",
+     "sid": "223-194-150-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    },
+    {
+     "track_id": "30mZtKJnUgMmlYG58px9S9",
+     "track_name": "Seja Livre",
+     "artists": "Marcelo Markes",
+     "sid": "223-200-143-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "Acoustic, calm, slow — matches the request perfectly.",
+     "explanation_source": "llm"
+    }
+   ],
+   "meta": {
+    "system": "sid",
+    "guard": null,
+    "notes": [],
+    "dial": 0.5,
+    "lambda": -0.5,
+    "latency_ms": 3785.619200003566
+   }
+  },
+  "guard": {
+   "query": "",
+   "message": "I can only help with music. Tell me a mood, an activity or a genre and I'll find songs for it.",
+   "results": [],
+   "meta": {
+    "system": null,
+    "guard": "redirect",
+    "notes": [],
+    "dial": 0.0,
+    "lambda": -0.0,
+    "latency_ms": 10.260899995046202
+   }
+  },
+  "forced_faiss_fallback": {
+   "query": "mellow acoustic songs for a slow sunday morning",
+   "message": null,
+   "results": [
+    {
+     "track_id": "34fyjViTs96VuHTC7CBfOI",
+     "track_name": "Perfeito Amor",
+     "artists": "Kemuel",
+     "sid": "14-200-4-0",
+     "cluster_name": "Slow Melancholic Rainy Day",
+     "explanation": "slow, calm, melancholic — matches 'mellow slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "5DIVWgTeJ2fPIxaY9e7ZKn",
+     "track_name": "I've Got A Crush On You",
+     "artists": "Ella Fitzgerald",
+     "sid": "84-23-7-0",
+     "cluster_name": "Slow Blues Jazz Soul",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "1gJOqXpRjz9GeEEwQpcujK",
+     "track_name": "You Are So Beautiful",
+     "artists": "Joe Cocker",
+     "sid": "84-23-246-0",
+     "cluster_name": "Slow Blues Jazz Soul",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "2gaVsa8Ifi2w2csnRqNN2F",
+     "track_name": "The Secret Of Christmas",
+     "artists": "Ella Fitzgerald",
+     "sid": "84-23-148-0",
+     "cluster_name": "Slow Blues Jazz Soul",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "2jBGtK7ChvwIX75iyLcdJ2",
+     "track_name": "You Go To My Head",
+     "artists": "Billie Holiday",
+     "sid": "84-23-190-0",
+     "cluster_name": "Slow Blues Jazz Soul",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "6TBBKYKoB1NDmx08ZIUMRp",
+     "track_name": "Bewitched, Bothered, And Bewildered - Stereo Version",
+     "artists": "Ella Fitzgerald",
+     "sid": "84-23-133-0",
+     "cluster_name": "Slow Blues Jazz Soul",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "0XoDkl2Q5pKCfjSe7Woxr6",
+     "track_name": "あなたのすべてになりたい",
+     "artists": "Seiko Matsuda",
+     "sid": "14-116-159-0",
+     "cluster_name": "Slow Melancholic Rainy Day",
+     "explanation": "slow, calm, melancholic — matches 'mellow slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "4Ohepr2J1G5LJ8I6fvDq1x",
+     "track_name": "Something Good",
+     "artists": "Julie Andrews, Bill Lee",
+     "sid": "223-219-182-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "1VVyW3Dl9LaCAcPIhygo9A",
+     "track_name": "On My Own",
+     "artists": "Samantha Barks",
+     "sid": "223-219-12-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    },
+    {
+     "track_id": "4TxbUrVjT6ZYQ1jVPTeTvA",
+     "track_name": "The Mirror (Angel Of Music)",
+     "artists": "Andrew Lloyd Webber, Michael Crawford, Sarah Brightman, Steve Barton",
+     "sid": "223-39-26-0",
+     "cluster_name": "Slow Melancholic Acoustic",
+     "explanation": "slow, calm, melancholic, acoustic — matches 'mellow acoustic slow'",
+     "explanation_source": "fallback"
+    }
+   ],
+   "meta": {
+    "system": "faiss_fallback",
+    "guard": null,
+    "notes": [],
+    "dial": 0.0,
+    "lambda": -0.0,
+    "fallback_reason": "TimeoutError: ",
+    "latency_ms": 4323.635599997942
+   }
+  }
+ }
+}
