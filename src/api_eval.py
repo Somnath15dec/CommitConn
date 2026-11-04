@@ -62,7 +62,7 @@ def main() -> None:
         rows = []
         for num, g in robust:
             try:
-                r = c.post("/recommend", json={"query": g["query"], "k": 10})
+                r = c.post("/recommend", json={"query": g["query"], "k": 10, "explain": "llm"})
                 status, out = r.status_code, (r.json() if r.status_code == 200 else None)
             except Exception as e:                               # a crash fails the case
                 status, out = 0, None
@@ -86,7 +86,7 @@ def main() -> None:
         qs = G.MUSIC_PROTOTYPES[:LATENCY_N]
         ms, systems, llm_share = [], [], []
         for i, q in enumerate(qs):
-            body = {"query": q, "k": 10}
+            body = {"query": q, "k": 10, "explain": "llm"}
             if i % 2:
                 body |= {"user_id": users[i % len(users)]["user_id"], "dial": [-1, -0.5, 0.5, 1][i % 4]}
             t0 = time.perf_counter()
@@ -101,13 +101,13 @@ def main() -> None:
 
         # 3. examples
         ex_normal = c.post("/recommend", json={"query": "mellow acoustic songs for a slow sunday morning", "k": 10,
-                                                "user_id": users[0]["user_id"], "dial": 0.5}).json()
+                                                "user_id": users[0]["user_id"], "dial": 0.5, "explain": "llm"}).json()
         ex_guard = c.post("/recommend", json={"query": "can you book me a cab to the airport at 6am?"}).json()
         # forced FAISS fallback: the SID budget is made impossible to meet for one request
         A.SID_BUDGET_S, old = 1e-4, A.SID_BUDGET_S
         try:
             ex_fallback = c.post("/recommend", json={"query": "mellow acoustic songs for a slow sunday morning",
-                                                     "k": 10}).json()
+                                                     "k": 10, "explain": "llm"}).json()
         finally:
             A.SID_BUDGET_S = old
     api_res = {"latency_end_to_end": latency, "examples": {"normal": ex_normal, "guard": ex_guard,

@@ -2,11 +2,13 @@
 
     uvicorn src.api:app --port 8000
 
-POST /recommend {query, user_id?, dial in [-1, 1], k}: guards (src/guards.py) -> SID model (trie-constrained beam,
-discovery dial lambda = -dial on the user's history level-1 codes, history tracks excluded) with a 2 s budget, else
-FAISS ("faiss_fallback") -> batch explanation of the CLEANED query (template fallback per item).
-GET /users, POST /feedback (-> logs/feedback.jsonl), GET /health. Startup warm-up loads everything and runs one
-dummy explanation.
+POST /recommend {query, user_id?, dial in [-1, 1], k, explain}: guards (src/guards.py) -> SID model
+(trie-constrained beam, discovery dial lambda = -dial on the user's history level-1 codes, history tracks excluded)
+with a 2 s budget, else FAISS ("faiss_fallback"). explain = "template" (default, fast) returns template
+explanations; "llm" runs the batch explainer on the CLEANED query (template fallback per item).
+Two-phase UI flow: /recommend (templates, ~0.4 s) then POST /explain {query (cleaned), track_ids} for LLM text.
+GET /users, POST /feedback (-> logs/feedback.jsonl), GET /health. CORS for the local UI dev server.
+Startup warm-up loads everything and runs one dummy explanation.
 """
 from __future__ import annotations
 
@@ -22,6 +24,7 @@ import numpy as np
 import pandas as pd
 import requests
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from src import explain as X
@@ -36,6 +39,7 @@ BEAMS = 50
 MAX_K = 50
 DEMO_USERS, DEMO_SEED, DEMO_MIN_HISTORY = 20, 24, 30
 FEEDBACK_LOG = ROOT / "logs" / "feedback.jsonl"
+UI_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:4173", "http://127.0.0.1:4173"]
 
 
 # ---------------------------------------------------------------- schemas
@@ -44,6 +48,12 @@ class RecommendIn(BaseModel):
     user_id: str | None = None
     dial: float = Field(0.0, ge=-1.0, le=1.0, description="-1 familiar ... +1 discovery (lambda = -dial)")
     k: int = Field(10, ge=1, le=MAX_K)
+    explain: Literal["template", "llm"] = "template"
+
+
+class ExplainIn(BaseModel):
+    query: str = Field(..., max_length=2_000)
+    track_ids: list[str] = Field(..., min_length=1, max_length=MAX_K)
 
 
 class FeedbackIn(BaseModel):
@@ -175,15 +185,50 @@ def recommend(svc: Services, req: RecommendIn) -> dict:
         meta["system"], meta["fallback_reason"] = "faiss_fallback", f"{type(e).__name__}: {e}"[:200]
         ids = svc.faiss(g.query, req.k, req.user_id)
     tracks = [svc.meta[t] for t in ids]
-    try:
-        exps = svc.explain(g.query, tracks)                        # cleaned query only
-    except Exception as e:
-        exps = [{"text": X.fallback(g.query, t), "source": "fallback", "reason": f"explainer error: {type(e).__name__}"}
-                for t in tracks]
-    results = [{**{k: t[k] for k in ("track_id", "track_name", "artists", "sid", "cluster_name")},
-                "explanation": e["text"], "explanation_source": e["source"]} for t, e in zip(tracks, exps)]
+    exps = explanations(svc, g.query, tracks, req.explain)
+    H = {svc.level1[t] for t in svc.history[req.user_id]} if req.user_id else None
+    results = [card(svc, t, e, H) for t, e in zip(tracks, exps)]
     meta["latency_ms"] = (time.perf_counter() - t0) * 1000
     return {"query": g.query, "message": None, "results": results, "meta": meta}
+
+
+def explanations(svc: Services, query: str, tracks: list[dict], mode: str) -> list[dict]:
+    """mode "template": instant templates; "llm": batch explainer (cleaned query only), template fallback per item."""
+    if mode == "template":
+        return [{"text": X.fallback(query, t), "source": "template", "reason": None} for t in tracks]
+    try:
+        return svc.explain(query, tracks)
+    except Exception as e:
+        return [{"text": X.fallback(query, t), "source": "fallback", "reason": f"explainer error: {type(e).__name__}"}
+                for t in tracks]
+
+
+def card(svc: Services, t: dict, e: dict, H: set[int] | None) -> dict:
+    return {**{k: t[k] for k in ("track_id", "track_name", "artists", "sid", "cluster_name")},
+            "level1": svc.level1[t["track_id"]],
+            "new_to_user": None if H is None else svc.level1[t["track_id"]] not in H,
+            "explanation": e["text"], "explanation_source": e["source"],
+            "explanation_fallback_reason": None if e["source"] in ("llm", "template") else e.get("reason")}
+
+
+def explain_tracks(svc: Services, req: ExplainIn) -> dict:
+    """Phase 2: LLM explanations for tracks already shown. The query is re-guarded; a guarded query never reaches
+    the explainer (templates only)."""
+    t0 = time.perf_counter()
+    unknown = [t for t in req.track_ids if t not in svc.meta]
+    if unknown:
+        raise HTTPException(404, f"unknown track_id(s): {unknown[:3]}")
+    g = G.check(req.query, svc.words, svc.classifier)
+    tracks = [svc.meta[t] for t in req.track_ids]
+    if g.guard:
+        exps = [{"text": X.fallback(G.clean(req.query), t), "source": "fallback", "reason": f"guard: {g.guard}"}
+                for t in tracks]
+    else:
+        exps = explanations(svc, g.query, tracks, "llm")
+    items = [{"track_id": t["track_id"], "explanation": e["text"], "explanation_source": e["source"],
+              "explanation_fallback_reason": None if e["source"] == "llm" else e.get("reason")}
+             for t, e in zip(tracks, exps)]
+    return {"query": g.query, "items": items, "meta": {"guard": g.guard, "latency_ms": (time.perf_counter() - t0) * 1000}}
 
 
 # ---------------------------------------------------------------- app
@@ -198,11 +243,16 @@ def create_app(services: Services | None = None, warm: bool = True) -> FastAPI:
             state["svc"].warm_up()
         yield
 
-    app = FastAPI(title="Language-steerable music recommender", lifespan=lifespan)
+    app = FastAPI(title="Shelf — language-steerable music recommender", lifespan=lifespan)
+    app.add_middleware(CORSMiddleware, allow_origins=UI_ORIGINS, allow_methods=["GET", "POST"], allow_headers=["*"])
 
     @app.post("/recommend")
     def _recommend(req: RecommendIn):
         return recommend(state["svc"], req)
+
+    @app.post("/explain")
+    def _explain(req: ExplainIn):
+        return explain_tracks(state["svc"], req)
 
     @app.get("/users")
     def _users():
