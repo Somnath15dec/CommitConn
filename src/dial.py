@@ -105,7 +105,7 @@ def criteria(table: dict) -> dict:
 
 
 # ---------------------------------------------------------------- run
-def run() -> dict:
+def run(lambdas=LAMBDAS, example_lambdas=(4, 0, -4)) -> dict:
     from src.evaluate_final import load_sid_model
     cat = pd.read_parquet(CATALOG)
     sids = pd.read_parquet(SIDS)
@@ -121,7 +121,7 @@ def run() -> dict:
         H = {level1[t] for t in u["history"]}
         dec = SidDecoder(model, tok, sids, exclude=set(u["history"]))
         uq = [q for q in qs if q["user_id"] == u["user_id"]]
-        for lam in LAMBDAS:
+        for lam in lambdas:
             res = dec.search([q["query"] for q in uq], n=K, num_beams=BEAMS, batch_size=DECODE_BATCH,
                              logits_processor_fn=dial_fn(tok, H, lam))
             for q, r in zip(uq, res):
@@ -131,9 +131,9 @@ def run() -> dict:
                              "lambda": lam, "novelty@10": novelty(top, level1, H),
                              "familiar_hit@10": familiar_hit(top, set(u["heldout"])),
                              "relevance@10": relevance(top, ctx, q["context_word"]), "n_returned": len(top)})
-    print(f"decoded {len(users)} users x {len(LAMBDAS)} settings in {time.time() - t0:.0f}s", flush=True)
+    print(f"decoded {len(users)} users x {len(lambdas)} settings in {time.time() - t0:.0f}s", flush=True)
     df = pd.DataFrame(rows)
-    table = {int(l): {m: summary(g[m]) for m in ("novelty@10", "familiar_hit@10", "relevance@10")}
+    table = {l: {m: summary(g[m]) for m in ("novelty@10", "familiar_hit@10", "relevance@10")}
              for l, g in df.groupby("lambda")}
     for l in table:
         table[l]["returned_fewer_than_10"] = int((df[df["lambda"] == l].n_returned < K).sum())
@@ -149,14 +149,16 @@ def run() -> dict:
         ex = {"user_id": str(uid), "query": q["query"], "n_history": len(u["history"]),
               "top_history_clusters": [f"{names[str(k)]['name']} ({v})" for k, v in hist_clusters.items()],
               "results": {}}
-        for lam in (4, 0, -4):
+        for lam in example_lambdas:
             ex["results"][str(lam)] = [{"track": f"{meta.at[t, 'track_name']} — {meta.at[t, 'artists'].replace(';', ', ')}",
                                         "cluster": names[str(level1[t])]["name"], "in_history_cluster": level1[t] in H}
                                        for t in tops[(uid, q["query"], lam)][:5]]
         examples.append(ex)
     res = {"note": "eval/PLAN.md note 5 (pre-registered 919201a); run once", "checkpoint": "checkpoints/run1/epoch3",
-           "n_users": len(users), "n_queries": len(qs), "lambdas": list(LAMBDAS), "table": table,
-           "criteria": criteria(table), "examples": examples, "per_query": rows}
+           "n_users": len(users), "n_queries": len(qs), "lambdas": list(lambdas), "table": table,
+           "examples": examples, "per_query": rows}
+    if tuple(sorted(lambdas)) == tuple(sorted(LAMBDAS)):
+        res["criteria"] = criteria(table)
     return res
 
 
