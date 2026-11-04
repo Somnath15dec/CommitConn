@@ -5,3 +5,6 @@ checkpoints/
 __pycache__/
 exports/
 logs/
+node_modules/
+ui/dist/
+*.tsbuildinfo
