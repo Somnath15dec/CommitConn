@@ -194,7 +194,7 @@ Work step by step and stop at every **[STOP]** for review. Commit after each mil
   - 2 negation queries ("no vocals", "not sad")
 - **[STOP]** Show all 38 for editing. Commit: `feat: gold eval queries`.
 
-## Step 9: `data/DATA.md`, data card
+## Step 9: `data/DATA.md`, data card (done, `docs: data card`; licenses checked 2026-11-04: Spotify Tracks ODbL-1.0, MuSe CC BY 4.0, Spotify Playlists CC BY 4.0. User-data wording still awaits open item 1)
 - Sources and licenses: check each dataset page and quote only the license name. Covers Spotify Tracks
   (Kaggle), MuSe (Kaggle) and the Innsbruck Spotify Playlists dataset (Zenodo, CC-BY-4.0 per the API).
 - What is real and what is synthetic, row counts per file, and how train and eval are separated:
