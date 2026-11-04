@@ -65,6 +65,7 @@ For EACH numbered track below, write ONE sentence (at most 20 words) explaining 
 Rules:
 - Mention at most 2 facts, preferring the facts listed under "matches the request".
 - Never mention a "good for" use the listener did not ask for, unless nothing matches the request.
+- If nothing matches, describe the track's sound positively. Never say that it does not match.
 - Use ONLY sound, mood and use words from that track's facts; never invent others. Do not name tracks or artists.
 Return {{"items": [{{"id": <track number>, "explanation": "..."}}, ...]}} with one item per track.
 
@@ -135,12 +136,19 @@ def ask_batch(query: str, tracks: list[dict], timeout: float, url: str = OLLAMA_
     return {int(it["id"]): " ".join(str(it["explanation"]).split()) for it in items}
 
 
+NEGATIVE = re.compile(r"\b(no (direct |clear |real )?match|(does ?n[o']t|do ?n[o']t|not) (really )?(match|fit)|"
+                      r"not (a |an )?(good |great |ideal )?(fit|match)|unrelated)\b", re.I)
+
+
 def check(text: str | None, query: str, track: dict) -> dict:
     """Per-item grounding / length check -> result dict (template fallback on failure)."""
     if not text:
         return {"text": fallback(query, track), "source": "fallback", "reason": "missing item"}
     if len(text.split()) > MAX_WORDS:
         return {"text": fallback(query, track), "source": "fallback", "reason": "too long", "llm_text": text}
+    if NEGATIVE.search(text):
+        return {"text": fallback(query, track), "source": "fallback", "reason": "says it does not match",
+                "llm_text": text}
     bad = ungrounded(text, track)
     if bad:
         return {"text": fallback(query, track), "source": "fallback", "reason": f"ungrounded: {', '.join(bad)}",

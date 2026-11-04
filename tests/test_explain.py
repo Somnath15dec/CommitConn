@@ -107,3 +107,11 @@ def test_prompt_view_is_cleaned_and_lists_matches():
     assert "Matches the request: fast, gym, workout." in f
     assert "Matches the request: nothing directly." in X.facts("something romantic", TRACK2)
     assert X.timeout_for(1) == X.TIMEOUT_S and X.timeout_for(10) > X.TIMEOUT_S
+
+
+def test_negative_explanations_fall_back():
+    for bad in ["No direct match for a long drive at night.", "This doesn't really fit the request.",
+                "Not a great match, but calm."]:
+        r = X.explain("songs for a long drive at night", TRACK, post=fake_llm(bad))
+        assert r["source"] == "fallback" and r["reason"] == "says it does not match", bad
+    assert X.explain("calm study", TRACK, post=fake_llm("A calm instrumental match for study."))["source"] == "llm"
