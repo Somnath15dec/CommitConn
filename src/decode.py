@@ -59,9 +59,11 @@ class SidDecoder:
         return node if isinstance(node, str) else None
 
     @torch.no_grad()
-    def search(self, queries: list[str], n: int = 10, num_beams: int = 20,
-               batch_size: int = 16) -> list[list[tuple[str, float]]]:
-        """Up to n distinct (track_id, score) per query; score = length-normalized beam log-prob."""
+    def search(self, queries: list[str], n: int = 10, num_beams: int = 20, batch_size: int = 16,
+               logits_processor_fn=None) -> list[list[tuple[str, float]]]:
+        """Up to n distinct (track_id, score) per query; score = length-normalized beam log-prob.
+        logits_processor_fn(prompt_len) -> LogitsProcessor (optional, e.g. the discovery dial). It composes with the
+        trie constraint in either order: trie-disallowed tokens are -inf and stay -inf after a finite bias."""
         num_beams = max(num_beams, n)
         self.tok.padding_side = "left"
         out = []
@@ -70,11 +72,15 @@ class SidDecoder:
             enc = self.tok([PROMPT.format(q=q) for q in qs], return_tensors="pt", padding=True).to(
                 self.model.device)
             plen = enc.input_ids.shape[1]
+            extra = {}
+            if logits_processor_fn is not None:
+                from transformers import LogitsProcessorList
+                extra["logits_processor"] = LogitsProcessorList([logits_processor_fn(plen)])
             gen = self.model.generate(
                 **enc, max_new_tokens=len(LEVELS), num_beams=num_beams, num_return_sequences=num_beams,
                 do_sample=False, early_stopping=True, output_scores=True, return_dict_in_generate=True,
                 prefix_allowed_tokens_fn=lambda _b, ids: self._allowed(ids[plen:].tolist()),
-                pad_token_id=self.tok.pad_token_id, eos_token_id=None)
+                pad_token_id=self.tok.pad_token_id, eos_token_id=None, **extra)
             seqs = gen.sequences[:, plen:].tolist()
             scores = gen.sequences_scores.tolist()
             for qi in range(len(qs)):
