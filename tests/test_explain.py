@@ -21,7 +21,9 @@ class _Resp:
         pass
 
     def json(self):
-        return {"message": {"content": json.dumps({"explanation": self.text})}}
+        texts = self.text if isinstance(self.text, list) else [self.text]
+        return {"message": {"content": json.dumps({"items": [{"id": i, "explanation": t}
+                                                             for i, t in enumerate(texts, 1)]})}}
 
 
 def fake_llm(text):
@@ -42,7 +44,7 @@ def test_grounding_rejects_invented_tag():
 
 def test_fallback_template():
     r = X.explain("calm music for studying", TRACK, post=fake_llm(" ".join(["word"] * 30)))
-    assert r["source"] == "fallback" and r["reason"] == "empty or too long"
+    assert r["source"] == "fallback" and r["reason"] == "too long"
     assert r["text"] == "calm, melancholic, instrumental — matches 'calm studying'"
     assert X.fallback("pump me up", TRACK) == "calm, melancholic, instrumental — closest match for 'pump me up'"
 
@@ -84,3 +86,24 @@ def test_bad_json_falls_back():
             return {"message": {"content": "not json"}}
     r = X.explain("calm", TRACK, post=lambda url, timeout, json: Bad(""))
     assert r["source"] == "fallback" and r["reason"].startswith("bad response")
+
+
+TRACK2 = {"content_desc": "Genre: punk. Sound: fast, energetic, neutral mood. Good for: workout, running, gym.",
+          "tags": ["fast", "energetic", "neutral mood"], "context": ["workout", "running", "gym"], "cluster_name": "Punk"}
+
+
+def test_batch_grounding_and_fallback_per_item():
+    out = X.explain_batch("calm music for studying", [TRACK, TRACK2],
+                          post=fake_llm(["A calm instrumental piece for study.", "A sad, sleepy track."]))
+    assert [o["source"] for o in out] == ["llm", "fallback"] and out[1]["reason"].startswith("ungrounded")
+    one = X.explain_batch("calm", [TRACK, TRACK2], post=fake_llm(["Calm and instrumental."]))   # item 2 missing
+    assert [o["source"] for o in one] == ["llm", "fallback"] and one[1]["reason"] == "missing item"
+    assert X.explain_batch("x", []) == []
+
+
+def test_prompt_view_is_cleaned_and_lists_matches():
+    f = X.facts("fast songs for the gym", TRACK2)
+    assert "neutral mood" not in f and "moderate energy" not in f
+    assert "Matches the request: fast, gym, workout." in f
+    assert "Matches the request: nothing directly." in X.facts("something romantic", TRACK2)
+    assert X.timeout_for(1) == X.TIMEOUT_S and X.timeout_for(10) > X.TIMEOUT_S
